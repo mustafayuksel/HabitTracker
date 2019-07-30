@@ -36,41 +36,62 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZg-R0-3pU">
+                                <rect key="frame" x="167.5" y="519" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="F0M-B8-xzA"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="gZp-w3-a5b"/>
+                                    <constraint firstAttribute="height" constant="40" id="gaN-Ir-qYz"/>
+                                    <constraint firstAttribute="width" constant="40" id="q1S-nB-8Bb"/>
+                                </constraints>
+                                <state key="normal" image="plus.png">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="addButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZsR-Vf-8fF"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Habit / Event" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uv2-j0-FdP">
+                                <rect key="frame" x="111" y="567" width="153.5" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" red="0.44705882352941173" green="0.73725490196078436" blue="0.83137254901960778" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="h5u-pp-Cqc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9lu-vN-XGE"/>
-                            <constraint firstItem="h5u-pp-Cqc" firstAttribute="bottom" secondItem="HLv-ry-Ae9" secondAttribute="top" id="HwS-gw-5lh"/>
-                            <constraint firstAttribute="trailing" secondItem="h5u-pp-Cqc" secondAttribute="trailing" id="dyP-fo-0Xx"/>
-                            <constraint firstItem="h5u-pp-Cqc" firstAttribute="top" secondItem="j4w-M4-uLk" secondAttribute="bottom" id="eJW-aL-GxH"/>
+                            <constraint firstItem="BZg-R0-3pU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerXWithinMargins" priority="999" id="00o-3C-m9D"/>
+                            <constraint firstItem="uv2-j0-FdP" firstAttribute="centerX" secondItem="BZg-R0-3pU" secondAttribute="centerX" id="0pf-b6-5pO"/>
+                            <constraint firstItem="h5u-pp-Cqc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" priority="999" id="9lu-vN-XGE"/>
+                            <constraint firstItem="uv2-j0-FdP" firstAttribute="top" secondItem="BZg-R0-3pU" secondAttribute="bottom" constant="8" symbolic="YES" id="Fl6-Cn-6xl"/>
+                            <constraint firstItem="h5u-pp-Cqc" firstAttribute="bottom" secondItem="HLv-ry-Ae9" secondAttribute="top" priority="999" id="HwS-gw-5lh"/>
+                            <constraint firstAttribute="trailing" secondItem="h5u-pp-Cqc" secondAttribute="trailing" priority="999" id="dyP-fo-0Xx"/>
+                            <constraint firstItem="h5u-pp-Cqc" firstAttribute="top" secondItem="j4w-M4-uLk" secondAttribute="bottom" priority="999" id="eJW-aL-GxH"/>
+                            <constraint firstItem="BZg-R0-3pU" firstAttribute="top" secondItem="j4w-M4-uLk" secondAttribute="bottom" priority="999" constant="455" id="iSe-ip-Zy5"/>
+                            <constraint firstItem="HLv-ry-Ae9" firstAttribute="top" secondItem="BZg-R0-3pU" secondAttribute="bottom" priority="999" constant="108" id="j7Y-mY-eVO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LHv-HB-vmX">
-                        <rightBarButtonItems>
-                            <barButtonItem title="Item" image="settings.png" id="4bz-rY-vIl">
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <action selector="settingsButtonAction:" destination="BYZ-38-t0r" id="Fsf-Hb-k3V"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Item" image="plus.png" id="lMU-RA-YNs">
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="settings.png" id="4bz-rY-vIl">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="settingsButtonAction:" destination="BYZ-38-t0r" id="Fsf-Hb-k3V"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="h5u-pp-Cqc" id="8Xc-rp-Sbm"/>
-                        <segue destination="Ivb-wb-KIw" kind="show" identifier="toSettingsVC" id="ouN-Pp-Gwo"/>
+                        <segue destination="Ivb-wb-KIw" kind="show" identifier="toCreateHabitVC" id="ouN-Pp-Gwo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="858.39999999999998" y="131.78410794602701"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--Habit / Event-->
         <scene sceneID="PM3-Om-jwg">
             <objects>
-                <viewController id="Ivb-wb-KIw" customClass="SettingsViewController" customModule="HabitTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Habit / Event" id="Ivb-wb-KIw" customClass="SettingsViewController" customModule="HabitTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jQo-2Q-fTk"/>
                         <viewControllerLayoutGuide type="bottom" id="xgN-96-3wz"/>
@@ -79,134 +100,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Swo-bG-3mE">
-                                <rect key="frame" x="0.0" y="64" width="375" height="553"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IBa-r3-3si">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="553" id="hEV-9K-AL8"/>
-                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="transportCell" editingAccessoryType="disclosureIndicator" rowHeight="100" id="xK7-3P-zLC">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xK7-3P-zLC" id="lne-aZ-YdC">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="99.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="BZc-wr-9eA">
-                                <rect key="frame" x="0.0" y="484" width="375" height="183"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <date key="date" timeIntervalSinceReferenceDate="573859770.51094306">
-                                    <!--2019-03-09 ÖS 9:29:30 +0000-->
-                                </date>
-                            </datePicker>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TuX-Rp-RbV">
-                                <rect key="frame" x="0.0" y="449" width="375" height="218"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" selected="YES"/>
-                                </accessibility>
-                            </pickerView>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eAm-4E-jX1" userLabel="Size Picker">
-                                <rect key="frame" x="0.0" y="449" width="375" height="218"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" selected="YES"/>
-                                </accessibility>
-                            </pickerView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OjT-Jf-RxG">
-                                <rect key="frame" x="0.0" y="449" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="DXp-jE-fdP"/>
-                                </constraints>
-                                <items>
-                                    <barButtonItem title="Cancel" id="vm3-VX-rVU">
-                                        <connections>
-                                            <action selector="cancelToolbarAction:" destination="Ivb-wb-KIw" id="u3G-0R-6vb"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="me1-fi-Vzp"/>
-                                    <barButtonItem title="Done" id="ePE-ZZ-4SI">
-                                        <connections>
-                                            <action selector="doneToolbarAction:" destination="Ivb-wb-KIw" id="GMB-HT-yPv"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aMG-vR-2nb" userLabel="FontPickerToolbar">
-                                <rect key="frame" x="0.0" y="449" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="jKV-UE-eJI"/>
-                                </constraints>
-                                <items>
-                                    <barButtonItem title="Cancel" id="YfG-4j-95C">
-                                        <connections>
-                                            <action selector="cancelFontPickerAction:" destination="Ivb-wb-KIw" id="AbS-l2-BB4"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="I2c-cP-hei"/>
-                                    <barButtonItem title="Done" id="3bk-fI-sLa">
-                                        <connections>
-                                            <action selector="doneFontPickerAction:" destination="Ivb-wb-KIw" id="8Eg-Bo-WCB"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XB1-XS-5gk" userLabel="SizePickerToolbar">
-                                <rect key="frame" x="0.0" y="449" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="8aW-vT-xTp"/>
-                                </constraints>
-                                <items>
-                                    <barButtonItem title="Cancel" id="lgp-Y4-uX9">
-                                        <connections>
-                                            <action selector="cancelSizePickerAction:" destination="Ivb-wb-KIw" id="Fd1-Ka-9H9"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="vQb-1E-L7J"/>
-                                    <barButtonItem title="Done" id="JYo-To-7Jt">
-                                        <connections>
-                                            <action selector="doneSizePickerAction:" destination="Ivb-wb-KIw" id="wAc-ry-bEe"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="aMG-vR-2nb" firstAttribute="trailing" secondItem="OjT-Jf-RxG" secondAttribute="trailing" id="2FR-Vc-SNT"/>
-                            <constraint firstItem="BZc-wr-9eA" firstAttribute="top" secondItem="OjT-Jf-RxG" secondAttribute="bottom" constant="-9" id="3c0-mP-dZH"/>
-                            <constraint firstItem="XB1-XS-5gk" firstAttribute="top" secondItem="eAm-4E-jX1" secondAttribute="top" id="4Du-0Q-RU0"/>
-                            <constraint firstItem="aMG-vR-2nb" firstAttribute="trailing" secondItem="Swo-bG-3mE" secondAttribute="trailing" id="5kH-dc-Fvg"/>
-                            <constraint firstItem="XB1-XS-5gk" firstAttribute="top" secondItem="OjT-Jf-RxG" secondAttribute="top" id="C1v-aK-6eZ"/>
-                            <constraint firstItem="XB1-XS-5gk" firstAttribute="trailing" secondItem="OjT-Jf-RxG" secondAttribute="trailing" id="Fqp-g3-Um1"/>
-                            <constraint firstItem="aMG-vR-2nb" firstAttribute="trailing" secondItem="TuX-Rp-RbV" secondAttribute="trailing" id="LB1-RE-9ee"/>
-                            <constraint firstAttribute="trailing" secondItem="Swo-bG-3mE" secondAttribute="trailing" id="Lm9-Xv-DAh"/>
-                            <constraint firstItem="OjT-Jf-RxG" firstAttribute="leading" secondItem="Swo-bG-3mE" secondAttribute="leading" id="NOh-wb-bMg"/>
-                            <constraint firstItem="OjT-Jf-RxG" firstAttribute="top" secondItem="aMG-vR-2nb" secondAttribute="top" id="U0W-gx-1aj"/>
-                            <constraint firstItem="TuX-Rp-RbV" firstAttribute="bottom" secondItem="xgN-96-3wz" secondAttribute="top" id="Z5A-Nq-BCK"/>
-                            <constraint firstItem="eAm-4E-jX1" firstAttribute="trailing" secondItem="XB1-XS-5gk" secondAttribute="trailing" id="ZBA-DY-jCj"/>
-                            <constraint firstItem="TuX-Rp-RbV" firstAttribute="top" secondItem="aMG-vR-2nb" secondAttribute="top" id="cvv-ha-PoW"/>
-                            <constraint firstItem="Swo-bG-3mE" firstAttribute="leading" secondItem="iBw-wL-D1Y" secondAttribute="leading" id="eVk-wr-PJE"/>
-                            <constraint firstItem="TuX-Rp-RbV" firstAttribute="leading" secondItem="aMG-vR-2nb" secondAttribute="leading" id="fzQ-PH-8AM"/>
-                            <constraint firstItem="OjT-Jf-RxG" firstAttribute="leading" secondItem="BZc-wr-9eA" secondAttribute="leading" id="l0d-sI-Mbl"/>
-                            <constraint firstItem="XB1-XS-5gk" firstAttribute="leading" secondItem="OjT-Jf-RxG" secondAttribute="leading" id="leW-oH-WkJ"/>
-                            <constraint firstItem="Swo-bG-3mE" firstAttribute="top" secondItem="jQo-2Q-fTk" secondAttribute="bottom" id="nm4-EP-G0m"/>
-                            <constraint firstItem="OjT-Jf-RxG" firstAttribute="top" secondItem="jQo-2Q-fTk" secondAttribute="bottom" constant="385" id="oQM-ij-ZTb"/>
-                            <constraint firstItem="OjT-Jf-RxG" firstAttribute="trailing" secondItem="BZc-wr-9eA" secondAttribute="trailing" id="pGt-p1-kl1"/>
-                            <constraint firstItem="eAm-4E-jX1" firstAttribute="bottom" secondItem="xgN-96-3wz" secondAttribute="top" id="qIO-MQ-omJ"/>
-                            <constraint firstItem="BZc-wr-9eA" firstAttribute="bottom" secondItem="xgN-96-3wz" secondAttribute="top" id="wYl-OM-Ysx"/>
-                            <constraint firstItem="eAm-4E-jX1" firstAttribute="leading" secondItem="TuX-Rp-RbV" secondAttribute="leading" id="x17-l7-WJT"/>
-                            <constraint firstItem="OjT-Jf-RxG" firstAttribute="leading" secondItem="aMG-vR-2nb" secondAttribute="leading" id="x7e-ek-ydR"/>
-                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="cancelDatePicker" destination="vm3-VX-rVU" id="ekH-To-iCT"/>
-                        <outlet property="cancelFontPicker" destination="YfG-4j-95C" id="th0-49-Vly"/>
-                        <outlet property="cancelSizePicker" destination="lgp-Y4-uX9" id="KOZ-HH-lRz"/>
-                        <outlet property="commonPicker" destination="TuX-Rp-RbV" id="G9s-fe-7wo"/>
-                        <outlet property="datePicker" destination="BZc-wr-9eA" id="RLd-yH-NBB"/>
-                        <outlet property="datePickerToolBar" destination="OjT-Jf-RxG" id="uAe-3L-e6o"/>
-                        <outlet property="doneDatePicker" destination="ePE-ZZ-4SI" id="nVh-dD-lo4"/>
-                        <outlet property="doneFontPicker" destination="3bk-fI-sLa" id="ga0-7Z-YaD"/>
-                        <outlet property="doneSizePicker" destination="JYo-To-7Jt" id="57A-sf-Jg0"/>
-                        <outlet property="fontPickerToolBar" destination="aMG-vR-2nb" id="mih-hm-YED"/>
-                        <outlet property="sizePicker" destination="eAm-4E-jX1" id="pcs-lW-TLN"/>
-                        <outlet property="sizePickerToolBar" destination="XB1-XS-5gk" id="nFJ-1e-Idj"/>
-                        <outlet property="tableView" destination="Swo-bG-3mE" id="Sdg-jz-Obu"/>
                         <segue destination="4ap-xK-nct" kind="show" identifier="toThemeVC" id="lbF-dh-wWY"/>
                     </connections>
                 </viewController>
@@ -437,7 +349,7 @@
     </scenes>
     <resources>
         <image name="left-128.png" width="128" height="128"/>
-        <image name="plus.png" width="24" height="24"/>
+        <image name="plus.png" width="512" height="512"/>
         <image name="rigth-128.png" width="128" height="128"/>
         <image name="selected.png" width="512" height="512"/>
         <image name="settings.png" width="24" height="24"/>

@@ -65,6 +65,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         tableView.tableFooterView = UIView() 
     }
 
-
+    @IBAction func addButtonAction(_ sender: Any) {
+         performSegue(withIdentifier: "toCreateHabitVC", sender: nil)
+    }
 }
-
