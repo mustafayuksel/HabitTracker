@@ -91,7 +91,7 @@
         <!--Habit / Event-->
         <scene sceneID="PM3-Om-jwg">
             <objects>
-                <viewController title="Habit / Event" id="Ivb-wb-KIw" customClass="SettingsViewController" customModule="HabitTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Habit / Event" id="Ivb-wb-KIw" customClass="HabitCreatorController" customModule="HabitTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jQo-2Q-fTk"/>
                         <viewControllerLayoutGuide type="bottom" id="xgN-96-3wz"/>
@@ -100,25 +100,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IBa-r3-3si">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IBa-r3-3si">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="transportCell" editingAccessoryType="disclosureIndicator" rowHeight="100" id="xK7-3P-zLC">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="hcTransportCell" editingAccessoryType="disclosureIndicator" rowHeight="100" id="xK7-3P-zLC">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xK7-3P-zLC" id="lne-aZ-YdC">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SRG-Qq-lSn">
+                                                    <rect key="frame" x="252" y="4" width="90" height="90"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IBa-r3-3si" firstAttribute="leading" secondItem="iBw-wL-D1Y" secondAttribute="leading" id="DuI-5X-h1t"/>
+                            <constraint firstAttribute="trailing" secondItem="IBa-r3-3si" secondAttribute="trailing" id="bxh-xW-7S0"/>
+                            <constraint firstItem="IBa-r3-3si" firstAttribute="bottom" secondItem="xgN-96-3wz" secondAttribute="top" id="eES-as-lAf"/>
+                            <constraint firstItem="IBa-r3-3si" firstAttribute="top" secondItem="jQo-2Q-fTk" secondAttribute="bottom" id="t3s-UT-CPs"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="tableView" destination="IBa-r3-3si" id="Gmz-GP-JIu"/>
                         <segue destination="4ap-xK-nct" kind="show" identifier="toThemeVC" id="lbF-dh-wWY"/>
                     </connections>
                 </viewController>
@@ -353,9 +365,10 @@
         <image name="rigth-128.png" width="128" height="128"/>
         <image name="selected.png" width="512" height="512"/>
         <image name="settings.png" width="24" height="24"/>
-        <image name="update.png" width="256" height="256"/>
+        <image name="update.png" width="90" height="90"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="asZ-lz-p6p"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		452F456B22F627C6009E8210 /* HabitCreatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F456A22F627C6009E8210 /* HabitCreatorController.swift */; };
+		452F456D22F62D92009E8210 /* no-smoke.png in Resources */ = {isa = PBXBuildFile; fileRef = 452F456C22F62D92009E8210 /* no-smoke.png */; };
+		452F457122F62E7B009E8210 /* update.png in Resources */ = {isa = PBXBuildFile; fileRef = 452F457022F62E7B009E8210 /* update.png */; };
 		453FF90222EB503C00214532 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453FF90122EB503C00214532 /* AppDelegate.swift */; };
 		453FF90422EB503C00214532 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453FF90322EB503C00214532 /* ViewController.swift */; };
 		453FF90A22EB503C00214532 /* HabitTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 453FF90822EB503C00214532 /* HabitTracker.xcdatamodeld */; };
@@ -52,6 +55,9 @@
 		1913B5678DCFA4CCA28F6752 /* Pods-HabitTracker-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTracker-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HabitTracker-OneSignalNotificationServiceExtension/Pods-HabitTracker-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		253BA197D139DCB10595D90F /* Pods_HabitTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HabitTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31FC10C1735A4E1610E59204 /* Pods-HabitTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-HabitTracker/Pods-HabitTracker.release.xcconfig"; sourceTree = "<group>"; };
+		452F456A22F627C6009E8210 /* HabitCreatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCreatorController.swift; sourceTree = "<group>"; };
+		452F456C22F62D92009E8210 /* no-smoke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-smoke.png"; sourceTree = "<group>"; };
+		452F457022F62E7B009E8210 /* update.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = update.png; sourceTree = "<group>"; };
 		453FF8FE22EB503C00214532 /* HabitTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		453FF90122EB503C00214532 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		453FF90322EB503C00214532 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +132,7 @@
 				453FF90D22EB503D00214532 /* LaunchScreen.storyboard */,
 				453FF91022EB503D00214532 /* Info.plist */,
 				453FF90822EB503C00214532 /* HabitTracker.xcdatamodeld */,
+				452F456A22F627C6009E8210 /* HabitCreatorController.swift */,
 			);
 			path = HabitTracker;
 			sourceTree = "<group>";
@@ -154,6 +161,8 @@
 			isa = PBXGroup;
 			children = (
 				458A92E622F0CB4200421932 /* plus.png */,
+				452F456C22F62D92009E8210 /* no-smoke.png */,
+				452F457022F62E7B009E8210 /* update.png */,
 				45895DF322EE064300DBE05D /* settings.png */,
 			);
 			path = images;
@@ -266,7 +275,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				45895DF622EE064300DBE05D /* settings.png in Resources */,
+				452F457122F62E7B009E8210 /* update.png in Resources */,
 				45BDE2A722EB98BA004D7459 /* Main.storyboard in Resources */,
+				452F456D22F62D92009E8210 /* no-smoke.png in Resources */,
 				453FF90F22EB503D00214532 /* LaunchScreen.storyboard in Resources */,
 				458A92E722F0CB4200421932 /* plus.png in Resources */,
 				453FF90C22EB503D00214532 /* Assets.xcassets in Resources */,
@@ -363,6 +374,7 @@
 				453FF90422EB503C00214532 /* ViewController.swift in Sources */,
 				453FF90222EB503C00214532 /* AppDelegate.swift in Sources */,
 				453FF90A22EB503C00214532 /* HabitTracker.xcdatamodeld in Sources */,
+				452F456B22F627C6009E8210 /* HabitCreatorController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
