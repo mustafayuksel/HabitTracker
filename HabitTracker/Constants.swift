@@ -18,8 +18,7 @@ class Constants {
     
     static let habitTitlesImages = [[], ["coffee-cup.png", "hamburger.png", "network.png", "game-controller.png", "no-alcohol.png", "no-smoke.png", "chained.png", "profanity.png", "poker-cards.png"], ["exercise.png", "yoga.png", "diet.png", "open-book.png", "wake-up.png", "jigsaw.png"], ["relationship.png", "marriage.png","stork.png", "pension.png", "new.png"], ["piano.png", "microphone.png", "edit.png", "best-practice.png", "pray.png", "purse.png", "new.png", "call.png"]]
     
-    static let MAIN_ENTITY = "MainEntity"
-    static let THEME_ENTITY = "ThemeEntity"
+    static let HABIT_ENTITY = "HabitEntity"
     static let PRUDUCT_ID: NSString = "com.mustafayuksel.LoveDays.removeAds"
     
     struct Keys {

@@ -28,5 +28,6 @@ class HabitCreatorController: UIViewController{
     }
     
     @IBAction func saveButtonAction(_ sender: Any) {
+        //reminderFrequencySegmented.selectedSegmentIndex
     }
 }

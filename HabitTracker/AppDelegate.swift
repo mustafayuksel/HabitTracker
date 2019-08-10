@@ -102,5 +102,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GADInterstitialDelegate {
             }
         }
     }
-
 }
