@@ -1,39 +1,33 @@
 //
-//  HabitCreatorController.swift
+//  HabitTitleSelectorController.swift
 //  HabitTracker
 //
-//  Created by Mustafa on 3.08.2019.
+//  Created by Mustafa on 10.08.2019.
 //  Copyright © 2019 Mustafa Yuksel. All rights reserved.
 //
 
 import UIKit
 
-class HabitSelectorController: UIViewController,UITableViewDelegate, UITableViewDataSource {
-    let habitItems = ["Write my own", "Form a Habit"]//["Kendin yaz","Alışkanlık oluştur"]
-    let habitImages = ["update.png", "no-smoke.png"]
+class HabitTitleSelectorController: UIViewController,UITableViewDelegate, UITableViewDataSource {
+    var selectedCategory : Int = Constants.Defaults.value(forKey: Constants.Keys.SelectedCategory) as! Int
     
-    @IBOutlet weak var tableView: UITableView!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return habitItems.count
+        return Constants.habitTitles[selectedCategory].count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "hcTransportCell", for: indexPath)
-        cell.imageView!.image = UIImage(named: habitImages[indexPath.row]);
+        cell.imageView!.image = UIImage(named:  Constants.habitTitlesImages[selectedCategory][indexPath.row]);
         
-        cell.textLabel?.text = habitItems[indexPath.row]
+        cell.textLabel?.text =  Constants.habitTitles[selectedCategory][indexPath.row]
         cell.preservesSuperviewLayoutMargins = false
         cell.separatorInset = UIEdgeInsets.zero
         cell.layoutMargins = UIEdgeInsets.zero
         return cell
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            performSegue(withIdentifier: "toCreateHabitDetailsOwnVC", sender: nil)
-        }
-        else{
-            performSegue(withIdentifier: "toCreateHabitDetailsVC", sender: nil)
-        }
-    }
+    
+    
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

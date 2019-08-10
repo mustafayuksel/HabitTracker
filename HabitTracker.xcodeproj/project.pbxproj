@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		452F456B22F627C6009E8210 /* HabitSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F456A22F627C6009E8210 /* HabitSelectorController.swift */; };
+		452F456B22F627C6009E8210 /* HabitCategorySelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F456A22F627C6009E8210 /* HabitCategorySelectorController.swift */; };
 		452F456D22F62D92009E8210 /* no-smoke.png in Resources */ = {isa = PBXBuildFile; fileRef = 452F456C22F62D92009E8210 /* no-smoke.png */; };
 		452F457122F62E7B009E8210 /* update.png in Resources */ = {isa = PBXBuildFile; fileRef = 452F457022F62E7B009E8210 /* update.png */; };
 		453FF90222EB503C00214532 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453FF90122EB503C00214532 /* AppDelegate.swift */; };
@@ -21,6 +21,37 @@
 		45718A5122FCAF5C00F78CCC /* HabitCreatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45718A5022FCAF5C00F78CCC /* HabitCreatorController.swift */; };
 		45895DF622EE064300DBE05D /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 45895DF322EE064300DBE05D /* settings.png */; };
 		458A92E722F0CB4200421932 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 458A92E622F0CB4200421932 /* plus.png */; };
+		45B3AEAC22FF068200AC43F9 /* tea-cup.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AEAB22FF068200AC43F9 /* tea-cup.png */; };
+		45B3AEAE22FF06CA00AC43F9 /* confetti.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AEAD22FF06C900AC43F9 /* confetti.png */; };
+		45B3AEB222FF082300AC43F9 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AEB122FF082300AC43F9 /* calendar.png */; };
+		45B3AEB422FF099700AC43F9 /* HabitTitleSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B3AEB322FF099700AC43F9 /* HabitTitleSelectorController.swift */; };
+		45B3AEB622FF0C3E00AC43F9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B3AEB522FF0C3E00AC43F9 /* Constants.swift */; };
+		45B3AEB822FF101D00AC43F9 /* coffee-cup.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AEB722FF101D00AC43F9 /* coffee-cup.png */; };
+		45B3AEBA22FF105400AC43F9 /* hamburger.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AEB922FF105400AC43F9 /* hamburger.png */; };
+		45B3AEBC22FF110100AC43F9 /* network.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AEBB22FF110100AC43F9 /* network.png */; };
+		45B3AEC222FF118D00AC43F9 /* no-alcohol.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AEC122FF118D00AC43F9 /* no-alcohol.png */; };
+		45B3AEC422FF11AB00AC43F9 /* game-controller.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AEC322FF11AB00AC43F9 /* game-controller.png */; };
+		45B3AEC622FF11FD00AC43F9 /* chained.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AEC522FF11FD00AC43F9 /* chained.png */; };
+		45B3AEC822FF137400AC43F9 /* profanity.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AEC722FF137400AC43F9 /* profanity.png */; };
+		45B3AECA22FF13CE00AC43F9 /* poker-cards.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AEC922FF13CE00AC43F9 /* poker-cards.png */; };
+		45B3AECC22FF13FA00AC43F9 /* exercise.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AECB22FF13FA00AC43F9 /* exercise.png */; };
+		45B3AECE22FF142100AC43F9 /* yoga.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AECD22FF142100AC43F9 /* yoga.png */; };
+		45B3AED022FF145300AC43F9 /* diet.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AECF22FF145200AC43F9 /* diet.png */; };
+		45B3AED222FF149200AC43F9 /* open-book.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AED122FF149200AC43F9 /* open-book.png */; };
+		45B3AED422FF14BC00AC43F9 /* wake-up.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AED322FF14BC00AC43F9 /* wake-up.png */; };
+		45B3AED622FF14E300AC43F9 /* jigsaw.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AED522FF14E300AC43F9 /* jigsaw.png */; };
+		45B3AEDB22FF15F100AC43F9 /* relationship.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AED722FF15F000AC43F9 /* relationship.png */; };
+		45B3AEDC22FF15F100AC43F9 /* pension.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AED822FF15F100AC43F9 /* pension.png */; };
+		45B3AEDD22FF15F100AC43F9 /* marriage.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AED922FF15F100AC43F9 /* marriage.png */; };
+		45B3AEDE22FF15F100AC43F9 /* stork.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AEDA22FF15F100AC43F9 /* stork.png */; };
+		45B3AEE022FF164800AC43F9 /* new.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AEDF22FF164800AC43F9 /* new.png */; };
+		45B3AEE722FF173300AC43F9 /* piano.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AEE122FF173200AC43F9 /* piano.png */; };
+		45B3AEE822FF173300AC43F9 /* purse.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AEE222FF173200AC43F9 /* purse.png */; };
+		45B3AEE922FF173300AC43F9 /* microphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AEE322FF173200AC43F9 /* microphone.png */; };
+		45B3AEEA22FF173300AC43F9 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AEE422FF173200AC43F9 /* edit.png */; };
+		45B3AEEB22FF173300AC43F9 /* best-practice.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AEE522FF173300AC43F9 /* best-practice.png */; };
+		45B3AEEC22FF173300AC43F9 /* pray.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AEE622FF173300AC43F9 /* pray.png */; };
+		45B3AEEE22FF17C400AC43F9 /* call.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AEED22FF17C400AC43F9 /* call.png */; };
 		45BDE2A422EB8691004D7459 /* UnityAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45BDE2A322EB8691004D7459 /* UnityAds.framework */; };
 		45BDE2A722EB98BA004D7459 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45BDE2A622EB98B9004D7459 /* Main.storyboard */; };
 		507E080EB53A884DC5B8A84E /* Pods_HabitTracker_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA44EC19F6AC5818B90C69D4 /* Pods_HabitTracker_OneSignalNotificationServiceExtension.framework */; };
@@ -56,7 +87,7 @@
 		1913B5678DCFA4CCA28F6752 /* Pods-HabitTracker-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTracker-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HabitTracker-OneSignalNotificationServiceExtension/Pods-HabitTracker-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		253BA197D139DCB10595D90F /* Pods_HabitTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HabitTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31FC10C1735A4E1610E59204 /* Pods-HabitTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-HabitTracker/Pods-HabitTracker.release.xcconfig"; sourceTree = "<group>"; };
-		452F456A22F627C6009E8210 /* HabitSelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitSelectorController.swift; sourceTree = "<group>"; };
+		452F456A22F627C6009E8210 /* HabitCategorySelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCategorySelectorController.swift; sourceTree = "<group>"; };
 		452F456C22F62D92009E8210 /* no-smoke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-smoke.png"; sourceTree = "<group>"; };
 		452F457022F62E7B009E8210 /* update.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = update.png; sourceTree = "<group>"; };
 		453FF8FE22EB503C00214532 /* HabitTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +105,37 @@
 		45718A5022FCAF5C00F78CCC /* HabitCreatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCreatorController.swift; sourceTree = "<group>"; };
 		45895DF322EE064300DBE05D /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		458A92E622F0CB4200421932 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
+		45B3AEAB22FF068200AC43F9 /* tea-cup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tea-cup.png"; sourceTree = "<group>"; };
+		45B3AEAD22FF06C900AC43F9 /* confetti.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = confetti.png; sourceTree = "<group>"; };
+		45B3AEB122FF082300AC43F9 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
+		45B3AEB322FF099700AC43F9 /* HabitTitleSelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTitleSelectorController.swift; sourceTree = "<group>"; };
+		45B3AEB522FF0C3E00AC43F9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		45B3AEB722FF101D00AC43F9 /* coffee-cup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coffee-cup.png"; sourceTree = "<group>"; };
+		45B3AEB922FF105400AC43F9 /* hamburger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hamburger.png; sourceTree = "<group>"; };
+		45B3AEBB22FF110100AC43F9 /* network.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = network.png; sourceTree = "<group>"; };
+		45B3AEC122FF118D00AC43F9 /* no-alcohol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-alcohol.png"; sourceTree = "<group>"; };
+		45B3AEC322FF11AB00AC43F9 /* game-controller.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "game-controller.png"; sourceTree = "<group>"; };
+		45B3AEC522FF11FD00AC43F9 /* chained.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chained.png; sourceTree = "<group>"; };
+		45B3AEC722FF137400AC43F9 /* profanity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profanity.png; sourceTree = "<group>"; };
+		45B3AEC922FF13CE00AC43F9 /* poker-cards.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "poker-cards.png"; sourceTree = "<group>"; };
+		45B3AECB22FF13FA00AC43F9 /* exercise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exercise.png; sourceTree = "<group>"; };
+		45B3AECD22FF142100AC43F9 /* yoga.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yoga.png; sourceTree = "<group>"; };
+		45B3AECF22FF145200AC43F9 /* diet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = diet.png; sourceTree = "<group>"; };
+		45B3AED122FF149200AC43F9 /* open-book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "open-book.png"; sourceTree = "<group>"; };
+		45B3AED322FF14BC00AC43F9 /* wake-up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wake-up.png"; sourceTree = "<group>"; };
+		45B3AED522FF14E300AC43F9 /* jigsaw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jigsaw.png; sourceTree = "<group>"; };
+		45B3AED722FF15F000AC43F9 /* relationship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = relationship.png; sourceTree = "<group>"; };
+		45B3AED822FF15F100AC43F9 /* pension.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pension.png; sourceTree = "<group>"; };
+		45B3AED922FF15F100AC43F9 /* marriage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = marriage.png; sourceTree = "<group>"; };
+		45B3AEDA22FF15F100AC43F9 /* stork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stork.png; sourceTree = "<group>"; };
+		45B3AEDF22FF164800AC43F9 /* new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new.png; sourceTree = "<group>"; };
+		45B3AEE122FF173200AC43F9 /* piano.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = piano.png; sourceTree = "<group>"; };
+		45B3AEE222FF173200AC43F9 /* purse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = purse.png; sourceTree = "<group>"; };
+		45B3AEE322FF173200AC43F9 /* microphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = microphone.png; sourceTree = "<group>"; };
+		45B3AEE422FF173200AC43F9 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit.png; sourceTree = "<group>"; };
+		45B3AEE522FF173300AC43F9 /* best-practice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "best-practice.png"; sourceTree = "<group>"; };
+		45B3AEE622FF173300AC43F9 /* pray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pray.png; sourceTree = "<group>"; };
+		45B3AEED22FF17C400AC43F9 /* call.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = call.png; sourceTree = "<group>"; };
 		45BDE2A322EB8691004D7459 /* UnityAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnityAds.framework; sourceTree = "<group>"; };
 		45BDE2A622EB98B9004D7459 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		ACAB98CB9F93C72BCE6EA201 /* Pods-HabitTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HabitTracker/Pods-HabitTracker.debug.xcconfig"; sourceTree = "<group>"; };
@@ -134,8 +196,10 @@
 				453FF90D22EB503D00214532 /* LaunchScreen.storyboard */,
 				453FF91022EB503D00214532 /* Info.plist */,
 				453FF90822EB503C00214532 /* HabitTracker.xcdatamodeld */,
-				452F456A22F627C6009E8210 /* HabitSelectorController.swift */,
+				452F456A22F627C6009E8210 /* HabitCategorySelectorController.swift */,
 				45718A5022FCAF5C00F78CCC /* HabitCreatorController.swift */,
+				45B3AEB322FF099700AC43F9 /* HabitTitleSelectorController.swift */,
+				45B3AEB522FF0C3E00AC43F9 /* Constants.swift */,
 			);
 			path = HabitTracker;
 			sourceTree = "<group>";
@@ -165,6 +229,35 @@
 			children = (
 				458A92E622F0CB4200421932 /* plus.png */,
 				452F456C22F62D92009E8210 /* no-smoke.png */,
+				45B3AEB722FF101D00AC43F9 /* coffee-cup.png */,
+				45B3AEB922FF105400AC43F9 /* hamburger.png */,
+				45B3AEC722FF137400AC43F9 /* profanity.png */,
+				45B3AEE522FF173300AC43F9 /* best-practice.png */,
+				45B3AEE422FF173200AC43F9 /* edit.png */,
+				45B3AEE322FF173200AC43F9 /* microphone.png */,
+				45B3AEE122FF173200AC43F9 /* piano.png */,
+				45B3AEE622FF173300AC43F9 /* pray.png */,
+				45B3AEE222FF173200AC43F9 /* purse.png */,
+				45B3AED122FF149200AC43F9 /* open-book.png */,
+				45B3AEBB22FF110100AC43F9 /* network.png */,
+				45B3AED522FF14E300AC43F9 /* jigsaw.png */,
+				45B3AECF22FF145200AC43F9 /* diet.png */,
+				45B3AEED22FF17C400AC43F9 /* call.png */,
+				45B3AEC522FF11FD00AC43F9 /* chained.png */,
+				45B3AED322FF14BC00AC43F9 /* wake-up.png */,
+				45B3AEDF22FF164800AC43F9 /* new.png */,
+				45B3AED922FF15F100AC43F9 /* marriage.png */,
+				45B3AED822FF15F100AC43F9 /* pension.png */,
+				45B3AED722FF15F000AC43F9 /* relationship.png */,
+				45B3AEDA22FF15F100AC43F9 /* stork.png */,
+				45B3AECD22FF142100AC43F9 /* yoga.png */,
+				45B3AEC322FF11AB00AC43F9 /* game-controller.png */,
+				45B3AEC922FF13CE00AC43F9 /* poker-cards.png */,
+				45B3AECB22FF13FA00AC43F9 /* exercise.png */,
+				45B3AEC122FF118D00AC43F9 /* no-alcohol.png */,
+				45B3AEAB22FF068200AC43F9 /* tea-cup.png */,
+				45B3AEAD22FF06C900AC43F9 /* confetti.png */,
+				45B3AEB122FF082300AC43F9 /* calendar.png */,
 				452F457022F62E7B009E8210 /* update.png */,
 				45895DF322EE064300DBE05D /* settings.png */,
 			);
@@ -278,10 +371,39 @@
 			buildActionMask = 2147483647;
 			files = (
 				45895DF622EE064300DBE05D /* settings.png in Resources */,
+				45B3AEBA22FF105400AC43F9 /* hamburger.png in Resources */,
+				45B3AEDD22FF15F100AC43F9 /* marriage.png in Resources */,
 				452F457122F62E7B009E8210 /* update.png in Resources */,
+				45B3AED422FF14BC00AC43F9 /* wake-up.png in Resources */,
+				45B3AEE822FF173300AC43F9 /* purse.png in Resources */,
+				45B3AEC822FF137400AC43F9 /* profanity.png in Resources */,
 				45BDE2A722EB98BA004D7459 /* Main.storyboard in Resources */,
+				45B3AECA22FF13CE00AC43F9 /* poker-cards.png in Resources */,
+				45B3AEBC22FF110100AC43F9 /* network.png in Resources */,
+				45B3AEDC22FF15F100AC43F9 /* pension.png in Resources */,
+				45B3AEEE22FF17C400AC43F9 /* call.png in Resources */,
+				45B3AEC222FF118D00AC43F9 /* no-alcohol.png in Resources */,
+				45B3AED222FF149200AC43F9 /* open-book.png in Resources */,
+				45B3AED622FF14E300AC43F9 /* jigsaw.png in Resources */,
+				45B3AEC422FF11AB00AC43F9 /* game-controller.png in Resources */,
+				45B3AEDB22FF15F100AC43F9 /* relationship.png in Resources */,
+				45B3AECC22FF13FA00AC43F9 /* exercise.png in Resources */,
 				452F456D22F62D92009E8210 /* no-smoke.png in Resources */,
+				45B3AEEB22FF173300AC43F9 /* best-practice.png in Resources */,
+				45B3AEE722FF173300AC43F9 /* piano.png in Resources */,
+				45B3AED022FF145300AC43F9 /* diet.png in Resources */,
+				45B3AECE22FF142100AC43F9 /* yoga.png in Resources */,
+				45B3AEE922FF173300AC43F9 /* microphone.png in Resources */,
+				45B3AEDE22FF15F100AC43F9 /* stork.png in Resources */,
 				453FF90F22EB503D00214532 /* LaunchScreen.storyboard in Resources */,
+				45B3AEAE22FF06CA00AC43F9 /* confetti.png in Resources */,
+				45B3AEEC22FF173300AC43F9 /* pray.png in Resources */,
+				45B3AEC622FF11FD00AC43F9 /* chained.png in Resources */,
+				45B3AEEA22FF173300AC43F9 /* edit.png in Resources */,
+				45B3AEAC22FF068200AC43F9 /* tea-cup.png in Resources */,
+				45B3AEB822FF101D00AC43F9 /* coffee-cup.png in Resources */,
+				45B3AEE022FF164800AC43F9 /* new.png in Resources */,
+				45B3AEB222FF082300AC43F9 /* calendar.png in Resources */,
 				458A92E722F0CB4200421932 /* plus.png in Resources */,
 				453FF90C22EB503D00214532 /* Assets.xcassets in Resources */,
 			);
@@ -376,8 +498,10 @@
 			files = (
 				453FF90422EB503C00214532 /* ViewController.swift in Sources */,
 				453FF90222EB503C00214532 /* AppDelegate.swift in Sources */,
+				45B3AEB422FF099700AC43F9 /* HabitTitleSelectorController.swift in Sources */,
 				453FF90A22EB503C00214532 /* HabitTracker.xcdatamodeld in Sources */,
-				452F456B22F627C6009E8210 /* HabitSelectorController.swift in Sources */,
+				45B3AEB622FF0C3E00AC43F9 /* Constants.swift in Sources */,
+				452F456B22F627C6009E8210 /* HabitCategorySelectorController.swift in Sources */,
 				45718A5122FCAF5C00F78CCC /* HabitCreatorController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

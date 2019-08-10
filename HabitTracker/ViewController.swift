@@ -66,6 +66,6 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     }
 
     @IBAction func addButtonAction(_ sender: Any) {
-         performSegue(withIdentifier: "toCreateHabitVC", sender: nil)
+         performSegue(withIdentifier: "toHabitCategorySelectorVC", sender: nil)
     }
 }
