@@ -52,8 +52,10 @@
 		45B3AEEB22FF173300AC43F9 /* best-practice.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AEE522FF173300AC43F9 /* best-practice.png */; };
 		45B3AEEC22FF173300AC43F9 /* pray.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AEE622FF173300AC43F9 /* pray.png */; };
 		45B3AEEE22FF17C400AC43F9 /* call.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AEED22FF17C400AC43F9 /* call.png */; };
+		45B3AEFC22FF29B500AC43F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AEFE22FF29B500AC43F9 /* Main.storyboard */; };
+		45B3AF0E22FF40C600AC43F9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AF1022FF40C600AC43F9 /* Localizable.strings */; };
+		45B3AF1322FF40D900AC43F9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AF1522FF40D900AC43F9 /* Localizable.strings */; };
 		45BDE2A422EB8691004D7459 /* UnityAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45BDE2A322EB8691004D7459 /* UnityAds.framework */; };
-		45BDE2A722EB98BA004D7459 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45BDE2A622EB98B9004D7459 /* Main.storyboard */; };
 		507E080EB53A884DC5B8A84E /* Pods_HabitTracker_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA44EC19F6AC5818B90C69D4 /* Pods_HabitTracker_OneSignalNotificationServiceExtension.framework */; };
 		C8147D46BCB39F1BCD255F46 /* Pods_HabitTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 253BA197D139DCB10595D90F /* Pods_HabitTracker.framework */; };
 /* End PBXBuildFile section */
@@ -136,8 +138,14 @@
 		45B3AEE522FF173300AC43F9 /* best-practice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "best-practice.png"; sourceTree = "<group>"; };
 		45B3AEE622FF173300AC43F9 /* pray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pray.png; sourceTree = "<group>"; };
 		45B3AEED22FF17C400AC43F9 /* call.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = call.png; sourceTree = "<group>"; };
+		45B3AEFD22FF29B500AC43F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		45B3AF0A22FF40B500AC43F9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		45B3AF0B22FF40B600AC43F9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		45B3AF0C22FF40BE00AC43F9 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
+		45B3AF0D22FF40BE00AC43F9 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		45B3AF0F22FF40C600AC43F9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		45B3AF1422FF40D900AC43F9 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		45BDE2A322EB8691004D7459 /* UnityAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnityAds.framework; sourceTree = "<group>"; };
-		45BDE2A622EB98B9004D7459 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		ACAB98CB9F93C72BCE6EA201 /* Pods-HabitTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HabitTracker/Pods-HabitTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		BA44EC19F6AC5818B90C69D4 /* Pods_HabitTracker_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HabitTracker_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -191,7 +199,7 @@
 				453FF91622EB50B400214532 /* HabitTracker.entitlements */,
 				453FF90122EB503C00214532 /* AppDelegate.swift */,
 				453FF90322EB503C00214532 /* ViewController.swift */,
-				45BDE2A622EB98B9004D7459 /* Main.storyboard */,
+				45B3AEFE22FF29B500AC43F9 /* Main.storyboard */,
 				453FF90B22EB503D00214532 /* Assets.xcassets */,
 				453FF90D22EB503D00214532 /* LaunchScreen.storyboard */,
 				453FF91022EB503D00214532 /* Info.plist */,
@@ -200,6 +208,8 @@
 				45718A5022FCAF5C00F78CCC /* HabitCreatorController.swift */,
 				45B3AEB322FF099700AC43F9 /* HabitTitleSelectorController.swift */,
 				45B3AEB522FF0C3E00AC43F9 /* Constants.swift */,
+				45B3AF1022FF40C600AC43F9 /* Localizable.strings */,
+				45B3AF1522FF40D900AC43F9 /* Localizable.strings */,
 			);
 			path = HabitTracker;
 			sourceTree = "<group>";
@@ -351,7 +361,6 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
 			);
 			mainGroup = 453FF8F522EB503C00214532;
@@ -377,7 +386,7 @@
 				45B3AED422FF14BC00AC43F9 /* wake-up.png in Resources */,
 				45B3AEE822FF173300AC43F9 /* purse.png in Resources */,
 				45B3AEC822FF137400AC43F9 /* profanity.png in Resources */,
-				45BDE2A722EB98BA004D7459 /* Main.storyboard in Resources */,
+				45B3AEFC22FF29B500AC43F9 /* Main.storyboard in Resources */,
 				45B3AECA22FF13CE00AC43F9 /* poker-cards.png in Resources */,
 				45B3AEBC22FF110100AC43F9 /* network.png in Resources */,
 				45B3AEDC22FF15F100AC43F9 /* pension.png in Resources */,
@@ -394,6 +403,7 @@
 				45B3AED022FF145300AC43F9 /* diet.png in Resources */,
 				45B3AECE22FF142100AC43F9 /* yoga.png in Resources */,
 				45B3AEE922FF173300AC43F9 /* microphone.png in Resources */,
+				45B3AF0E22FF40C600AC43F9 /* Localizable.strings in Resources */,
 				45B3AEDE22FF15F100AC43F9 /* stork.png in Resources */,
 				453FF90F22EB503D00214532 /* LaunchScreen.storyboard in Resources */,
 				45B3AEAE22FF06CA00AC43F9 /* confetti.png in Resources */,
@@ -404,6 +414,7 @@
 				45B3AEB822FF101D00AC43F9 /* coffee-cup.png in Resources */,
 				45B3AEE022FF164800AC43F9 /* new.png in Resources */,
 				45B3AEB222FF082300AC43F9 /* calendar.png in Resources */,
+				45B3AF1322FF40D900AC43F9 /* Localizable.strings in Resources */,
 				458A92E722F0CB4200421932 /* plus.png in Resources */,
 				453FF90C22EB503D00214532 /* Assets.xcassets in Resources */,
 			);
@@ -529,8 +540,36 @@
 			isa = PBXVariantGroup;
 			children = (
 				453FF90E22EB503D00214532 /* Base */,
+				45B3AF0B22FF40B600AC43F9 /* en */,
+				45B3AF0D22FF40BE00AC43F9 /* tr */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		45B3AEFE22FF29B500AC43F9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45B3AEFD22FF29B500AC43F9 /* Base */,
+				45B3AF0A22FF40B500AC43F9 /* en */,
+				45B3AF0C22FF40BE00AC43F9 /* tr */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		45B3AF1022FF40C600AC43F9 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45B3AF0F22FF40C600AC43F9 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		45B3AF1522FF40D900AC43F9 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45B3AF1422FF40D900AC43F9 /* tr */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -540,6 +579,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -602,6 +642,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

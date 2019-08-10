@@ -1,0 +1,41 @@
+/* 
+  Localizable.strings
+  HabitTracker
+
+  Created by Mustafa on 10.08.2019.
+  Copyright © 2019 Mustafa Yuksel. All rights reserved.
+*/
+"NewHabitEvent" = "Yeni Olay / Alışkanlık";
+"Write my own" = "Kendin Yaz";
+"Quit" = "Bırak";
+"Form a Habit" = "Alışkanlık oluştur";
+"Celebrate" = "Kutla";
+"Commit" = "Yap";
+"Caffeine" = "Kafein";
+"Junk Food" = "Abur Cubur";
+"Social Media" = "Sosyal Medya";
+"Gaming" = "Oyun";
+"Alcohol" = "Alkol";
+"Smoking" = "Sigara";
+"Addiction" = "Bağımlılık";
+"Swearing" = "Küfür";
+"Gambling" = "Kumar";
+"Exercise" = "Egzersiz Yap";
+"Meditate" = "Meditasyon Yap";
+"Diet" = "Diyet";
+"Reading" = "Oku";
+"Wake up" = "Erken Uyan";
+"Hobby" = "Hobi";
+"Relationship" = "İlişki";
+"Marriage" = "Evlilik";
+"Birth" = "Doğum";
+"Retirement" = "Emeklilik";
+"New Beginning" = "Yeni Bir Başlangıç";
+"Play Instrument" = "Müzik Aleti Çal";
+"Sing" = "Şarkı Söyle";
+"Draw" = "Resim Yap";
+"Practice" = "Alıştırma Yap";
+"Pray" = "Dua Et";
+"Save Money" = "Para Biriktir";
+"Try New Thing" = "Yeni Bir Şey Dene";
+"Call Friend" = "Arkadaşını Ara";

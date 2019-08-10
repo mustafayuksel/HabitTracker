@@ -24,6 +24,7 @@ class Constants {
     
     struct Keys {
         static let SelectedCategory = "selectedCategory"
+        static let SelectedTitle = "selectedTitle"
         static let RemoveAds = "removeAds"
     }
 }

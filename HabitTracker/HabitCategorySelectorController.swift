@@ -19,7 +19,7 @@ class HabitCategorySelectorController: UIViewController,UITableViewDelegate, UIT
         let cell = tableView.dequeueReusableCell(withIdentifier: "hcTransportCell", for: indexPath)
         cell.imageView!.image = UIImage(named: Constants.habitCategoryImages[indexPath.row]);
         
-        cell.textLabel?.text = Constants.habitCategories[indexPath.row]
+        cell.textLabel?.text = NSLocalizedString(Constants.habitCategories[indexPath.row], comment: "") 
         cell.preservesSuperviewLayoutMargins = false
         cell.separatorInset = UIEdgeInsets.zero
         cell.layoutMargins = UIEdgeInsets.zero

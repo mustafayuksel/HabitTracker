@@ -10,12 +10,13 @@ import UIKit
 
 class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     let transportItems = ["Bus","Helicopter"]
-
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var buttonLabel: UILabel!
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return transportItems.count
     }
-    
-    @IBOutlet weak var tableView: UITableView!
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "transportCell", for: indexPath)
         
@@ -59,6 +60,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        buttonLabel.text = NSLocalizedString("NewHabitEvent", comment: "")
         // Do any additional setup after loading the view, typically from a nib.
         tableView.dataSource = self
         tableView.delegate = self

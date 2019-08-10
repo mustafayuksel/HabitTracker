@@ -1,0 +1,78 @@
+
+/* Class = "UILabel"; text = "Reminder Frequency"; ObjectID = "0Af-mw-Mjq"; */
+"0Af-mw-Mjq.text" = "Reminder Frequency";
+
+/* Class = "UIBarButtonItem"; title = "Save"; ObjectID = "413-xt-hlD"; */
+"413-xt-hlD.title" = "Save";
+
+/* Class = "UILabel"; text = "Time"; ObjectID = "4Uh-cR-Wtb"; */
+"4Uh-cR-Wtb.text" = "Time";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "4bz-rY-vIl"; */
+"4bz-rY-vIl.title" = "Item";
+
+/* Class = "UIBarButtonItem"; title = "Save"; ObjectID = "5Xo-vo-fE6"; */
+"5Xo-vo-fE6.title" = "Save";
+
+/* Class = "UILabel"; text = "Time"; ObjectID = "EcB-ef-hUY"; */
+"EcB-ef-hUY.text" = "Time";
+
+/* Class = "UIButton"; normalTitle = "İptal"; ObjectID = "Eyp-L1-Rht"; */
+"Eyp-L1-Rht.normalTitle" = "İptal";
+
+/* Class = "UIViewController"; title = "Habit / Event Category"; ObjectID = "Ivb-wb-KIw"; */
+"Ivb-wb-KIw.title" = "Habit / Event Category";
+
+/* Class = "UITextField"; placeholder = "Name of habit"; ObjectID = "JmX-SD-G09"; */
+"JmX-SD-G09.placeholder" = "Name of habit";
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "RHC-gf-5ih"; */
+"RHC-gf-5ih.text" = "Date";
+
+/* Class = "UISegmentedControl"; avv-PM-0Hf.segmentTitles[0] = "Daily"; ObjectID = "avv-PM-0Hf"; */
+"avv-PM-0Hf.segmentTitles[0]" = "Daily";
+
+/* Class = "UISegmentedControl"; avv-PM-0Hf.segmentTitles[1] = "Weekly"; ObjectID = "avv-PM-0Hf"; */
+"avv-PM-0Hf.segmentTitles[1]" = "Weekly";
+
+/* Class = "UISegmentedControl"; avv-PM-0Hf.segmentTitles[2] = "Monthly"; ObjectID = "avv-PM-0Hf"; */
+"avv-PM-0Hf.segmentTitles[2]" = "Monthly";
+
+/* Class = "UISegmentedControl"; avv-PM-0Hf.segmentTitles[3] = "Yearly"; ObjectID = "avv-PM-0Hf"; */
+"avv-PM-0Hf.segmentTitles[3]" = "Yearly";
+
+/* Class = "UISegmentedControl"; avv-PM-0Hf.segmentTitles[4] = "Never"; ObjectID = "avv-PM-0Hf"; */
+"avv-PM-0Hf.segmentTitles[4]" = "Never";
+
+/* Class = "UIButton"; normalTitle = "OK"; ObjectID = "b3q-XD-meu"; */
+"b3q-XD-meu.normalTitle" = "OK";
+
+/* Class = "UILabel"; text = "Reminder Frequency"; ObjectID = "bEm-ps-TFB"; */
+"bEm-ps-TFB.text" = "Reminder Frequency";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "cTA-Ji-hR8"; */
+"cTA-Ji-hR8.text" = "Label";
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "in1-A1-49m"; */
+"in1-A1-49m.text" = "Date";
+
+/* Class = "UIViewController"; title = "Habit / Event"; ObjectID = "l2h-GA-9OV"; */
+"l2h-GA-9OV.title" = "Habit / Event";
+
+/* Class = "UILabel"; text = "New Habit / Event"; ObjectID = "uv2-j0-FdP"; */
+"uv2-j0-FdP.text" = "New Habit / Event";
+
+/* Class = "UISegmentedControl"; yT2-qP-nB4.segmentTitles[0] = "Daily"; ObjectID = "yT2-qP-nB4"; */
+"yT2-qP-nB4.segmentTitles[0]" = "Daily";
+
+/* Class = "UISegmentedControl"; yT2-qP-nB4.segmentTitles[1] = "Weekly"; ObjectID = "yT2-qP-nB4"; */
+"yT2-qP-nB4.segmentTitles[1]" = "Weekly";
+
+/* Class = "UISegmentedControl"; yT2-qP-nB4.segmentTitles[2] = "Monthly"; ObjectID = "yT2-qP-nB4"; */
+"yT2-qP-nB4.segmentTitles[2]" = "Monthly";
+
+/* Class = "UISegmentedControl"; yT2-qP-nB4.segmentTitles[3] = "Yearly"; ObjectID = "yT2-qP-nB4"; */
+"yT2-qP-nB4.segmentTitles[3]" = "Yearly";
+
+/* Class = "UISegmentedControl"; yT2-qP-nB4.segmentTitles[4] = "Never"; ObjectID = "yT2-qP-nB4"; */
+"yT2-qP-nB4.segmentTitles[4]" = "Never";

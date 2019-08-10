@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="HabitTracker/Base.lproj/Main.storyboard" source-language="en" datatype="plaintext" target-language="tr">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.1" build-num="10B61"/>
+    </header>
+    <body>
+      <trans-unit id="0Af-mw-Mjq.text">
+        <source>Reminder Frequency</source>
+        <target>Reminder Frequency</target>
+        <note>Class = "UILabel"; text = "Reminder Frequency"; ObjectID = "0Af-mw-Mjq";</note>
+      </trans-unit>
+      <trans-unit id="4Uh-cR-Wtb.text">
+        <source>Time</source>
+        <target>Time</target>
+        <note>Class = "UILabel"; text = "Time"; ObjectID = "4Uh-cR-Wtb";</note>
+      </trans-unit>
+      <trans-unit id="4bz-rY-vIl.title">
+        <source>Item</source>
+        <target>Item</target>
+        <note>Class = "UIBarButtonItem"; title = "Item"; ObjectID = "4bz-rY-vIl";</note>
+      </trans-unit>
+      <trans-unit id="5Xo-vo-fE6.title">
+        <source>Save</source>
+        <target>Save</target>
+        <note>Class = "UIBarButtonItem"; title = "Save"; ObjectID = "5Xo-vo-fE6";</note>
+      </trans-unit>
+      <trans-unit id="413-xt-hlD.title">
+        <source>Save</source>
+        <target>Save</target>
+        <note>Class = "UIBarButtonItem"; title = "Save"; ObjectID = "413-xt-hlD";</note>
+      </trans-unit>
+      <trans-unit id="EcB-ef-hUY.text">
+        <source>Time</source>
+        <target>Time</target>
+        <note>Class = "UILabel"; text = "Time"; ObjectID = "EcB-ef-hUY";</note>
+      </trans-unit>
+      <trans-unit id="Eyp-L1-Rht.normalTitle">
+        <source>İptal</source>
+        <target>İptal</target>
+        <note>Class = "UIButton"; normalTitle = "İptal"; ObjectID = "Eyp-L1-Rht";</note>
+      </trans-unit>
+      <trans-unit id="Ivb-wb-KIw.title">
+        <source>Habit / Event Category</source>
+        <target>Habit / Event Category</target>
+        <note>Class = "UIViewController"; title = "Habit / Event Category"; ObjectID = "Ivb-wb-KIw";</note>
+      </trans-unit>
+      <trans-unit id="JmX-SD-G09.placeholder">
+        <source>Name of habit</source>
+        <target>Name of habit</target>
+        <note>Class = "UITextField"; placeholder = "Name of habit"; ObjectID = "JmX-SD-G09";</note>
+      </trans-unit>
+      <trans-unit id="RHC-gf-5ih.text">
+        <source>Date</source>
+        <target>Date</target>
+        <note>Class = "UILabel"; text = "Date"; ObjectID = "RHC-gf-5ih";</note>
+      </trans-unit>
+      <trans-unit id="avv-PM-0Hf.segmentTitles[0]">
+        <source>Daily</source>
+        <target>Daily</target>
+        <note>Class = "UISegmentedControl"; avv-PM-0Hf.segmentTitles[0] = "Daily"; ObjectID = "avv-PM-0Hf";</note>
+      </trans-unit>
+      <trans-unit id="avv-PM-0Hf.segmentTitles[1]">
+        <source>Weekly</source>
+        <target>Weekly</target>
+        <note>Class = "UISegmentedControl"; avv-PM-0Hf.segmentTitles[1] = "Weekly"; ObjectID = "avv-PM-0Hf";</note>
+      </trans-unit>
+      <trans-unit id="avv-PM-0Hf.segmentTitles[2]">
+        <source>Monthly</source>
+        <target>Monthly</target>
+        <note>Class = "UISegmentedControl"; avv-PM-0Hf.segmentTitles[2] = "Monthly"; ObjectID = "avv-PM-0Hf";</note>
+      </trans-unit>
+      <trans-unit id="avv-PM-0Hf.segmentTitles[3]">
+        <source>Yearly</source>
+        <target>Yearly</target>
+        <note>Class = "UISegmentedControl"; avv-PM-0Hf.segmentTitles[3] = "Yearly"; ObjectID = "avv-PM-0Hf";</note>
+      </trans-unit>
+      <trans-unit id="avv-PM-0Hf.segmentTitles[4]">
+        <source>Never</source>
+        <target>Never</target>
+        <note>Class = "UISegmentedControl"; avv-PM-0Hf.segmentTitles[4] = "Never"; ObjectID = "avv-PM-0Hf";</note>
+      </trans-unit>
+      <trans-unit id="b3q-XD-meu.normalTitle">
+        <source>OK</source>
+        <target>OK</target>
+        <note>Class = "UIButton"; normalTitle = "OK"; ObjectID = "b3q-XD-meu";</note>
+      </trans-unit>
+      <trans-unit id="bEm-ps-TFB.text">
+        <source>Reminder Frequency</source>
+        <target>Reminder Frequency</target>
+        <note>Class = "UILabel"; text = "Reminder Frequency"; ObjectID = "bEm-ps-TFB";</note>
+      </trans-unit>
+      <trans-unit id="cTA-Ji-hR8.text">
+        <source>Label</source>
+        <target>Label</target>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "cTA-Ji-hR8";</note>
+      </trans-unit>
+      <trans-unit id="in1-A1-49m.text">
+        <source>Date</source>
+        <target>Date</target>
+        <note>Class = "UILabel"; text = "Date"; ObjectID = "in1-A1-49m";</note>
+      </trans-unit>
+      <trans-unit id="l2h-GA-9OV.title">
+        <source>Habit / Event</source>
+        <target>Habit / Event</target>
+        <note>Class = "UIViewController"; title = "Habit / Event"; ObjectID = "l2h-GA-9OV";</note>
+      </trans-unit>
+      <trans-unit id="uv2-j0-FdP.text">
+        <source>New Habit / Event</source>
+        <target>New Habit / Event</target>
+        <note>Class = "UILabel"; text = "New Habit / Event"; ObjectID = "uv2-j0-FdP";</note>
+      </trans-unit>
+      <trans-unit id="yT2-qP-nB4.segmentTitles[0]">
+        <source>Daily</source>
+        <target>Daily</target>
+        <note>Class = "UISegmentedControl"; yT2-qP-nB4.segmentTitles[0] = "Daily"; ObjectID = "yT2-qP-nB4";</note>
+      </trans-unit>
+      <trans-unit id="yT2-qP-nB4.segmentTitles[1]">
+        <source>Weekly</source>
+        <target>Weekly</target>
+        <note>Class = "UISegmentedControl"; yT2-qP-nB4.segmentTitles[1] = "Weekly"; ObjectID = "yT2-qP-nB4";</note>
+      </trans-unit>
+      <trans-unit id="yT2-qP-nB4.segmentTitles[2]">
+        <source>Monthly</source>
+        <target>Monthly</target>
+        <note>Class = "UISegmentedControl"; yT2-qP-nB4.segmentTitles[2] = "Monthly"; ObjectID = "yT2-qP-nB4";</note>
+      </trans-unit>
+      <trans-unit id="yT2-qP-nB4.segmentTitles[3]">
+        <source>Yearly</source>
+        <target>Yearly</target>
+        <note>Class = "UISegmentedControl"; yT2-qP-nB4.segmentTitles[3] = "Yearly"; ObjectID = "yT2-qP-nB4";</note>
+      </trans-unit>
+      <trans-unit id="yT2-qP-nB4.segmentTitles[4]">
+        <source>Never</source>
+        <target>Never</target>
+        <note>Class = "UISegmentedControl"; yT2-qP-nB4.segmentTitles[4] = "Never"; ObjectID = "yT2-qP-nB4";</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="HabitTracker/en.lproj/InfoPlist.strings" source-language="en" datatype="plaintext" target-language="tr">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.1" build-num="10B61"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName">
+        <source>$(PRODUCT_NAME)</source>
+        <note>Bundle name</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="OneSignal/en.lproj/InfoPlist.strings" datatype="plaintext" source-language="en" target-language="tr">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.1" build-num="10B61"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleDisplayName">
+        <source>OneSignalNotificationServiceExtension</source>
+        <note>Bundle display name</note>
+      </trans-unit>
+      <trans-unit id="CFBundleName">
+        <source>$(PRODUCT_NAME)</source>
+        <note>Bundle name</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

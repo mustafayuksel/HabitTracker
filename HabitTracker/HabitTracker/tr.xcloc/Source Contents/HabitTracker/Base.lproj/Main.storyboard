@@ -440,10 +440,19 @@
                         <barButtonItem key="rightBarButtonItem" title="Save" id="413-xt-hlD">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="settingsButtonAction:" destination="BYZ-38-t0r" id="5zl-in-gKf"/>
+                                <action selector="saveButtonAction:" destination="gBB-1d-yDq" id="28S-Pt-GS9"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="dateLabel" destination="RHC-gf-5ih" id="BZV-O6-Z9w"/>
+                        <outlet property="datePicker" destination="1kG-ug-2O9" id="zUe-aB-l5e"/>
+                        <outlet property="habitNameTextField" destination="JmX-SD-G09" id="1ae-tM-fxh"/>
+                        <outlet property="reminderFrequencyLabel" destination="bEm-ps-TFB" id="aKA-Ip-GaM"/>
+                        <outlet property="reminderFrequencySegmented" destination="yT2-qP-nB4" id="kPc-69-yeD"/>
+                        <outlet property="timeLabel" destination="4Uh-cR-Wtb" id="A5P-e9-Phs"/>
+                        <outlet property="timePicker" destination="1kG-ug-2O9" id="wqe-je-RXZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kmz-Fc-70k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -499,6 +508,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="E7o-lb-vDJ" id="WOv-gu-HE9"/>
+                        <segue destination="gBB-1d-yDq" kind="show" identifier="toCreateHabitVC" id="ugL-kT-xI0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8zc-1D-FII" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -512,6 +522,7 @@
         <image name="update.png" width="60" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="ugL-kT-xI0"/>
         <segue reference="5H0-YJ-Jon"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

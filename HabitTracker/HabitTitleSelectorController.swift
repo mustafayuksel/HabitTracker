@@ -11,6 +11,8 @@ import UIKit
 class HabitTitleSelectorController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     var selectedCategory : Int = Constants.Defaults.value(forKey: Constants.Keys.SelectedCategory) as! Int
     
+    @IBOutlet weak var tableView: UITableView!
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Constants.habitTitles[selectedCategory].count
     }
@@ -18,16 +20,17 @@ class HabitTitleSelectorController: UIViewController,UITableViewDelegate, UITabl
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "hcTransportCell", for: indexPath)
         cell.imageView!.image = UIImage(named:  Constants.habitTitlesImages[selectedCategory][indexPath.row]);
-        
-        cell.textLabel?.text =  Constants.habitTitles[selectedCategory][indexPath.row]
+        cell.textLabel?.text =  NSLocalizedString(Constants.habitTitles[selectedCategory][indexPath.row], comment: "")
         cell.preservesSuperviewLayoutMargins = false
         cell.separatorInset = UIEdgeInsets.zero
         cell.layoutMargins = UIEdgeInsets.zero
         return cell
     }
     
-    
-    @IBOutlet weak var tableView: UITableView!
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        Constants.Defaults.set(indexPath.row, forKey: Constants.Keys.SelectedTitle)
+        performSegue(withIdentifier: "toCreateHabitVC", sender: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
