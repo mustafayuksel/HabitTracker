@@ -18,7 +18,7 @@ class HabitTitleSelectorController: UIViewController,UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "hcTransportCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "titleCell", for: indexPath)
         cell.imageView!.image = UIImage(named:  Constants.habitTitlesImages[selectedCategory][indexPath.row]);
         cell.textLabel?.text =  NSLocalizedString(Constants.habitTitles[selectedCategory][indexPath.row], comment: "")
         cell.preservesSuperviewLayoutMargins = false

@@ -9,18 +9,22 @@
 import UIKit
 
 class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
-    let transportItems = ["Bus","Helicopter"]
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var buttonLabel: UILabel!
     
+    var habitEntityList : [HabitEntity] = []
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return transportItems.count
+        return habitEntityList.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "transportCell", for: indexPath)
-        
-        cell.textLabel?.text = transportItems[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "mainCell", for: indexPath)
+        if !habitEntityList.isEmpty {
+            cell.textLabel?.text = habitEntityList[indexPath.row].name
+            let habitCategory = Int(habitEntityList[indexPath.row].habitCategory)
+            let habitTitle = Int(habitEntityList[indexPath.row].habitTitle)
+            cell.imageView!.image = UIImage(named: Constants.habitTitlesImages[habitCategory][habitTitle]);
+        }
         cell.preservesSuperviewLayoutMargins = false
         cell.separatorInset = UIEdgeInsets.zero
         cell.layoutMargins = UIEdgeInsets.zero
@@ -29,45 +33,39 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?
     {
         // 1
-        let shareAction = UITableViewRowAction(style: .default, title: "Share" , handler: { (action:UITableViewRowAction, indexPath: IndexPath) -> Void in
+        let editAction = UITableViewRowAction(style: .normal, title: "Edit" , handler: { (action:UITableViewRowAction, indexPath: IndexPath) -> Void in
             // 2
-            let shareMenu = UIAlertController(title: nil, message: "Share using", preferredStyle: .actionSheet)
             
-            let twitterAction = UIAlertAction(title: "Twitter", style: .default, handler: nil)
-            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-            
-            shareMenu.addAction(twitterAction)
-            shareMenu.addAction(cancelAction)
-            
-            self.present(shareMenu, animated: true, completion: nil)
+            //self.present(shareMenu, animated: true, completion: nil)
         })
         // 3
-        let rateAction = UITableViewRowAction(style: .default, title: "Rate" , handler: { (action:UITableViewRowAction, indexPath:IndexPath) -> Void in
+        let deleteAction = UITableViewRowAction(style: .default, title: "Delete" , handler: { (action:UITableViewRowAction, indexPath:IndexPath) -> Void in
             // 4
-            let rateMenu = UIAlertController(title: nil, message: "Rate this App", preferredStyle: .actionSheet)
+            let deleteMenu = UIAlertController(title: nil, message: "Delete this item", preferredStyle: .actionSheet)
             
-            let appRateAction = UIAlertAction(title: "Rate", style: .default, handler: nil)
+            let deleteAction = UIAlertAction(title: "Delete", style: .default, handler: nil)
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
             
-            rateMenu.addAction(appRateAction)
-            rateMenu.addAction(cancelAction)
+            deleteMenu.addAction(deleteAction)
+            deleteMenu.addAction(cancelAction)
             
-            self.present(rateMenu, animated: true, completion: nil)
+            self.present(deleteMenu, animated: true, completion: nil)
         })
         // 5
-        return [shareAction,rateAction]
+        return [deleteAction, editAction]
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         buttonLabel.text = NSLocalizedString("NewHabitEvent", comment: "")
+        habitEntityList = DatabaseUtil.app.getHabitEntityResults() as! [HabitEntity]
         // Do any additional setup after loading the view, typically from a nib.
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.tableFooterView = UIView() 
+        tableView.tableFooterView = UIView()
     }
-
+    
     @IBAction func addButtonAction(_ sender: Any) {
-         performSegue(withIdentifier: "toHabitCategorySelectorVC", sender: nil)
+        performSegue(withIdentifier: "toHabitCategorySelectorVC", sender: nil)
     }
 }

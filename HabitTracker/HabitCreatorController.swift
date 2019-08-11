@@ -29,5 +29,7 @@ class HabitCreatorController: UIViewController{
     
     @IBAction func saveButtonAction(_ sender: Any) {
         //reminderFrequencySegmented.selectedSegmentIndex
+        var habitEntity = Habit(name: "Test", habitCategory: selectedCategory, habitTitle: selectedTitle, reminderFrequency: 1, startDate: Date(timeIntervalSinceNow: 1200), startTime: Date(timeIntervalSinceNow: 1200))
+        DatabaseUtil.app.insertHabitEntity(data: habitEntity)
     }
 }

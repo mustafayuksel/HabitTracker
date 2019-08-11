@@ -15,7 +15,7 @@ class DatabaseUtil{
         return DatabaseUtil()
     }()
     
-    func getThemeEntityResults() -> [HabitEntity?] {
+    func getHabitEntityResults() -> [HabitEntity?] {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: Constants.HABIT_ENTITY)
         request.returnsObjectsAsFaults = false
         do{
@@ -31,7 +31,7 @@ class DatabaseUtil{
         return []
     }
     
-    func insertThemeEntity(data : HabitEntity) {
+    func insertHabitEntity(data : Habit) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         
@@ -51,7 +51,7 @@ class DatabaseUtil{
         }
     }
     
-    func saveThemeEntityAttribute(index : Int, attributeName : String, data : Any){
+    func saveHabitEntityAttribute(index : Int, attributeName : String, data : Any){
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: Constants.HABIT_ENTITY)
         request.returnsObjectsAsFaults = false
         do{
