@@ -41,7 +41,8 @@ class DatabaseUtil{
         entity.setValue(data.name, forKey: "name")
         entity.setValue(data.reminderFrequency, forKey: "reminderFrequency")
         entity.setValue(data.startDate, forKey: "startDate")
-        entity.setValue(data.startTime, forKey: "startTime")
+        entity.setValue(data.startHour, forKey: "startHour")
+        entity.setValue(data.startMinute, forKey: "startMinute")
         
         do{
             try context.save()

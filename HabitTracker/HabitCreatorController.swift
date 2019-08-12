@@ -8,13 +8,14 @@
 
 import UIKit
 
-class HabitCreatorController: UIViewController{
+class HabitCreatorController: UIViewController {
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var reminderFrequencyLabel: UILabel!
     @IBOutlet weak var habitNameTextField: UITextField!
-    @IBOutlet weak var datePicker: UIDatePicker!
+    
+    @IBOutlet var datePicker: UIDatePicker!
     @IBOutlet weak var timePicker: UIDatePicker!
     @IBOutlet weak var reminderFrequencySegmented: UISegmentedControl!
     
@@ -29,7 +30,15 @@ class HabitCreatorController: UIViewController{
     
     @IBAction func saveButtonAction(_ sender: Any) {
         //reminderFrequencySegmented.selectedSegmentIndex
-        var habitEntity = Habit(name: "Test", habitCategory: selectedCategory, habitTitle: selectedTitle, reminderFrequency: 1, startDate: Date(timeIntervalSinceNow: 1200), startTime: Date(timeIntervalSinceNow: 1200))
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-yyyy"
+        let formattedStartDate = formatter.string(from: datePicker.date)
+        let components = Calendar.current.dateComponents([.hour, .minute], from: timePicker.date)
+        let hour = components.hour!
+        let minute = components.minute!
+        let habitEntity = Habit(name: habitNameTextField.text ?? "", habitCategory: selectedCategory, habitTitle: selectedTitle, reminderFrequency: reminderFrequencySegmented.selectedSegmentIndex, startDate: formattedStartDate, startHour: hour, startMinute : minute)
         DatabaseUtil.app.insertHabitEntity(data: habitEntity)
+        ViewController.isSaveButtonClick = true
+        performSegue(withIdentifier: "toMainVC", sender: nil)
     }
 }

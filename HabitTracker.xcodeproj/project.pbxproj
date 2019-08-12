@@ -24,6 +24,7 @@
 		45895DF622EE064300DBE05D /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 45895DF322EE064300DBE05D /* settings.png */; };
 		458A92E722F0CB4200421932 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 458A92E622F0CB4200421932 /* plus.png */; };
 		45A89C6C22FF591A00321357 /* DatabaseUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A89C6B22FF591A00321357 /* DatabaseUtil.swift */; };
+		45AFA98B2300A3E600BEE5D8 /* CustomMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AFA98A2300A3E600BEE5D8 /* CustomMainTableViewCell.swift */; };
 		45B3AEAC22FF068200AC43F9 /* tea-cup.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AEAB22FF068200AC43F9 /* tea-cup.png */; };
 		45B3AEAE22FF06CA00AC43F9 /* confetti.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AEAD22FF06C900AC43F9 /* confetti.png */; };
 		45B3AEB222FF082300AC43F9 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AEB122FF082300AC43F9 /* calendar.png */; };
@@ -113,6 +114,7 @@
 		45895DF322EE064300DBE05D /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		458A92E622F0CB4200421932 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
 		45A89C6B22FF591A00321357 /* DatabaseUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseUtil.swift; sourceTree = "<group>"; };
+		45AFA98A2300A3E600BEE5D8 /* CustomMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMainTableViewCell.swift; sourceTree = "<group>"; };
 		45B3AEAB22FF068200AC43F9 /* tea-cup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tea-cup.png"; sourceTree = "<group>"; };
 		45B3AEAD22FF06C900AC43F9 /* confetti.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = confetti.png; sourceTree = "<group>"; };
 		45B3AEB122FF082300AC43F9 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 				45B3AF1022FF40C600AC43F9 /* Localizable.strings */,
 				45B3AF1522FF40D900AC43F9 /* Localizable.strings */,
 				456D3E8A230021FA001C5D87 /* Habit.swift */,
+				45AFA98A2300A3E600BEE5D8 /* CustomMainTableViewCell.swift */,
 			);
 			path = HabitTracker;
 			sourceTree = "<group>";
@@ -522,6 +525,7 @@
 				453FF90222EB503C00214532 /* AppDelegate.swift in Sources */,
 				45B3AEB422FF099700AC43F9 /* HabitTitleSelectorController.swift in Sources */,
 				453FF90A22EB503C00214532 /* HabitTracker.xcdatamodeld in Sources */,
+				45AFA98B2300A3E600BEE5D8 /* CustomMainTableViewCell.swift in Sources */,
 				45B3AEB622FF0C3E00AC43F9 /* Constants.swift in Sources */,
 				456D3E8B230021FA001C5D87 /* Habit.swift in Sources */,
 				452F456B22F627C6009E8210 /* HabitCategorySelectorController.swift in Sources */,

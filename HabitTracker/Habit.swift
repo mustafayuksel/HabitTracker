@@ -14,15 +14,17 @@ class Habit {
     let habitCategory : Int
     let habitTitle : Int
     let reminderFrequency : Int
-    let startDate : Date
-    let startTime : Date
+    let startDate : String
+    let startHour : Int
+    let startMinute : Int
     
-    init(name: String, habitCategory : Int, habitTitle : Int, reminderFrequency : Int, startDate : Date, startTime : Date) {
+    init(name: String, habitCategory : Int, habitTitle : Int, reminderFrequency : Int, startDate : String, startHour : Int, startMinute : Int) {
         self.name = name
         self.habitCategory = habitCategory
         self.habitTitle = habitTitle
         self.reminderFrequency = reminderFrequency
         self.startDate = startDate
-        self.startTime = startTime
+        self.startHour = startHour
+        self.startMinute = startMinute
     }
 }
