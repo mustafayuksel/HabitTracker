@@ -3,6 +3,22 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "HabitCreatorController.saveButtonAction(_:):HabitCreatorController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "datePicker.date">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DatabaseUtil.deleteHabitEntity(index:):DatabaseUtil.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "context.fetch(request)[index]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "ViewController.tableView(_:cellForRowAt:):ViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -12,7 +28,7 @@
                value = "Date().description(with: .current) ">
             </PersistentString>
             <PersistentString
-               value = "Date()">
+               value = "habitEntityList">
             </PersistentString>
             <PersistentString
                value = "Locale.current">
@@ -20,10 +36,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "HabitCreatorController.saveButtonAction(_:):HabitCreatorController.swift">
+         contextName = "closure #1 in closure #2 in ViewController.tableView(_:editActionsForRowAt:):ViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "datePicker.date">
+               value = "indexPath.row">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

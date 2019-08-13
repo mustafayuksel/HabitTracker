@@ -71,4 +71,24 @@ class DatabaseUtil{
             print("error")
         }
     }
+    
+    func deleteHabitEntity(index : Int){
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: Constants.HABIT_ENTITY)
+        request.returnsObjectsAsFaults = false
+        do{
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            let resultList = try context.fetch(request)
+            let objectToDelete = resultList[index] as! NSManagedObject
+            context.delete(objectToDelete)
+            do{
+                try context.save()
+            }
+            catch{
+                print("error")
+            }
+        }catch{
+            print("error")
+        }
+    }
 }

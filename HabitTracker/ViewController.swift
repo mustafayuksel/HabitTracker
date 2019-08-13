@@ -25,32 +25,8 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
             let habitCategory = Int(habitEntityList[indexPath.row].habitCategory)
             let habitTitle = Int(habitEntityList[indexPath.row].habitTitle)
             cell.cellImage.image = UIImage(named: Constants.habitTitlesImages[habitCategory][habitTitle])
-            let startDate = habitEntityList[indexPath.row].startDate
-            let hour = habitEntityList[indexPath.row].startHour
-            let minute = habitEntityList[indexPath.row].startMinute
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd-MM-yyyy"
-            dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
-            let formattedStartDate = dateFormatter.date(from:startDate!)!
-            var calendar = Calendar.current
-            calendar.timeZone = TimeZone(abbreviation: "GMT+0:00")!
-            let selectedDate = calendar.date(bySettingHour: Int(hour), minute: Int(minute), second: 0, of: formattedStartDate)!
-            let currentDate = Date()
-            let timezoneOffset =  TimeZone.current.secondsFromGMT()
-            // 2) Get the current date (GMT) in seconds since 1970. Epoch datetime.
-            let epochDate = currentDate.timeIntervalSince1970
-            // 3) Perform a calculation with timezoneOffset + epochDate to get the total seconds for the
-            //    local date since 1970.
-            //    This may look a bit strange, but since timezoneOffset is given as -18000.0, adding epochDate and timezoneOffset
-            //    calculates correctly.
-            let timezoneEpochOffset = (epochDate + Double(timezoneOffset))
-            // 4) Finally, create a date using the seconds offset since 1970 for the local date.
-            let timeZoneOffsetDate = Date(timeIntervalSince1970: timezoneEpochOffset)
-            let component = Set<Calendar.Component>([.day])
-            let differenceOfDate = calendar.dateComponents(component, from: selectedDate, to: timeZoneOffsetDate)
-            if let dayText: String = String(describing: differenceOfDate.day!) {
-                cell.counter.text = dayText + " Gün"
-            }
+            let calculatedDay = DateHelper.app.calculateDays(habitEntity: habitEntityList[indexPath.row])
+            cell.counter.text = calculatedDay
         }
         cell.preservesSuperviewLayoutMargins = false
         cell.separatorInset = UIEdgeInsets.zero
@@ -70,18 +46,38 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
             // 4
             let deleteMenu = UIAlertController(title: nil, message: "Delete this item", preferredStyle: .actionSheet)
             
-            let deleteAction = UIAlertAction(title: "Delete", style: .default, handler: nil)
+            let deleteAction = UIAlertAction(title: "Delete", style: .default){ _ in
+                print("Delete")
+                DatabaseUtil.app.deleteHabitEntity(index: indexPath.row)
+                self.habitEntityList = DatabaseUtil.app.getHabitEntityResults() as! [HabitEntity]
+                tableView.reloadData()
+            }
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
             
             deleteMenu.addAction(deleteAction)
             deleteMenu.addAction(cancelAction)
-            
+            if (UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad)
+            {
+                deleteMenu.popoverPresentationController!.permittedArrowDirections = []
+                deleteMenu.popoverPresentationController!.sourceView = self.view
+                deleteMenu.popoverPresentationController!.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+            }
             self.present(deleteMenu, animated: true, completion: nil)
         })
         // 5
         return [deleteAction, editAction]
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        Constants.Defaults.set(indexPath.row, forKey: Constants.Keys.SelectedHabit)
+        performSegue(withIdentifier: "toShowHabitVC", sender: nil)
+    }
+   /* override func viewWillAppear(_ animated: Bool) {
+        _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(ViewController.getTime), userInfo: nil, repeats: true)
+    }
     
+    @objc func getTime() {
+        tableView.reloadData()
+    }*/
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true

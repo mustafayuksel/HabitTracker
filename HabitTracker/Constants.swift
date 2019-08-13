@@ -12,8 +12,10 @@ import UIKit
 class Constants {
     static let Defaults = UserDefaults.standard
     
-    static let habitCategories = ["Write my own", "Quit", "Form a Habit", "Celebrate", "Commit"]//["Kendin yaz","Alışkanlık oluştur"]
+    static let habitCategories = ["Write my own", "Quit", "Form a Habit", "Celebrate", "Commit"]
+    
     static let habitCategoryImages = ["update.png", "no-smoke.png", "tea-cup.png", "confetti.png", "calendar.png"]
+    
     static let habitTitles = [[], ["Caffeine", "Junk Food", "Social Media", "Gaming", "Alcohol", "Smoking", "Addiction", "Swearing", "Gambling"], ["Exercise", "Meditate", "Diet", "Reading", "Wake up", "Hobby"], ["Relationship", "Marriage","Birth", "Retirement", "New Beginning"], ["Play Instrument", "Sing", "Draw", "Practice", "Pray", "Save Money", "Try New Thing", "Call Friend"]]
     
     static let habitTitlesImages = [[], ["coffee-cup.png", "hamburger.png", "network.png", "game-controller.png", "no-alcohol.png", "no-smoke.png", "chained.png", "profanity.png", "poker-cards.png"], ["exercise.png", "yoga.png", "diet.png", "open-book.png", "wake-up.png", "jigsaw.png"], ["relationship.png", "marriage.png","stork.png", "pension.png", "new.png"], ["piano.png", "microphone.png", "edit.png", "best-practice.png", "pray.png", "purse.png", "new.png", "call.png"]]
@@ -24,6 +26,7 @@ class Constants {
     struct Keys {
         static let SelectedCategory = "selectedCategory"
         static let SelectedTitle = "selectedTitle"
+        static let SelectedHabit = "selectedHabit"
         static let RemoveAds = "removeAds"
     }
 }

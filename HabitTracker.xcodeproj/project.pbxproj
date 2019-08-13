@@ -18,6 +18,10 @@
 		453FF91922EB50BF00214532 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 453FF91822EB50BF00214532 /* StoreKit.framework */; };
 		453FF92122EB50F600214532 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453FF92022EB50F600214532 /* NotificationService.swift */; };
 		453FF92522EB50F600214532 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 453FF91E22EB50F600214532 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4540FE022302A98F00D8F990 /* medal.png in Resources */ = {isa = PBXBuildFile; fileRef = 4540FE012302A98F00D8F990 /* medal.png */; };
+		4540FE042302A9DC00D8F990 /* ShowHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4540FE032302A9DC00D8F990 /* ShowHabitViewController.swift */; };
+		4540FE062302AAC800D8F990 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4540FE052302AAC800D8F990 /* DateHelper.swift */; };
+		4540FE082302B4FA00D8F990 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4540FE072302B4F800D8F990 /* background.jpg */; };
 		456D3E892300217C001C5D87 /* schedule.png in Resources */ = {isa = PBXBuildFile; fileRef = 456D3E882300217C001C5D87 /* schedule.png */; };
 		456D3E8B230021FA001C5D87 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456D3E8A230021FA001C5D87 /* Habit.swift */; };
 		45718A5122FCAF5C00F78CCC /* HabitCreatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45718A5022FCAF5C00F78CCC /* HabitCreatorController.swift */; };
@@ -108,6 +112,10 @@
 		453FF91E22EB50F600214532 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		453FF92022EB50F600214532 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		453FF92222EB50F600214532 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4540FE012302A98F00D8F990 /* medal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = medal.png; sourceTree = "<group>"; };
+		4540FE032302A9DC00D8F990 /* ShowHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowHabitViewController.swift; sourceTree = "<group>"; };
+		4540FE052302AAC800D8F990 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		4540FE072302B4F800D8F990 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		456D3E882300217C001C5D87 /* schedule.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule.png; sourceTree = "<group>"; };
 		456D3E8A230021FA001C5D87 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		45718A5022FCAF5C00F78CCC /* HabitCreatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCreatorController.swift; sourceTree = "<group>"; };
@@ -215,8 +223,10 @@
 				452F456A22F627C6009E8210 /* HabitCategorySelectorController.swift */,
 				45718A5022FCAF5C00F78CCC /* HabitCreatorController.swift */,
 				45B3AEB322FF099700AC43F9 /* HabitTitleSelectorController.swift */,
+				4540FE032302A9DC00D8F990 /* ShowHabitViewController.swift */,
 				45B3AEB522FF0C3E00AC43F9 /* Constants.swift */,
 				45A89C6B22FF591A00321357 /* DatabaseUtil.swift */,
+				4540FE052302AAC800D8F990 /* DateHelper.swift */,
 				45B3AF1022FF40C600AC43F9 /* Localizable.strings */,
 				45B3AF1522FF40D900AC43F9 /* Localizable.strings */,
 				456D3E8A230021FA001C5D87 /* Habit.swift */,
@@ -248,6 +258,8 @@
 		45895DF022EE064300DBE05D /* images */ = {
 			isa = PBXGroup;
 			children = (
+				4540FE012302A98F00D8F990 /* medal.png */,
+				4540FE072302B4F800D8F990 /* background.jpg */,
 				458A92E622F0CB4200421932 /* plus.png */,
 				452F456C22F62D92009E8210 /* no-smoke.png */,
 				45B3AEB722FF101D00AC43F9 /* coffee-cup.png */,
@@ -412,8 +424,10 @@
 				452F456D22F62D92009E8210 /* no-smoke.png in Resources */,
 				45B3AEEB22FF173300AC43F9 /* best-practice.png in Resources */,
 				45B3AEE722FF173300AC43F9 /* piano.png in Resources */,
+				4540FE022302A98F00D8F990 /* medal.png in Resources */,
 				45B3AED022FF145300AC43F9 /* diet.png in Resources */,
 				45B3AECE22FF142100AC43F9 /* yoga.png in Resources */,
+				4540FE082302B4FA00D8F990 /* background.jpg in Resources */,
 				45B3AEE922FF173300AC43F9 /* microphone.png in Resources */,
 				45B3AF0E22FF40C600AC43F9 /* Localizable.strings in Resources */,
 				45B3AEDE22FF15F100AC43F9 /* stork.png in Resources */,
@@ -529,7 +543,9 @@
 				45B3AEB622FF0C3E00AC43F9 /* Constants.swift in Sources */,
 				456D3E8B230021FA001C5D87 /* Habit.swift in Sources */,
 				452F456B22F627C6009E8210 /* HabitCategorySelectorController.swift in Sources */,
+				4540FE062302AAC800D8F990 /* DateHelper.swift in Sources */,
 				45718A5122FCAF5C00F78CCC /* HabitCreatorController.swift in Sources */,
+				4540FE042302A9DC00D8F990 /* ShowHabitViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

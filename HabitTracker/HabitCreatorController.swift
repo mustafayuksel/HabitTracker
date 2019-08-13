@@ -15,15 +15,25 @@ class HabitCreatorController: UIViewController {
     @IBOutlet weak var reminderFrequencyLabel: UILabel!
     @IBOutlet weak var habitNameTextField: UITextField!
     
+    @IBOutlet var saveButtonLabel: UIBarButtonItem!
     @IBOutlet var datePicker: UIDatePicker!
     @IBOutlet weak var timePicker: UIDatePicker!
     @IBOutlet weak var reminderFrequencySegmented: UISegmentedControl!
     
-     var selectedCategory : Int = Constants.Defaults.value(forKey: Constants.Keys.SelectedCategory) as! Int
-     var selectedTitle : Int = Constants.Defaults.value(forKey: Constants.Keys.SelectedTitle) as! Int
+    var selectedCategory : Int = Constants.Defaults.value(forKey: Constants.Keys.SelectedCategory) as! Int
+    var selectedTitle : Int = Constants.Defaults.value(forKey: Constants.Keys.SelectedTitle) as! Int
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        dateLabel.text = NSLocalizedString("Date", comment: "")
+        timeLabel.text = NSLocalizedString("Time", comment: "")
+        reminderFrequencyLabel.text = NSLocalizedString("ReminderFrequency", comment: "")
+        saveButtonLabel.title = NSLocalizedString("Save", comment: "")
+        reminderFrequencySegmented.setTitle(NSLocalizedString("Daily", comment: ""), forSegmentAt: 0)
+        reminderFrequencySegmented.setTitle(NSLocalizedString("Weekly", comment: ""), forSegmentAt: 1)
+        reminderFrequencySegmented.setTitle(NSLocalizedString("Monthly", comment: ""), forSegmentAt: 2)
+        reminderFrequencySegmented.setTitle(NSLocalizedString("Yearly", comment: ""), forSegmentAt: 3)
+        reminderFrequencySegmented.setTitle(NSLocalizedString("Never", comment: ""), forSegmentAt: 4)
         // Do any additional setup after loading the view, typically from a nib.
         habitNameTextField.text = NSLocalizedString(Constants.habitTitles[selectedCategory][selectedTitle], comment: "")
     }
