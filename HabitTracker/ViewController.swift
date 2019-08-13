@@ -35,15 +35,11 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     }
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?
     {
-        // 1
         let editAction = UITableViewRowAction(style: .normal, title: "Edit" , handler: { (action:UITableViewRowAction, indexPath: IndexPath) -> Void in
-            // 2
-            
-            //self.present(shareMenu, animated: true, completion: nil)
+            Constants.Defaults.set(indexPath.row, forKey: Constants.Keys.SelectedHabit)
+            self.performSegue(withIdentifier: "toHabitEditVC", sender: nil)
         })
-        // 3
         let deleteAction = UITableViewRowAction(style: .default, title: "Delete" , handler: { (action:UITableViewRowAction, indexPath:IndexPath) -> Void in
-            // 4
             let deleteMenu = UIAlertController(title: nil, message: "Delete this item", preferredStyle: .actionSheet)
             
             let deleteAction = UIAlertAction(title: "Delete", style: .default){ _ in
@@ -64,20 +60,12 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
             }
             self.present(deleteMenu, animated: true, completion: nil)
         })
-        // 5
         return [deleteAction, editAction]
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         Constants.Defaults.set(indexPath.row, forKey: Constants.Keys.SelectedHabit)
         performSegue(withIdentifier: "toShowHabitVC", sender: nil)
     }
-   /* override func viewWillAppear(_ animated: Bool) {
-        _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(ViewController.getTime), userInfo: nil, repeats: true)
-    }
-    
-    @objc func getTime() {
-        tableView.reloadData()
-    }*/
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true

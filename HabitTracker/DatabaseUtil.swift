@@ -91,4 +91,26 @@ class DatabaseUtil{
             print("error")
         }
     }
+    
+    func updateData(index : Int, habit : Habit){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: Constants.HABIT_ENTITY)
+        request.returnsObjectsAsFaults = false
+        do {
+            let resultList = try context.fetch(request)
+            let objectToUpdate = resultList[index] as! NSManagedObject
+            objectToUpdate.setValue(habit.name, forKey: "name")
+            objectToUpdate.setValue(habit.reminderFrequency, forKey: "reminderFrequency")
+            objectToUpdate.setValue(habit.startDate, forKey: "startDate")
+            objectToUpdate.setValue(habit.startHour, forKey: "startHour")
+            objectToUpdate.setValue(habit.startMinute, forKey: "startMinute")
+            try context.save()
+        }
+        catch
+        {
+            print(error)
+        }
+    }
 }
