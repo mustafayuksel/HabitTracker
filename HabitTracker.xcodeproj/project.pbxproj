@@ -28,6 +28,8 @@
 		45895DF622EE064300DBE05D /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 45895DF322EE064300DBE05D /* settings.png */; };
 		458A92E722F0CB4200421932 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 458A92E622F0CB4200421932 /* plus.png */; };
 		45A782062303156D0065C72A /* HabitEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A782052303156D0065C72A /* HabitEditViewController.swift */; };
+		45A782082303432C0065C72A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A782072303432C0065C72A /* SettingsViewController.swift */; };
+		45A7820A230344520065C72A /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 45A78209230344510065C72A /* share.png */; };
 		45A89C6C22FF591A00321357 /* DatabaseUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A89C6B22FF591A00321357 /* DatabaseUtil.swift */; };
 		45AFA98B2300A3E600BEE5D8 /* CustomMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AFA98A2300A3E600BEE5D8 /* CustomMainTableViewCell.swift */; };
 		45B3AEAC22FF068200AC43F9 /* tea-cup.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AEAB22FF068200AC43F9 /* tea-cup.png */; };
@@ -123,6 +125,8 @@
 		45895DF322EE064300DBE05D /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		458A92E622F0CB4200421932 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
 		45A782052303156D0065C72A /* HabitEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitEditViewController.swift; sourceTree = "<group>"; };
+		45A782072303432C0065C72A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		45A78209230344510065C72A /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
 		45A89C6B22FF591A00321357 /* DatabaseUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseUtil.swift; sourceTree = "<group>"; };
 		45AFA98A2300A3E600BEE5D8 /* CustomMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMainTableViewCell.swift; sourceTree = "<group>"; };
 		45B3AEAB22FF068200AC43F9 /* tea-cup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tea-cup.png"; sourceTree = "<group>"; };
@@ -234,6 +238,7 @@
 				456D3E8A230021FA001C5D87 /* Habit.swift */,
 				45AFA98A2300A3E600BEE5D8 /* CustomMainTableViewCell.swift */,
 				45A782052303156D0065C72A /* HabitEditViewController.swift */,
+				45A782072303432C0065C72A /* SettingsViewController.swift */,
 			);
 			path = HabitTracker;
 			sourceTree = "<group>";
@@ -296,6 +301,7 @@
 				45B3AEAD22FF06C900AC43F9 /* confetti.png */,
 				45B3AEB122FF082300AC43F9 /* calendar.png */,
 				452F457022F62E7B009E8210 /* update.png */,
+				45A78209230344510065C72A /* share.png */,
 				45895DF322EE064300DBE05D /* settings.png */,
 			);
 			path = images;
@@ -437,6 +443,7 @@
 				453FF90F22EB503D00214532 /* LaunchScreen.storyboard in Resources */,
 				45B3AEAE22FF06CA00AC43F9 /* confetti.png in Resources */,
 				45B3AEEC22FF173300AC43F9 /* pray.png in Resources */,
+				45A7820A230344520065C72A /* share.png in Resources */,
 				45B3AEC622FF11FD00AC43F9 /* chained.png in Resources */,
 				45B3AEEA22FF173300AC43F9 /* edit.png in Resources */,
 				456D3E892300217C001C5D87 /* schedule.png in Resources */,
@@ -546,6 +553,7 @@
 				45B3AEB622FF0C3E00AC43F9 /* Constants.swift in Sources */,
 				456D3E8B230021FA001C5D87 /* Habit.swift in Sources */,
 				45A782062303156D0065C72A /* HabitEditViewController.swift in Sources */,
+				45A782082303432C0065C72A /* SettingsViewController.swift in Sources */,
 				452F456B22F627C6009E8210 /* HabitCategorySelectorController.swift in Sources */,
 				4540FE062302AAC800D8F990 /* DateHelper.swift in Sources */,
 				45718A5122FCAF5C00F78CCC /* HabitCreatorController.swift in Sources */,
