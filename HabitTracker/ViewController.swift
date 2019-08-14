@@ -12,6 +12,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var buttonLabel: UILabel!
+    private let refreshControl = UIRefreshControl()
     
     var habitEntityList : [HabitEntity] = []
     static var isSaveButtonClick:Bool!
@@ -75,10 +76,15 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         }
         buttonLabel.text = NSLocalizedString("NewHabitEvent", comment: "")
         habitEntityList = DatabaseUtil.app.getHabitEntityResults() as! [HabitEntity]
-        // Do any additional setup after loading the view, typically from a nib.
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
+        refreshControl.addTarget(self, action: #selector(refreshTable), for: .valueChanged)
     }
     
     @IBAction func addButtonAction(_ sender: Any) {
@@ -86,5 +92,9 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     }
     @IBAction func settingsAction(_ sender: Any) {
         performSegue(withIdentifier: "toSettingsVC", sender: nil)
+    }
+    @objc private func refreshTable(_ sender: Any) {
+        tableView.reloadData()
+        self.refreshControl.endRefreshing()
     }
 }

@@ -34,12 +34,11 @@ class HabitCreatorController: UIViewController {
         reminderFrequencySegmented.setTitle(NSLocalizedString("Monthly", comment: ""), forSegmentAt: 2)
         reminderFrequencySegmented.setTitle(NSLocalizedString("Yearly", comment: ""), forSegmentAt: 3)
         reminderFrequencySegmented.setTitle(NSLocalizedString("Never", comment: ""), forSegmentAt: 4)
-        // Do any additional setup after loading the view, typically from a nib.
+        
         habitNameTextField.text = NSLocalizedString(Constants.habitTitles[selectedCategory][selectedTitle], comment: "")
     }
     
     @IBAction func saveButtonAction(_ sender: Any) {
-        //reminderFrequencySegmented.selectedSegmentIndex
         let formatter = DateFormatter()
         formatter.dateFormat = "dd-MM-yyyy"
         let formattedStartDate = formatter.string(from: datePicker.date)

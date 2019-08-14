@@ -34,7 +34,6 @@ class HabitTitleSelectorController: UIViewController,UITableViewDelegate, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
