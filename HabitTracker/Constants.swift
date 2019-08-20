@@ -23,6 +23,8 @@ class Constants {
     static let HABIT_ENTITY = "HabitEntity"
     static let PRUDUCT_ID: NSString = "com.mustafayuksel.LoveDays.removeAds"
     
+    static let MAIL_ADDRESS = "habitdaycounter@gmail.com"
+    
     struct Keys {
         static let SelectedCategory = "selectedCategory"
         static let SelectedTitle = "selectedTitle"

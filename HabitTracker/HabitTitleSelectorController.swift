@@ -36,6 +36,7 @@ class HabitTitleSelectorController: UIViewController,UITableViewDelegate, UITabl
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        self.title = NSLocalizedString(Constants.habitCategories[selectedCategory], comment: "")
         tableView.tableFooterView = UIView()
     }
 }

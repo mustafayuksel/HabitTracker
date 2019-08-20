@@ -26,6 +26,7 @@ class HabitCategorySelectorController: UIViewController,UITableViewDelegate, UIT
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
+            Constants.Defaults.set(0, forKey: Constants.Keys.SelectedCategory)
             performSegue(withIdentifier: "toCreateHabitOwnVC", sender: nil)
         }
         else{
@@ -36,6 +37,7 @@ class HabitCategorySelectorController: UIViewController,UITableViewDelegate, UIT
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = NSLocalizedString("PickCategory", comment: "")
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()

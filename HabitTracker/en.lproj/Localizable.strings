@@ -51,8 +51,13 @@
 "Day" = "Day";
 "Days" = "Days";
 "Update" = "Update";
-"UpgradeOrRestore" = "Upgrade/Restore Purchases";
+"Upgrade" = "Upgrade";
+"Restore" = "Restore Purchases";
 "SendFeedback" = "Send Feedback";
 "MoreApps" = "More Apps";
 "Subscription" = "Subscription";
 "Support" = "Support";
+"HabitDayCounter" = "Habit Day Counter";
+"Back" = "Back";
+"Settings" = "Settings";
+"PickCategory" = "Pick a Category";

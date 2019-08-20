@@ -44,6 +44,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "TodayViewController.prepareWidget():TodayViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "detailsText as? String">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "SettingsViewController.tableView(_:didSelectRowAt:):SettingsViewController.swift">
          <PersistentStrings>
             <PersistentString

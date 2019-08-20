@@ -34,8 +34,13 @@ class HabitCreatorController: UIViewController {
         reminderFrequencySegmented.setTitle(NSLocalizedString("Monthly", comment: ""), forSegmentAt: 2)
         reminderFrequencySegmented.setTitle(NSLocalizedString("Yearly", comment: ""), forSegmentAt: 3)
         reminderFrequencySegmented.setTitle(NSLocalizedString("Never", comment: ""), forSegmentAt: 4)
-        
-        habitNameTextField.text = NSLocalizedString(Constants.habitTitles[selectedCategory][selectedTitle], comment: "")
+        if selectedCategory != 0 {
+            habitNameTextField.text = NSLocalizedString(Constants.habitTitles[selectedCategory][selectedTitle], comment: "")
+        }
+        else {
+            habitNameTextField.text = ""
+        }
+        datePicker.maximumDate = Date()
     }
     
     @IBAction func saveButtonAction(_ sender: Any) {

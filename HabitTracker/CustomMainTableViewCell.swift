@@ -9,7 +9,6 @@
 import UIKit
 
 class CustomMainTableViewCell : UITableViewCell {
-    @IBOutlet var cellImage: UIImageView!
     @IBOutlet weak var counter: UILabel!
     @IBOutlet weak var details: UILabel!
 }

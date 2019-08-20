@@ -50,8 +50,13 @@
 "Save" = "Kaydet";
 "Day" = "Gün";
 "Update" = "Güncelle";
-"UpgradeOrRestore" = "Yükselt/Satın almaları geri yükle";
+"Upgrade" = "Yükselt";
+"Restore" = "Satın almaları geri yükle";
 "SendFeedback" = "Geri Bildirim Gönder";
 "MoreApps" = "Diğer Uygulamalar";
 "Subscription" = "Abonelik";
 "Support" = "Destek";
+"HabitDayCounter" = "Alışkanlık Gün Sayıcı";
+"Back" = "Geri";
+"Settings" = "Ayarlar";
+"PickCategory" = "Kategori Seçin";

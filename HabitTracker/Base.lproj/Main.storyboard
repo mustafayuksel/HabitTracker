@@ -36,8 +36,6 @@
                                                     <rect key="frame" x="22" y="26" width="60" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="GeD-aQ-hRB"/>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="kix-eL-nzg"/>
-                                                        <constraint firstAttribute="width" secondItem="af0-wX-sZr" secondAttribute="height" multiplier="1:1" id="sOu-rT-Vre"/>
                                                         <constraint firstAttribute="width" constant="60" id="w3Y-EF-WuT"/>
                                                     </constraints>
                                                 </imageView>
@@ -71,7 +69,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="cellImage" destination="af0-wX-sZr" id="5Ev-Ou-7q3"/>
                                             <outlet property="counter" destination="esJ-2v-yMb" id="uZV-GW-Ne1"/>
                                             <outlet property="details" destination="eq2-w7-vuP" id="OGa-tn-moD"/>
                                         </connections>
@@ -104,9 +101,9 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="BZg-R0-3pU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerXWithinMargins" priority="999" id="00o-3C-m9D"/>
-                            <constraint firstItem="uv2-j0-FdP" firstAttribute="centerX" secondItem="BZg-R0-3pU" secondAttribute="centerX" id="0pf-b6-5pO"/>
+                            <constraint firstItem="uv2-j0-FdP" firstAttribute="centerX" secondItem="BZg-R0-3pU" secondAttribute="centerX" priority="999" id="0pf-b6-5pO"/>
                             <constraint firstItem="h5u-pp-Cqc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" priority="999" id="9lu-vN-XGE"/>
-                            <constraint firstItem="uv2-j0-FdP" firstAttribute="top" secondItem="BZg-R0-3pU" secondAttribute="bottom" constant="8" symbolic="YES" id="Fl6-Cn-6xl"/>
+                            <constraint firstItem="uv2-j0-FdP" firstAttribute="top" secondItem="BZg-R0-3pU" secondAttribute="bottom" priority="999" constant="8" symbolic="YES" id="Fl6-Cn-6xl"/>
                             <constraint firstItem="h5u-pp-Cqc" firstAttribute="bottom" secondItem="HLv-ry-Ae9" secondAttribute="top" priority="999" id="HwS-gw-5lh"/>
                             <constraint firstAttribute="trailing" secondItem="h5u-pp-Cqc" secondAttribute="trailing" priority="999" id="dyP-fo-0Xx"/>
                             <constraint firstItem="h5u-pp-Cqc" firstAttribute="top" secondItem="j4w-M4-uLk" secondAttribute="bottom" priority="999" id="eJW-aL-GxH"/>

@@ -66,7 +66,18 @@
 		45B3AEFC22FF29B500AC43F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AEFE22FF29B500AC43F9 /* Main.storyboard */; };
 		45B3AF0E22FF40C600AC43F9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AF1022FF40C600AC43F9 /* Localizable.strings */; };
 		45B3AF1322FF40D900AC43F9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AF1522FF40D900AC43F9 /* Localizable.strings */; };
+		45B523B32309E29500089212 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B523B22309E29500089212 /* NotificationCenter.framework */; };
+		45B523B62309E29500089212 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B523B52309E29500089212 /* TodayViewController.swift */; };
+		45B523B92309E29500089212 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B523B72309E29500089212 /* MainInterface.storyboard */; };
+		45B523BD2309E29500089212 /* widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 45B523B12309E29500089212 /* widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		45B523C32309E36300089212 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B523C22309E36300089212 /* CoreDataStack.swift */; };
+		45B523C42309E38500089212 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B3AEB522FF0C3E00AC43F9 /* Constants.swift */; };
+		45B523C72309E7C600089212 /* HabitTracker.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 453FF90822EB503C00214532 /* HabitTracker.xcdatamodeld */; };
 		45BDE2A422EB8691004D7459 /* UnityAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45BDE2A322EB8691004D7459 /* UnityAds.framework */; };
+		45C260F2230C78FB00F3F6EE /* punctuality.png in Resources */ = {isa = PBXBuildFile; fileRef = 45C260F1230C78FB00F3F6EE /* punctuality.png */; };
+		45C260F4230C7B0800F3F6EE /* NSCustomPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C260F3230C7B0800F3F6EE /* NSCustomPersistentContainer.swift */; };
+		45C260F5230C7C0100F3F6EE /* NSCustomPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C260F3230C7B0800F3F6EE /* NSCustomPersistentContainer.swift */; };
+		45C260F6230C841F00F3F6EE /* punctuality.png in Resources */ = {isa = PBXBuildFile; fileRef = 45C260F1230C78FB00F3F6EE /* punctuality.png */; };
 		45D899E52304254A005B085C /* SettingsObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D899E42304254A005B085C /* SettingsObject.swift */; };
 		507E080EB53A884DC5B8A84E /* Pods_HabitTracker_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA44EC19F6AC5818B90C69D4 /* Pods_HabitTracker_OneSignalNotificationServiceExtension.framework */; };
 		C8147D46BCB39F1BCD255F46 /* Pods_HabitTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 253BA197D139DCB10595D90F /* Pods_HabitTracker.framework */; };
@@ -80,6 +91,13 @@
 			remoteGlobalIDString = 453FF91D22EB50F600214532;
 			remoteInfo = OneSignal;
 		};
+		45B523BB2309E29500089212 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 453FF8F622EB503C00214532 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45B523B02309E29500089212;
+			remoteInfo = widget;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -89,6 +107,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				45B523BD2309E29500089212 /* widget.appex in Embed App Extensions */,
 				453FF92522EB50F600214532 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -168,7 +187,16 @@
 		45B3AF0D22FF40BE00AC43F9 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		45B3AF0F22FF40C600AC43F9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		45B3AF1422FF40D900AC43F9 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		45B523B12309E29500089212 /* widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = widget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		45B523B22309E29500089212 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		45B523B52309E29500089212 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		45B523B82309E29500089212 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		45B523BA2309E29500089212 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45B523C12309E2EF00089212 /* widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = widget.entitlements; sourceTree = "<group>"; };
+		45B523C22309E36300089212 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		45BDE2A322EB8691004D7459 /* UnityAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnityAds.framework; sourceTree = "<group>"; };
+		45C260F1230C78FB00F3F6EE /* punctuality.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = punctuality.png; path = ../../../../Downloads/punctuality.png; sourceTree = "<group>"; };
+		45C260F3230C7B0800F3F6EE /* NSCustomPersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCustomPersistentContainer.swift; sourceTree = "<group>"; };
 		45D899E42304254A005B085C /* SettingsObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsObject.swift; sourceTree = "<group>"; };
 		ACAB98CB9F93C72BCE6EA201 /* Pods-HabitTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HabitTracker/Pods-HabitTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		BA44EC19F6AC5818B90C69D4 /* Pods_HabitTracker_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HabitTracker_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,6 +221,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		45B523AE2309E29500089212 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45B523B32309E29500089212 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -201,6 +237,7 @@
 			children = (
 				453FF90022EB503C00214532 /* HabitTracker */,
 				453FF91F22EB50F600214532 /* OneSignal */,
+				45B523B42309E29500089212 /* widget */,
 				453FF8FF22EB503C00214532 /* Products */,
 				453FF91722EB50BF00214532 /* Frameworks */,
 				6A84EF1A473186722EFEDC41 /* Pods */,
@@ -212,6 +249,7 @@
 			children = (
 				453FF8FE22EB503C00214532 /* HabitTracker.app */,
 				453FF91E22EB50F600214532 /* OneSignalNotificationServiceExtension.appex */,
+				45B523B12309E29500089212 /* widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -242,6 +280,7 @@
 				45A782052303156D0065C72A /* HabitEditViewController.swift */,
 				45A782072303432C0065C72A /* SettingsViewController.swift */,
 				45D899E42304254A005B085C /* SettingsObject.swift */,
+				45C260F3230C7B0800F3F6EE /* NSCustomPersistentContainer.swift */,
 			);
 			path = HabitTracker;
 			sourceTree = "<group>";
@@ -253,6 +292,7 @@
 				453FF91822EB50BF00214532 /* StoreKit.framework */,
 				253BA197D139DCB10595D90F /* Pods_HabitTracker.framework */,
 				BA44EC19F6AC5818B90C69D4 /* Pods_HabitTracker_OneSignalNotificationServiceExtension.framework */,
+				45B523B22309E29500089212 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -273,6 +313,7 @@
 				4540FE072302B4F800D8F990 /* background.jpg */,
 				458A92E622F0CB4200421932 /* plus.png */,
 				452F456C22F62D92009E8210 /* no-smoke.png */,
+				45C260F1230C78FB00F3F6EE /* punctuality.png */,
 				45B3AEB722FF101D00AC43F9 /* coffee-cup.png */,
 				45B3AEB922FF105400AC43F9 /* hamburger.png */,
 				45B3AEC722FF137400AC43F9 /* profanity.png */,
@@ -310,6 +351,18 @@
 			path = images;
 			sourceTree = "<group>";
 		};
+		45B523B42309E29500089212 /* widget */ = {
+			isa = PBXGroup;
+			children = (
+				45B523C12309E2EF00089212 /* widget.entitlements */,
+				45B523B52309E29500089212 /* TodayViewController.swift */,
+				45B523B72309E29500089212 /* MainInterface.storyboard */,
+				45B523BA2309E29500089212 /* Info.plist */,
+				45B523C22309E36300089212 /* CoreDataStack.swift */,
+			);
+			path = widget;
+			sourceTree = "<group>";
+		};
 		6A84EF1A473186722EFEDC41 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -339,6 +392,7 @@
 			);
 			dependencies = (
 				453FF92422EB50F600214532 /* PBXTargetDependency */,
+				45B523BC2309E29500089212 /* PBXTargetDependency */,
 			);
 			name = HabitTracker;
 			productName = HabitTracker;
@@ -361,6 +415,23 @@
 			name = OneSignalNotificationServiceExtension;
 			productName = OneSignal;
 			productReference = 453FF91E22EB50F600214532 /* OneSignalNotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		45B523B02309E29500089212 /* widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45B523C02309E29500089212 /* Build configuration list for PBXNativeTarget "widget" */;
+			buildPhases = (
+				45B523AD2309E29500089212 /* Sources */,
+				45B523AE2309E29500089212 /* Frameworks */,
+				45B523AF2309E29500089212 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = widget;
+			productName = widget;
+			productReference = 45B523B12309E29500089212 /* widget.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -390,6 +461,17 @@
 					453FF91D22EB50F600214532 = {
 						CreatedOnToolsVersion = 10.1;
 					};
+					45B523B02309E29500089212 = {
+						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
 				};
 			};
 			buildConfigurationList = 453FF8F922EB503C00214532 /* Build configuration list for PBXProject "HabitTracker" */;
@@ -406,6 +488,7 @@
 			targets = (
 				453FF8FD22EB503C00214532 /* HabitTracker */,
 				453FF91D22EB50F600214532 /* OneSignalNotificationServiceExtension */,
+				45B523B02309E29500089212 /* widget */,
 			);
 		};
 /* End PBXProject section */
@@ -449,6 +532,7 @@
 				45A7820A230344520065C72A /* share.png in Resources */,
 				45B3AEC622FF11FD00AC43F9 /* chained.png in Resources */,
 				45B3AEEA22FF173300AC43F9 /* edit.png in Resources */,
+				45C260F2230C78FB00F3F6EE /* punctuality.png in Resources */,
 				456D3E892300217C001C5D87 /* schedule.png in Resources */,
 				45B3AEAC22FF068200AC43F9 /* tea-cup.png in Resources */,
 				45B3AEB822FF101D00AC43F9 /* coffee-cup.png in Resources */,
@@ -464,6 +548,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45B523AF2309E29500089212 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45C260F6230C841F00F3F6EE /* punctuality.png in Resources */,
+				45B523C72309E7C600089212 /* HabitTracker.xcdatamodeld in Resources */,
+				45B523B92309E29500089212 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,6 +645,7 @@
 				453FF90422EB503C00214532 /* ViewController.swift in Sources */,
 				453FF90222EB503C00214532 /* AppDelegate.swift in Sources */,
 				45B3AEB422FF099700AC43F9 /* HabitTitleSelectorController.swift in Sources */,
+				45C260F5230C7C0100F3F6EE /* NSCustomPersistentContainer.swift in Sources */,
 				453FF90A22EB503C00214532 /* HabitTracker.xcdatamodeld in Sources */,
 				45D899E52304254A005B085C /* SettingsObject.swift in Sources */,
 				45AFA98B2300A3E600BEE5D8 /* CustomMainTableViewCell.swift in Sources */,
@@ -573,6 +668,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		45B523AD2309E29500089212 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45C260F4230C7B0800F3F6EE /* NSCustomPersistentContainer.swift in Sources */,
+				45B523B62309E29500089212 /* TodayViewController.swift in Sources */,
+				45B523C32309E36300089212 /* CoreDataStack.swift in Sources */,
+				45B523C42309E38500089212 /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -580,6 +686,11 @@
 			isa = PBXTargetDependency;
 			target = 453FF91D22EB50F600214532 /* OneSignalNotificationServiceExtension */;
 			targetProxy = 453FF92322EB50F600214532 /* PBXContainerItemProxy */;
+		};
+		45B523BC2309E29500089212 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45B523B02309E29500089212 /* widget */;
+			targetProxy = 45B523BB2309E29500089212 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -618,6 +729,14 @@
 				45B3AF1422FF40D900AC43F9 /* tr */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		45B523B72309E29500089212 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45B523B82309E29500089212 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -750,6 +869,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HabitTracker/HabitTracker.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LEFRQUV8R6;
 				ENABLE_BITCODE = YES;
@@ -758,12 +878,14 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = HabitTracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mustafayuksel.HabitTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -776,6 +898,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HabitTracker/HabitTracker.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LEFRQUV8R6;
 				ENABLE_BITCODE = YES;
@@ -784,12 +907,14 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = HabitTracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mustafayuksel.HabitTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -803,7 +928,7 @@
 				DEVELOPMENT_TEAM = LEFRQUV8R6;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = OneSignal/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -825,7 +950,7 @@
 				DEVELOPMENT_TEAM = LEFRQUV8R6;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = OneSignal/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -833,6 +958,52 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mustafayuksel.HabitTracker.onesignal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		45B523BE2309E29500089212 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = widget/widget.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LEFRQUV8R6;
+				INFOPLIST_FILE = widget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mustafayuksel.HabitTracker.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		45B523BF2309E29500089212 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = widget/widget.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LEFRQUV8R6;
+				INFOPLIST_FILE = widget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mustafayuksel.HabitTracker.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -865,6 +1036,15 @@
 			buildConfigurations = (
 				453FF92722EB50F600214532 /* Debug */,
 				453FF92822EB50F600214532 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45B523C02309E29500089212 /* Build configuration list for PBXNativeTarget "widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45B523BE2309E29500089212 /* Debug */,
+				45B523BF2309E29500089212 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

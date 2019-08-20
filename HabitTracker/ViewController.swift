@@ -25,7 +25,12 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
             cell.details.text = habitEntityList[indexPath.row].name
             let habitCategory = Int(habitEntityList[indexPath.row].habitCategory)
             let habitTitle = Int(habitEntityList[indexPath.row].habitTitle)
-            cell.cellImage.image = UIImage(named: Constants.habitTitlesImages[habitCategory][habitTitle])
+            if habitCategory != 0 {
+                cell.imageView?.image = UIImage(named: Constants.habitTitlesImages[habitCategory][habitTitle])
+            }
+            else {
+                cell.imageView?.image = UIImage(named: "punctuality.png")
+            }
             let calculatedDay = DateHelper.app.calculateDays(habitEntity: habitEntityList[indexPath.row])
             cell.counter.text = calculatedDay
         }
@@ -70,6 +75,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true
+        self.title = NSLocalizedString("HabitDayCounter", comment: "")
         if ViewController.isSaveButtonClick == true {
             ViewController.isSaveButtonClick = !ViewController.isSaveButtonClick
             //callSecondFunction()
