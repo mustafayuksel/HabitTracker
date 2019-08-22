@@ -63,6 +63,10 @@
 		455368AB230F28B700DD2D77 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 45895DF322EE064300DBE05D /* settings.png */; };
 		455368AE230F2BA300DD2D77 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AF1522FF40D900AC43F9 /* Localizable.strings */; };
 		455368AF230F2BA500DD2D77 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AF1022FF40C600AC43F9 /* Localizable.strings */; };
+		455368B7230F2E7600DD2D77 /* HabitTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455368B6230F2E7600DD2D77 /* HabitTrackerTests.swift */; };
+		455368BE230F2E8A00DD2D77 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4540FE052302AAC800D8F990 /* DateHelper.swift */; };
+		455368C2230F323400DD2D77 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 455368C5230F323400DD2D77 /* InfoPlist.strings */; };
+		455368C3230F323400DD2D77 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 455368C5230F323400DD2D77 /* InfoPlist.strings */; };
 		456D3E892300217C001C5D87 /* schedule.png in Resources */ = {isa = PBXBuildFile; fileRef = 456D3E882300217C001C5D87 /* schedule.png */; };
 		456D3E8B230021FA001C5D87 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456D3E8A230021FA001C5D87 /* Habit.swift */; };
 		45718A5122FCAF5C00F78CCC /* HabitCreatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45718A5022FCAF5C00F78CCC /* HabitCreatorController.swift */; };
@@ -131,6 +135,13 @@
 			remoteGlobalIDString = 453FF91D22EB50F600214532;
 			remoteInfo = OneSignal;
 		};
+		455368B9230F2E7600DD2D77 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 453FF8F622EB503C00214532 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 453FF8FD22EB503C00214532;
+			remoteInfo = HabitTracker;
+		};
 		45B523BB2309E29500089212 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 453FF8F622EB503C00214532 /* Project object */;
@@ -180,6 +191,11 @@
 		4540FE052302AAC800D8F990 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		4540FE072302B4F800D8F990 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		455368AD230F2B4700DD2D77 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/MainInterface.strings; sourceTree = "<group>"; };
+		455368B4230F2E7600DD2D77 /* HabitTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HabitTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		455368B6230F2E7600DD2D77 /* HabitTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTrackerTests.swift; sourceTree = "<group>"; };
+		455368B8230F2E7600DD2D77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		455368C4230F323400DD2D77 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		455368C6230F323600DD2D77 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		456D3E882300217C001C5D87 /* schedule.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule.png; sourceTree = "<group>"; };
 		456D3E8A230021FA001C5D87 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		45718A5022FCAF5C00F78CCC /* HabitCreatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCreatorController.swift; sourceTree = "<group>"; };
@@ -262,6 +278,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		455368B1230F2E7600DD2D77 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		45B523AE2309E29500089212 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -279,6 +302,7 @@
 				453FF90022EB503C00214532 /* HabitTracker */,
 				453FF91F22EB50F600214532 /* OneSignal */,
 				45B523B42309E29500089212 /* widget */,
+				455368B5230F2E7600DD2D77 /* HabitTrackerTests */,
 				453FF8FF22EB503C00214532 /* Products */,
 				453FF91722EB50BF00214532 /* Frameworks */,
 				6A84EF1A473186722EFEDC41 /* Pods */,
@@ -291,6 +315,7 @@
 				453FF8FE22EB503C00214532 /* HabitTracker.app */,
 				453FF91E22EB50F600214532 /* OneSignalNotificationServiceExtension.appex */,
 				45B523B12309E29500089212 /* widget.appex */,
+				455368B4230F2E7600DD2D77 /* HabitTrackerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -322,6 +347,7 @@
 				45A782072303432C0065C72A /* SettingsViewController.swift */,
 				45D899E42304254A005B085C /* SettingsObject.swift */,
 				45C260F3230C7B0800F3F6EE /* NSCustomPersistentContainer.swift */,
+				455368C5230F323400DD2D77 /* InfoPlist.strings */,
 			);
 			path = HabitTracker;
 			sourceTree = "<group>";
@@ -345,6 +371,15 @@
 				453FF92222EB50F600214532 /* Info.plist */,
 			);
 			path = OneSignal;
+			sourceTree = "<group>";
+		};
+		455368B5230F2E7600DD2D77 /* HabitTrackerTests */ = {
+			isa = PBXGroup;
+			children = (
+				455368B6230F2E7600DD2D77 /* HabitTrackerTests.swift */,
+				455368B8230F2E7600DD2D77 /* Info.plist */,
+			);
+			path = HabitTrackerTests;
 			sourceTree = "<group>";
 		};
 		45895DF022EE064300DBE05D /* images */ = {
@@ -458,6 +493,24 @@
 			productReference = 453FF91E22EB50F600214532 /* OneSignalNotificationServiceExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		455368B3230F2E7600DD2D77 /* HabitTrackerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 455368BB230F2E7600DD2D77 /* Build configuration list for PBXNativeTarget "HabitTrackerTests" */;
+			buildPhases = (
+				455368B0230F2E7600DD2D77 /* Sources */,
+				455368B1230F2E7600DD2D77 /* Frameworks */,
+				455368B2230F2E7600DD2D77 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				455368BA230F2E7600DD2D77 /* PBXTargetDependency */,
+			);
+			name = HabitTrackerTests;
+			productName = HabitTrackerTests;
+			productReference = 455368B4230F2E7600DD2D77 /* HabitTrackerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		45B523B02309E29500089212 /* widget */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 45B523C02309E29500089212 /* Build configuration list for PBXNativeTarget "widget" */;
@@ -502,6 +555,10 @@
 					453FF91D22EB50F600214532 = {
 						CreatedOnToolsVersion = 10.1;
 					};
+					455368B3230F2E7600DD2D77 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 453FF8FD22EB503C00214532;
+					};
 					45B523B02309E29500089212 = {
 						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
@@ -531,6 +588,7 @@
 				453FF8FD22EB503C00214532 /* HabitTracker */,
 				453FF91D22EB50F600214532 /* OneSignalNotificationServiceExtension */,
 				45B523B02309E29500089212 /* widget */,
+				455368B3230F2E7600DD2D77 /* HabitTrackerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -549,6 +607,7 @@
 				45B3AEC822FF137400AC43F9 /* profanity.png in Resources */,
 				45B3AEFC22FF29B500AC43F9 /* Main.storyboard in Resources */,
 				45B3AECA22FF13CE00AC43F9 /* poker-cards.png in Resources */,
+				455368C2230F323400DD2D77 /* InfoPlist.strings in Resources */,
 				45B3AEBC22FF110100AC43F9 /* network.png in Resources */,
 				45B3AEDC22FF15F100AC43F9 /* pension.png in Resources */,
 				45B3AEEE22FF17C400AC43F9 /* call.png in Resources */,
@@ -593,6 +652,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		455368B2230F2E7600DD2D77 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		45B523AF2309E29500089212 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -621,6 +687,7 @@
 				45536894230F28B700DD2D77 /* purse.png in Resources */,
 				45536895230F28B700DD2D77 /* open-book.png in Resources */,
 				4553689C230F28B700DD2D77 /* new.png in Resources */,
+				455368C3230F323400DD2D77 /* InfoPlist.strings in Resources */,
 				45536887230F28B700DD2D77 /* background.jpg in Resources */,
 				455368A7230F28B700DD2D77 /* confetti.png in Resources */,
 				455368AA230F28B700DD2D77 /* share.png in Resources */,
@@ -749,6 +816,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		455368B0230F2E7600DD2D77 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				455368B7230F2E7600DD2D77 /* HabitTrackerTests.swift in Sources */,
+				455368BE230F2E8A00DD2D77 /* DateHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		45B523AD2309E29500089212 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -769,6 +845,11 @@
 			target = 453FF91D22EB50F600214532 /* OneSignalNotificationServiceExtension */;
 			targetProxy = 453FF92322EB50F600214532 /* PBXContainerItemProxy */;
 		};
+		455368BA230F2E7600DD2D77 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 453FF8FD22EB503C00214532 /* HabitTracker */;
+			targetProxy = 455368B9230F2E7600DD2D77 /* PBXContainerItemProxy */;
+		};
 		45B523BC2309E29500089212 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 45B523B02309E29500089212 /* widget */;
@@ -785,6 +866,15 @@
 				45B3AF0D22FF40BE00AC43F9 /* tr */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		455368C5230F323400DD2D77 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				455368C4230F323400DD2D77 /* en */,
+				455368C6230F323600DD2D77 /* tr */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		45B3AEFE22FF29B500AC43F9 /* Main.storyboard */ = {
@@ -1047,6 +1137,48 @@
 			};
 			name = Release;
 		};
+		455368BC230F2E7600DD2D77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LEFRQUV8R6;
+				INFOPLIST_FILE = HabitTrackerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mustafayuksel.HabitTrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HabitTracker.app/HabitTracker";
+			};
+			name = Debug;
+		};
+		455368BD230F2E7600DD2D77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LEFRQUV8R6;
+				INFOPLIST_FILE = HabitTrackerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mustafayuksel.HabitTrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HabitTracker.app/HabitTracker";
+			};
+			name = Release;
+		};
 		45B523BE2309E29500089212 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1119,6 +1251,15 @@
 			buildConfigurations = (
 				453FF92722EB50F600214532 /* Debug */,
 				453FF92822EB50F600214532 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		455368BB230F2E7600DD2D77 /* Build configuration list for PBXNativeTarget "HabitTrackerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				455368BC230F2E7600DD2D77 /* Debug */,
+				455368BD230F2E7600DD2D77 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
