@@ -3,6 +3,17 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "SettingsViewController.tableView(_:didSelectRowAt:):SettingsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
+            <PersistentString
+               value = "indexPath.section">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "HabitCreatorController.saveButtonAction(_:):HabitCreatorController.swift">
          <PersistentStrings>
             <PersistentString
@@ -11,10 +22,26 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "DatabaseUtil.deleteHabitEntity(index:):DatabaseUtil.swift">
+         contextName = "closure #1 in closure #2 in ViewController.tableView(_:editActionsForRowAt:):ViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "context.fetch(request)[index]">
+               value = "indexPath.row">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DateHelper.calculateDays(startDate:hour:minute:):DateHelper.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "NSLocalizedString(&quot;Day&quot;, comment: &quot;&quot;)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TodayViewController.prepareWidget():TodayViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "detailsText as? String">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -36,29 +63,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in closure #2 in ViewController.tableView(_:editActionsForRowAt:):ViewController.swift">
+         contextName = "DatabaseUtil.deleteHabitEntity(index:):DatabaseUtil.swift">
          <PersistentStrings>
             <PersistentString
-               value = "indexPath.row">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "TodayViewController.prepareWidget():TodayViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "detailsText as? String">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "SettingsViewController.tableView(_:didSelectRowAt:):SettingsViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "indexPath.row">
-            </PersistentString>
-            <PersistentString
-               value = "indexPath.section">
+               value = "context.fetch(request)[index]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

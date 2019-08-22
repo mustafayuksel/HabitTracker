@@ -38,6 +38,9 @@ class ShowHabitViewController: UIViewController {
         habitEntityList = DatabaseUtil.app.getHabitEntityResults() as! [HabitEntity]
         titleLabel.text = habitEntityList[selectedHabit].name
         icon.image = UIImage(named: Constants.habitTitlesImages[Int(habitEntityList[selectedHabit].habitCategory)][Int(habitEntityList[selectedHabit].habitTitle)])
-        daysCounterLabel.text = DateHelper.app.calculateDays(habitEntity: habitEntityList[selectedHabit])
+        let startDate =  habitEntityList[selectedHabit].startDate
+        let hour =  habitEntityList[selectedHabit].startHour
+        let minute =  habitEntityList[selectedHabit].startMinute
+        daysCounterLabel.text = DateHelper.app.calculateDays(startDate: startDate!, hour: Int(hour), minute: Int(minute))
     }
 }

@@ -31,8 +31,10 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
             else {
                 cell.imageView?.image = UIImage(named: "punctuality.png")
             }
-            let calculatedDay = DateHelper.app.calculateDays(habitEntity: habitEntityList[indexPath.row])
-            cell.counter.text = calculatedDay
+            let startDate =  habitEntityList[indexPath.row].startDate
+            let hour =  habitEntityList[indexPath.row].startHour
+            let minute =  habitEntityList[indexPath.row].startMinute
+            cell.counter.text = DateHelper.app.calculateDays(startDate: startDate!, hour: Int(hour), minute: Int(minute))
         }
         cell.preservesSuperviewLayoutMargins = false
         cell.separatorInset = UIEdgeInsets.zero

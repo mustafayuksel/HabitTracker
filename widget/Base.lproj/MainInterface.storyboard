@@ -28,7 +28,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="punctuality.png" translatesAutoresizingMaskIntoConstraints="NO" id="Tuh-Bt-Ru3">
-                                <rect key="frame" x="57" y="24" width="60" height="60"/>
+                                <rect key="frame" x="45" y="24" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="9EF-Jy-QVo"/>
                                 </constraints>
@@ -44,11 +44,11 @@
                             <constraint firstItem="ssy-KU-ocm" firstAttribute="bottom" secondItem="frf-G5-0jQ" secondAttribute="bottom" constant="6" id="CNl-Wy-YbN"/>
                             <constraint firstAttribute="trailing" secondItem="4cy-go-SDy" secondAttribute="trailing" id="KHs-tB-7me"/>
                             <constraint firstItem="4cy-go-SDy" firstAttribute="leading" secondItem="frf-G5-0jQ" secondAttribute="leading" id="Tpu-8Y-394"/>
-                            <constraint firstItem="Tuh-Bt-Ru3" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="57" id="WA8-tu-1WK"/>
+                            <constraint firstItem="Tuh-Bt-Ru3" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="45" id="WA8-tu-1WK"/>
                             <constraint firstItem="4cy-go-SDy" firstAttribute="trailing" secondItem="frf-G5-0jQ" secondAttribute="trailing" id="csT-nQ-iTB"/>
                             <constraint firstItem="Tuh-Bt-Ru3" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" constant="24" id="fDZ-px-Aqt"/>
                             <constraint firstItem="frf-G5-0jQ" firstAttribute="top" secondItem="4cy-go-SDy" secondAttribute="bottom" constant="3" id="fa1-hJ-HNJ"/>
-                            <constraint firstItem="4cy-go-SDy" firstAttribute="leading" secondItem="Tuh-Bt-Ru3" secondAttribute="trailing" constant="8" symbolic="YES" id="hjT-im-vAR"/>
+                            <constraint firstItem="4cy-go-SDy" firstAttribute="leading" secondItem="Tuh-Bt-Ru3" secondAttribute="trailing" constant="20" id="hjT-im-vAR"/>
                             <constraint firstItem="4cy-go-SDy" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" constant="27" id="yz7-L5-yx5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>

@@ -13,14 +13,11 @@ class DateHelper {
         return DateHelper()
     }()
     
-    func calculateDays (habitEntity : HabitEntity) -> String {
-        let startDate = habitEntity.startDate
-        let hour = habitEntity.startHour
-        let minute = habitEntity.startMinute
+    func calculateDays (startDate : String, hour : Int, minute : Int) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
         dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
-        let formattedStartDate = dateFormatter.date(from:startDate!)!
+        let formattedStartDate = dateFormatter.date(from:startDate)!
         var calendar = Calendar.current
         calendar.timeZone = TimeZone(abbreviation: "GMT+0:00")!
         let selectedDate = calendar.date(bySettingHour: Int(hour), minute: Int(minute), second: 0, of: formattedStartDate)!
