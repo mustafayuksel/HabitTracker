@@ -19,10 +19,12 @@ class HabitEditViewController : UIViewController {
     @IBOutlet var timeLabel: UILabel!
     @IBOutlet var timePicker: UIDatePicker!
     @IBOutlet var frequencyLabel: UILabel!
+    @IBOutlet var switchLabel: UILabel!
     @IBOutlet var frequencySegment: UISegmentedControl!
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var updateButton: UIBarButtonItem!
     
+    @IBOutlet var switchOutlet: UISwitch!
     @IBAction func updateAction(_ sender: Any) {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd-MM-yyyy"
@@ -30,7 +32,17 @@ class HabitEditViewController : UIViewController {
         let components = Calendar.current.dateComponents([.hour, .minute], from: timePicker.date)
         let hour = components.hour!
         let minute = components.minute!
-        let habit = Habit(name: nameTextField.text ?? "", habitCategory: 0, habitTitle: 0, reminderFrequency: frequencySegment.selectedSegmentIndex, startDate: formattedStartDate, startHour: hour, startMinute : minute)
+        let isPrimary = switchOutlet.isOn
+        
+        if isPrimary {
+            let habitEntities = DatabaseUtil.app.getHabitEntityResults()
+            
+            for i in 0..<habitEntities.count {
+                DatabaseUtil.app.saveHabitEntityAttribute(index: i, attributeName: "isPrimary", data: false)
+            }
+        }
+        
+        let habit = Habit(name: nameTextField.text ?? "", habitCategory: 0, habitTitle: 0, reminderFrequency: frequencySegment.selectedSegmentIndex, startDate: formattedStartDate, startHour: hour, startMinute : minute, isPrimary : isPrimary)
         DatabaseUtil.app.updateData(index: selectedHabit, habit: habit)
         ViewController.isSaveButtonClick = true
         performSegue(withIdentifier: "fromEditToMainVC", sender: nil)
@@ -40,6 +52,7 @@ class HabitEditViewController : UIViewController {
         super.viewDidLoad()
         dateLabel.text = NSLocalizedString("Date", comment: "")
         timeLabel.text = NSLocalizedString("Time", comment: "")
+        switchLabel.text =  NSLocalizedString("SetPrimaryForWidget", comment: "")
         frequencyLabel.text = NSLocalizedString("ReminderFrequency", comment: "")
         updateButton.title = NSLocalizedString("Update", comment: "")
         frequencySegment.setTitle(NSLocalizedString("Daily", comment: ""), forSegmentAt: 0)
@@ -63,5 +76,7 @@ class HabitEditViewController : UIViewController {
         nameTextField.text = habitEntityList[selectedHabit].name
         
         frequencySegment.selectedSegmentIndex = Int(habitEntityList[selectedHabit].reminderFrequency)
+        
+        switchOutlet.isOn = habitEntityList[selectedHabit].isPrimary
     }
 }

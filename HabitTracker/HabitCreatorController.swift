@@ -16,9 +16,11 @@ class HabitCreatorController: UIViewController {
     @IBOutlet weak var habitNameTextField: UITextField!
     
     @IBOutlet var saveButtonLabel: UIBarButtonItem!
+    @IBOutlet var switchLabel: UILabel!
     @IBOutlet var datePicker: UIDatePicker!
     @IBOutlet weak var timePicker: UIDatePicker!
     @IBOutlet weak var reminderFrequencySegmented: UISegmentedControl!
+    @IBOutlet var switchOutlet: UISwitch!
     
     var selectedCategory : Int = Constants.Defaults.value(forKey: Constants.Keys.SelectedCategory) as! Int
     var selectedTitle : Int = Constants.Defaults.value(forKey: Constants.Keys.SelectedTitle) as! Int
@@ -27,6 +29,7 @@ class HabitCreatorController: UIViewController {
         super.viewDidLoad()
         dateLabel.text = NSLocalizedString("Date", comment: "")
         timeLabel.text = NSLocalizedString("Time", comment: "")
+        switchLabel.text =  NSLocalizedString("SetPrimaryForWidget", comment: "")
         reminderFrequencyLabel.text = NSLocalizedString("ReminderFrequency", comment: "")
         saveButtonLabel.title = NSLocalizedString("Save", comment: "")
         reminderFrequencySegmented.setTitle(NSLocalizedString("Daily", comment: ""), forSegmentAt: 0)
@@ -40,9 +43,16 @@ class HabitCreatorController: UIViewController {
         else {
             habitNameTextField.text = ""
         }
+        let habitEntities = DatabaseUtil.app.getHabitEntityResults() as! [HabitEntity]
+        
+        if habitEntities.isEmpty {
+            switchOutlet.isOn = true
+        }
+        else {
+            switchOutlet.isOn = false
+        }
         datePicker.maximumDate = Date()
     }
-    
     @IBAction func saveButtonAction(_ sender: Any) {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd-MM-yyyy"
@@ -50,7 +60,15 @@ class HabitCreatorController: UIViewController {
         let components = Calendar.current.dateComponents([.hour, .minute], from: timePicker.date)
         let hour = components.hour!
         let minute = components.minute!
-        let habitEntity = Habit(name: habitNameTextField.text ?? "", habitCategory: selectedCategory, habitTitle: selectedTitle, reminderFrequency: reminderFrequencySegmented.selectedSegmentIndex, startDate: formattedStartDate, startHour: hour, startMinute : minute)
+        let isPrimary = switchOutlet.isOn
+        if isPrimary {
+            let habitEntities = DatabaseUtil.app.getHabitEntityResults()
+            
+            for i in 0..<habitEntities.count {
+                DatabaseUtil.app.saveHabitEntityAttribute(index: i, attributeName: "isPrimary", data: false)
+            }
+        }
+        let habitEntity = Habit(name: habitNameTextField.text ?? "", habitCategory: selectedCategory, habitTitle: selectedTitle, reminderFrequency: reminderFrequencySegmented.selectedSegmentIndex, startDate: formattedStartDate, startHour: hour, startMinute : minute, isPrimary : isPrimary)
         DatabaseUtil.app.insertHabitEntity(data: habitEntity)
         ViewController.isSaveButtonClick = true
         performSegue(withIdentifier: "toMainVC", sender: nil)

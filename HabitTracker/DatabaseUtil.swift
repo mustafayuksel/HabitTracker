@@ -43,6 +43,7 @@ class DatabaseUtil{
         entity.setValue(data.startDate, forKey: "startDate")
         entity.setValue(data.startHour, forKey: "startHour")
         entity.setValue(data.startMinute, forKey: "startMinute")
+        entity.setValue(data.isPrimary, forKey: "isPrimary")
         
         do{
             try context.save()
@@ -106,6 +107,7 @@ class DatabaseUtil{
             objectToUpdate.setValue(habit.startDate, forKey: "startDate")
             objectToUpdate.setValue(habit.startHour, forKey: "startHour")
             objectToUpdate.setValue(habit.startMinute, forKey: "startMinute")
+            objectToUpdate.setValue(habit.isPrimary, forKey: "isPrimary")
             try context.save()
         }
         catch

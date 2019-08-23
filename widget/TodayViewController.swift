@@ -47,18 +47,21 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             if results.count > 0 {
                 
                 for item in results as! [NSManagedObject] {
-                    // let habitEntity = item as HabitEntity
-                    let detailsText = item.value(forKey: "name")
-                    let habitCategory = item.value(forKey: "habitCategory") as! Int
-                    let habitTitle = item.value(forKey: "habitTitle") as! Int
-                    let startDate = item.value(forKey: "startDate") as! String
-                    let startHour = item.value(forKey: "startHour") as! Int
-                    let startMinute = item.value(forKey: "startMinute") as! Int
-                    if detailsText != nil {
-                        habitLabel.text = detailsText as? String
+                    let isPrimary = item.value(forKey: "isPrimary") as! Bool
+                    if isPrimary {
+                        let detailsText = item.value(forKey: "name")
+                        let habitCategory = item.value(forKey: "habitCategory") as! Int
+                        let habitTitle = item.value(forKey: "habitTitle") as! Int
+                        let startDate = item.value(forKey: "startDate") as! String
+                        let startHour = item.value(forKey: "startHour") as! Int
+                        let startMinute = item.value(forKey: "startMinute") as! Int
+                        if detailsText != nil {
+                            habitLabel.text = detailsText as? String
+                        }
+                        counterLabel.text = DateHelper.app.calculateDays(startDate: startDate, hour: Int(startHour), minute: Int(startMinute))
+                        imageView.image = UIImage(named: Constants.habitTitlesImages[habitCategory][habitTitle])
+                        break
                     }
-                    counterLabel.text = DateHelper.app.calculateDays(startDate: startDate, hour: Int(startHour), minute: Int(startMinute))
-                    imageView.image = UIImage(named: Constants.habitTitlesImages[habitCategory][habitTitle])
                 }
             }
         } catch {

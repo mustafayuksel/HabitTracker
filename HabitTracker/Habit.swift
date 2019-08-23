@@ -10,15 +10,16 @@ import Foundation
 import UIKit
 
 class Habit {
-    let name : String
-    let habitCategory : Int
-    let habitTitle : Int
-    let reminderFrequency : Int
-    let startDate : String
-    let startHour : Int
-    let startMinute : Int
+    public private(set) var name : String
+    public private(set) var habitCategory : Int
+    public private(set) var habitTitle : Int
+    public private(set) var reminderFrequency : Int
+    public private(set) var startDate : String
+    public private(set) var startHour : Int
+    public private(set) var startMinute : Int
+    public private(set) var isPrimary : Bool
     
-    init(name: String, habitCategory : Int, habitTitle : Int, reminderFrequency : Int, startDate : String, startHour : Int, startMinute : Int) {
+    init(name: String, habitCategory : Int, habitTitle : Int, reminderFrequency : Int, startDate : String, startHour : Int, startMinute : Int, isPrimary : Bool) {
         self.name = name
         self.habitCategory = habitCategory
         self.habitTitle = habitTitle
@@ -26,5 +27,6 @@ class Habit {
         self.startDate = startDate
         self.startHour = startHour
         self.startMinute = startMinute
+        self.isPrimary = isPrimary
     }
 }
