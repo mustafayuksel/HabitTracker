@@ -35,15 +35,15 @@ class HabitEditViewController : UIViewController {
         let isPrimary = switchOutlet.isOn
         
         if isPrimary {
-            let habitEntities = DatabaseUtil.app.getHabitEntityResults()
+            let habitEntities = DatabaseHelper.app.getHabitEntityResults()
             
             for i in 0..<habitEntities.count {
-                DatabaseUtil.app.saveHabitEntityAttribute(index: i, attributeName: "isPrimary", data: false)
+                DatabaseHelper.app.saveHabitEntityAttribute(index: i, attributeName: "isPrimary", data: false)
             }
         }
         
         let habit = Habit(name: nameTextField.text ?? "", habitCategory: 0, habitTitle: 0, reminderFrequency: frequencySegment.selectedSegmentIndex, startDate: formattedStartDate, startHour: hour, startMinute : minute, isPrimary : isPrimary)
-        DatabaseUtil.app.updateData(index: selectedHabit, habit: habit)
+        DatabaseHelper.app.updateData(index: selectedHabit, habit: habit)
         ViewController.isSaveButtonClick = true
         performSegue(withIdentifier: "fromEditToMainVC", sender: nil)
     }
@@ -61,7 +61,7 @@ class HabitEditViewController : UIViewController {
         frequencySegment.setTitle(NSLocalizedString("Yearly", comment: ""), forSegmentAt: 3)
         frequencySegment.setTitle(NSLocalizedString("Never", comment: ""), forSegmentAt: 4)
         
-        habitEntityList = DatabaseUtil.app.getHabitEntityResults() as! [HabitEntity]
+        habitEntityList = DatabaseHelper.app.getHabitEntityResults() as! [HabitEntity]
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
         dateFormatter.locale = Locale.current

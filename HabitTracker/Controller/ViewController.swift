@@ -52,8 +52,8 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
             
             let deleteAction = UIAlertAction(title: "Delete", style: .default){ _ in
                 print("Delete")
-                DatabaseUtil.app.deleteHabitEntity(index: indexPath.row)
-                self.habitEntityList = DatabaseUtil.app.getHabitEntityResults() as! [HabitEntity]
+                DatabaseHelper.app.deleteHabitEntity(index: indexPath.row)
+                self.habitEntityList = DatabaseHelper.app.getHabitEntityResults() as! [HabitEntity]
                 tableView.reloadData()
             }
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -83,7 +83,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
             //callSecondFunction()
         }
         buttonLabel.text = NSLocalizedString("NewHabitEvent", comment: "")
-        habitEntityList = DatabaseUtil.app.getHabitEntityResults() as! [HabitEntity]
+        habitEntityList = DatabaseHelper.app.getHabitEntityResults() as! [HabitEntity]
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()

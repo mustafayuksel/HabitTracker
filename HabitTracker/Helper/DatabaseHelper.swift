@@ -10,9 +10,9 @@ import Foundation
 import CoreData
 import UIKit
 
-class DatabaseUtil{
-    static var app: DatabaseUtil = {
-        return DatabaseUtil()
+class DatabaseHelper {
+    static var app: DatabaseHelper = {
+        return DatabaseHelper()
     }()
     
     func getHabitEntityResults() -> [HabitEntity?] {

@@ -43,7 +43,7 @@ class HabitCreatorController: UIViewController {
         else {
             habitNameTextField.text = ""
         }
-        let habitEntities = DatabaseUtil.app.getHabitEntityResults() as! [HabitEntity]
+        let habitEntities = DatabaseHelper.app.getHabitEntityResults() as! [HabitEntity]
         
         if habitEntities.isEmpty {
             switchOutlet.isOn = true
@@ -62,14 +62,14 @@ class HabitCreatorController: UIViewController {
         let minute = components.minute!
         let isPrimary = switchOutlet.isOn
         if isPrimary {
-            let habitEntities = DatabaseUtil.app.getHabitEntityResults()
+            let habitEntities = DatabaseHelper.app.getHabitEntityResults()
             
             for i in 0..<habitEntities.count {
-                DatabaseUtil.app.saveHabitEntityAttribute(index: i, attributeName: "isPrimary", data: false)
+                DatabaseHelper.app.saveHabitEntityAttribute(index: i, attributeName: "isPrimary", data: false)
             }
         }
         let habitEntity = Habit(name: habitNameTextField.text ?? "", habitCategory: selectedCategory, habitTitle: selectedTitle, reminderFrequency: reminderFrequencySegmented.selectedSegmentIndex, startDate: formattedStartDate, startHour: hour, startMinute : minute, isPrimary : isPrimary)
-        DatabaseUtil.app.insertHabitEntity(data: habitEntity)
+        DatabaseHelper.app.insertHabitEntity(data: habitEntity)
         ViewController.isSaveButtonClick = true
         performSegue(withIdentifier: "toMainVC", sender: nil)
     }

@@ -35,7 +35,7 @@ class ShowHabitViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        habitEntityList = DatabaseUtil.app.getHabitEntityResults() as! [HabitEntity]
+        habitEntityList = DatabaseHelper.app.getHabitEntityResults() as! [HabitEntity]
         titleLabel.text = habitEntityList[selectedHabit].name
         icon.image = UIImage(named: Constants.habitTitlesImages[Int(habitEntityList[selectedHabit].habitCategory)][Int(habitEntityList[selectedHabit].habitTitle)])
         let startDate =  habitEntityList[selectedHabit].startDate
