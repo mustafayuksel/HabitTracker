@@ -41,10 +41,20 @@ class HabitEditViewController : UIViewController {
                 DatabaseHelper.app.saveHabitEntityAttribute(index: i, attributeName: "isPrimary", data: false)
             }
         }
-        
-        let habit = Habit(name: nameTextField.text ?? "", habitCategory: 0, habitTitle: 0, reminderFrequency: frequencySegment.selectedSegmentIndex, startDate: formattedStartDate, startHour: hour, startMinute : minute, isPrimary : isPrimary)
+        let reminderFrequencyRawValue = frequencySegment.selectedSegmentIndex
+        let habit = Habit(name: nameTextField.text ?? "", habitCategory: 0, habitTitle: 0, reminderFrequency: reminderFrequencyRawValue, startDate: formattedStartDate, startHour: hour, startMinute : minute, isPrimary : isPrimary, notificationId : UUID())
         DatabaseHelper.app.updateData(index: selectedHabit, habit: habit)
-        ViewController.isSaveButtonClick = true
+        
+        if Int(habitEntityList[selectedHabit].reminderFrequency) != reminderFrequencyRawValue {
+            var identifiers : [String] = []
+        identifiers.append((habitEntityList[selectedHabit].notificationId?.uuidString.lowercased())!)
+            NotificationHelper.app.unscheduleNotification(identifiers: identifiers)
+            let frequency = ReminderFrequency(rawValue : reminderFrequencyRawValue)
+            let uuid = UUID()
+            if frequency != ReminderFrequency.NEVER {
+                NotificationHelper.app.scheduleNotification(title: "Habit Reminder", body: habitEntityList[selectedHabit].name ?? "", frequency: frequency ?? ReminderFrequency.DAILY, identifier: uuid.uuidString.lowercased())
+            }
+        }
         performSegue(withIdentifier: "fromEditToMainVC", sender: nil)
     }
     

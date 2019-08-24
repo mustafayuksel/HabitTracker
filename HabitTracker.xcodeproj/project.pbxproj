@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		452F456B22F627C6009E8210 /* HabitCategorySelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F456A22F627C6009E8210 /* HabitCategorySelectorController.swift */; };
 		4530A1CF23115C4500947C25 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4530A1CE23115C4500947C25 /* NotificationHelper.swift */; };
+		453BCD2523118A700082EDE1 /* ReminderFrequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453BCD2423118A700082EDE1 /* ReminderFrequency.swift */; };
 		453FF90222EB503C00214532 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453FF90122EB503C00214532 /* AppDelegate.swift */; };
 		453FF90422EB503C00214532 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453FF90322EB503C00214532 /* ViewController.swift */; };
 		453FF90A22EB503C00214532 /* HabitTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 453FF90822EB503C00214532 /* HabitTracker.xcdatamodeld */; };
@@ -99,6 +100,7 @@
 		31FC10C1735A4E1610E59204 /* Pods-HabitTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-HabitTracker/Pods-HabitTracker.release.xcconfig"; sourceTree = "<group>"; };
 		452F456A22F627C6009E8210 /* HabitCategorySelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCategorySelectorController.swift; sourceTree = "<group>"; };
 		4530A1CE23115C4500947C25 /* NotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
+		453BCD2423118A700082EDE1 /* ReminderFrequency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderFrequency.swift; sourceTree = "<group>"; };
 		453FF8FE22EB503C00214532 /* HabitTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		453FF90122EB503C00214532 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		453FF90322EB503C00214532 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				45B3AF1522FF40D900AC43F9 /* Localizable.strings */,
 				45C260F3230C7B0800F3F6EE /* NSCustomPersistentContainer.swift */,
 				455368C5230F323400DD2D77 /* InfoPlist.strings */,
+				453BCD2423118A700082EDE1 /* ReminderFrequency.swift */,
 			);
 			path = HabitTracker;
 			sourceTree = "<group>";
@@ -590,6 +593,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				453BCD2523118A700082EDE1 /* ReminderFrequency.swift in Sources */,
 				45A89C6C22FF591A00321357 /* DatabaseHelper.swift in Sources */,
 				453FF90422EB503C00214532 /* ViewController.swift in Sources */,
 				453FF90222EB503C00214532 /* AppDelegate.swift in Sources */,
@@ -853,7 +857,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = HabitTracker/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -882,7 +886,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = HabitTracker/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -903,7 +907,7 @@
 				DEVELOPMENT_TEAM = LEFRQUV8R6;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = OneSignal/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -925,7 +929,7 @@
 				DEVELOPMENT_TEAM = LEFRQUV8R6;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = OneSignal/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -989,7 +993,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LEFRQUV8R6;
 				INFOPLIST_FILE = widget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1012,7 +1016,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LEFRQUV8R6;
 				INFOPLIST_FILE = widget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -44,7 +44,7 @@ class DatabaseHelper {
         entity.setValue(data.startHour, forKey: "startHour")
         entity.setValue(data.startMinute, forKey: "startMinute")
         entity.setValue(data.isPrimary, forKey: "isPrimary")
-        
+        entity.setValue(data.notificationId, forKey: "notificationId")
         do{
             try context.save()
             print("no error")

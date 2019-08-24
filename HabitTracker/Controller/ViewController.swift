@@ -52,7 +52,13 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
             
             let deleteAction = UIAlertAction(title: "Delete", style: .default){ _ in
                 print("Delete")
+                self.habitEntityList = DatabaseHelper.app.getHabitEntityResults() as! [HabitEntity]
+                var identifiers : [String] = []
+            identifiers.append((self.habitEntityList[indexPath.row].notificationId?.uuidString.lowercased())!)
+                NotificationHelper.app.unscheduleNotification(identifiers: identifiers)
+                
                 DatabaseHelper.app.deleteHabitEntity(index: indexPath.row)
+                
                 self.habitEntityList = DatabaseHelper.app.getHabitEntityResults() as! [HabitEntity]
                 tableView.reloadData()
             }
@@ -77,7 +83,6 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     override func viewDidLoad() {
         super.viewDidLoad()
         UIApplication.shared.applicationIconBadgeNumber = 0
-        NotificationHelper.app.scheduleNotification(title: "Hello", body: "Naber")
         self.navigationItem.hidesBackButton = true
         self.title = NSLocalizedString("HabitDayCounter", comment: "")
         if ViewController.isSaveButtonClick == true {
