@@ -76,6 +76,8 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        UIApplication.shared.applicationIconBadgeNumber = 0
+        NotificationHelper.app.scheduleNotification(title: "Hello", body: "Naber")
         self.navigationItem.hidesBackButton = true
         self.title = NSLocalizedString("HabitDayCounter", comment: "")
         if ViewController.isSaveButtonClick == true {

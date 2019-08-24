@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		452F456B22F627C6009E8210 /* HabitCategorySelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F456A22F627C6009E8210 /* HabitCategorySelectorController.swift */; };
+		4530A1CF23115C4500947C25 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4530A1CE23115C4500947C25 /* NotificationHelper.swift */; };
 		453FF90222EB503C00214532 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453FF90122EB503C00214532 /* AppDelegate.swift */; };
 		453FF90422EB503C00214532 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453FF90322EB503C00214532 /* ViewController.swift */; };
 		453FF90A22EB503C00214532 /* HabitTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 453FF90822EB503C00214532 /* HabitTracker.xcdatamodeld */; };
@@ -97,6 +98,7 @@
 		253BA197D139DCB10595D90F /* Pods_HabitTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HabitTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31FC10C1735A4E1610E59204 /* Pods-HabitTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-HabitTracker/Pods-HabitTracker.release.xcconfig"; sourceTree = "<group>"; };
 		452F456A22F627C6009E8210 /* HabitCategorySelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCategorySelectorController.swift; sourceTree = "<group>"; };
+		4530A1CE23115C4500947C25 /* NotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
 		453FF8FE22EB503C00214532 /* HabitTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		453FF90122EB503C00214532 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		453FF90322EB503C00214532 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 			children = (
 				45A89C6B22FF591A00321357 /* DatabaseHelper.swift */,
 				4540FE052302AAC800D8F990 /* DateHelper.swift */,
+				4530A1CE23115C4500947C25 /* NotificationHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -590,6 +593,7 @@
 				45A89C6C22FF591A00321357 /* DatabaseHelper.swift in Sources */,
 				453FF90422EB503C00214532 /* ViewController.swift in Sources */,
 				453FF90222EB503C00214532 /* AppDelegate.swift in Sources */,
+				4530A1CF23115C4500947C25 /* NotificationHelper.swift in Sources */,
 				45B3AEB422FF099700AC43F9 /* HabitTitleSelectorController.swift in Sources */,
 				45C260F5230C7C0100F3F6EE /* NSCustomPersistentContainer.swift in Sources */,
 				453FF90A22EB503C00214532 /* HabitTracker.xcdatamodeld in Sources */,
