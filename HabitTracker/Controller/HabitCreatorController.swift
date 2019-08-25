@@ -42,7 +42,7 @@ class HabitCreatorController: UIViewController {
     }
     
     var selectedCategory : Int = Constants.Defaults.value(forKey: Constants.Keys.SelectedCategory) as! Int
-    var selectedTitle : Int = Constants.Defaults.value(forKey: Constants.Keys.SelectedTitle) as! Int
+    var selectedTitle : Int = Constants.Defaults.value(forKey: Constants.Keys.SelectedTitle) as? Int ?? 0
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -25,6 +25,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADInterstitialDelegate {
         navigationBarAppearace.barTintColor = AppDelegate.UIColorFromHex(rgbValue: 0x72bcd4)
         navigationBarAppearace.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         NotificationHelper.app.userRequest()
+        let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false]
+        
+        // Replace 'YOUR_APP_ID' with your OneSignal App ID.
+        OneSignal.initWithLaunchOptions(launchOptions,
+                                        appId: "ecc8009c-1e95-4966-9b68-916538139fee",
+                                        handleNotificationAction: nil,
+                                        settings: onesignalInitSettings)
+        
+        OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification;
+        
+        // Recommend moving the below line to prompt for push after informing the user about
+        //   how your app will use them.
+        OneSignal.promptForPushNotifications(userResponse: { accepted in
+            print("User accepted notifications: \(accepted)")
+        })
         return true
     }
     static func UIColorFromHex(rgbValue:UInt32, alpha:Double=1.0)->UIColor {

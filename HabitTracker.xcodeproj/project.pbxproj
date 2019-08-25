@@ -145,6 +145,7 @@
 		45B523C22309E36300089212 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		45BDE2A322EB8691004D7459 /* UnityAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnityAds.framework; sourceTree = "<group>"; };
 		45C260F3230C7B0800F3F6EE /* NSCustomPersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCustomPersistentContainer.swift; sourceTree = "<group>"; };
+		45D2F30C2313026A00F40231 /* OneSignalNotificationServiceExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OneSignalNotificationServiceExtension.entitlements; sourceTree = "<group>"; };
 		45D899E42304254A005B085C /* SettingsObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsObject.swift; sourceTree = "<group>"; };
 		ACAB98CB9F93C72BCE6EA201 /* Pods-HabitTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HabitTracker/Pods-HabitTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		BA44EC19F6AC5818B90C69D4 /* Pods_HabitTracker_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HabitTracker_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -190,6 +191,7 @@
 		453FF8F522EB503C00214532 = {
 			isa = PBXGroup;
 			children = (
+				45D2F30C2313026A00F40231 /* OneSignalNotificationServiceExtension.entitlements */,
 				453FF90022EB503C00214532 /* HabitTracker */,
 				453FF91F22EB50F600214532 /* OneSignal */,
 				45B523B42309E29500089212 /* widget */,
@@ -433,6 +435,11 @@
 					};
 					453FF91D22EB50F600214532 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 					455368B3230F2E7600DD2D77 = {
 						CreatedOnToolsVersion = 10.1;
