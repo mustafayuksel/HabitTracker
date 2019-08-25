@@ -21,6 +21,25 @@ class HabitCreatorController: UIViewController {
     @IBOutlet weak var timePicker: UIDatePicker!
     @IBOutlet weak var reminderFrequencySegmented: UISegmentedControl!
     @IBOutlet var switchOutlet: UISwitch!
+    @IBAction func widgetInfoButtonAction(_ sender: Any) {
+        let width = self.view.frame.size.width
+        let toastLabel = UILabel(frame: CGRect(x: width - 300 - ((width - 300)/2), y: self.view.frame.size.height/2, width: 300, height: 100))
+        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        toastLabel.textColor = UIColor.white
+        //toastLabel.
+        toastLabel.textAlignment = .center;
+        toastLabel.text = NSLocalizedString("WidgetInfoMessage", comment: "")
+        toastLabel.alpha = 1.0
+        toastLabel.numberOfLines = 2
+        toastLabel.layer.cornerRadius = 10;
+        toastLabel.clipsToBounds  =  true
+        self.view.addSubview(toastLabel)
+        UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: {
+            toastLabel.alpha = 0.0
+        }, completion: {(isCompleted) in
+            toastLabel.removeFromSuperview()
+        })
+    }
     
     var selectedCategory : Int = Constants.Defaults.value(forKey: Constants.Keys.SelectedCategory) as! Int
     var selectedTitle : Int = Constants.Defaults.value(forKey: Constants.Keys.SelectedTitle) as! Int

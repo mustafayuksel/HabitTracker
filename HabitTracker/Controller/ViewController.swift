@@ -43,14 +43,14 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     }
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?
     {
-        let editAction = UITableViewRowAction(style: .normal, title: "Edit" , handler: { (action:UITableViewRowAction, indexPath: IndexPath) -> Void in
+        let editAction = UITableViewRowAction(style: .normal, title: NSLocalizedString("Edit", comment: "") , handler: { (action:UITableViewRowAction, indexPath: IndexPath) -> Void in
             Constants.Defaults.set(indexPath.row, forKey: Constants.Keys.SelectedHabit)
             self.performSegue(withIdentifier: "toHabitEditVC", sender: nil)
         })
-        let deleteAction = UITableViewRowAction(style: .default, title: "Delete" , handler: { (action:UITableViewRowAction, indexPath:IndexPath) -> Void in
-            let deleteMenu = UIAlertController(title: nil, message: "Delete this item", preferredStyle: .actionSheet)
+        let deleteAction = UITableViewRowAction(style: .default, title: NSLocalizedString("Delete", comment: "") , handler: { (action:UITableViewRowAction, indexPath:IndexPath) -> Void in
+            let deleteMenu = UIAlertController(title: nil, message: NSLocalizedString("DeleteItem", comment: ""), preferredStyle: .actionSheet)
             
-            let deleteAction = UIAlertAction(title: "Delete", style: .default){ _ in
+            let deleteAction = UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .default){ _ in
                 print("Delete")
                 self.habitEntityList = DatabaseHelper.app.getHabitEntityResults() as! [HabitEntity]
                 var identifiers : [String] = []
@@ -62,7 +62,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
                 self.habitEntityList = DatabaseHelper.app.getHabitEntityResults() as! [HabitEntity]
                 tableView.reloadData()
             }
-            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil)
             
             deleteMenu.addAction(deleteAction)
             deleteMenu.addAction(cancelAction)

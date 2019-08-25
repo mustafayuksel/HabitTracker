@@ -62,3 +62,8 @@
 "Settings" = "Settings";
 "PickCategory" = "Pick a Category";
 "SetPrimaryForWidget" = "Show On Widget";
+"Edit" = "Edit";
+"Delete" = "Delete";
+"DeleteItem" = "Delete This Item";
+"Cancel" = "Cancel";
+"WidgetInfoMessage" = "Only 1 habit could be shown on the widget";

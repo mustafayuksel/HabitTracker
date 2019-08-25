@@ -61,3 +61,8 @@
 "Settings" = "Ayarlar";
 "PickCategory" = "Kategori Seçin";
 "SetPrimaryForWidget" = "Widgetta Göster";
+"Edit" = "Düzenle";
+"Delete" = "Sil";
+"DeleteItem" = "Bu Öğeyi Sil";
+"Cancel" = "İptal";
+"WidgetInfoMessage" = "Widgetta sadece 1 adet alışkanlık gösterilebilir";
