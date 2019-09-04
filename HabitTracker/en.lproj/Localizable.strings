@@ -67,3 +67,5 @@
 "DeleteItem" = "Delete This Item";
 "Cancel" = "Cancel";
 "WidgetInfoMessage" = "Only 1 habit could be shown on the widget";
+"Hours" = "Hours";
+"Hour" = "Hour";

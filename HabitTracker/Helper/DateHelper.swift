@@ -32,22 +32,42 @@ class DateHelper {
         let timezoneEpochOffset = (epochDate + Double(timezoneOffset))
         // 4) Finally, create a date using the seconds offset since 1970 for the local date.
         let timeZoneOffsetDate = Date(timeIntervalSince1970: timezoneEpochOffset)
-        let component = Set<Calendar.Component>([.day])
+        let component = Set<Calendar.Component>([.day, .hour])
         let differenceOfDate = calendar.dateComponents(component, from: selectedDate, to: timeZoneOffsetDate)
-        if let dayText: String = String(describing: differenceOfDate.day ?? 0) {
-            if differenceOfDate.day ?? 0 > 1 {
-                let systemLanguage = Locale.current.languageCode
-                if systemLanguage != "tr" {
-                    return dayText + " " + NSLocalizedString("Days", comment: "")
+        var counterText = ""
+        if differenceOfDate.day ?? 0 > 0 {
+            if let dayText: String = String(describing: differenceOfDate.day ?? 0) {
+                if differenceOfDate.day ?? 0 > 1 {
+                    let systemLanguage = Locale.current.languageCode
+                    if systemLanguage != "tr" {
+                        counterText = dayText + " " + NSLocalizedString("Days", comment: "") + " "
+                    }
+                    else {
+                        counterText = dayText + " " + NSLocalizedString("Day", comment: "") + " "
+                    }
                 }
                 else {
-                    return dayText + " " + NSLocalizedString("Day", comment: "")
+                    counterText = dayText + " " + NSLocalizedString("Day", comment: "") + " "
                 }
             }
-            else {
-                return dayText + " " + NSLocalizedString("Day", comment: "")
+        }
+        if differenceOfDate.hour ?? 0 > 0 {
+            if let hourText: String = String(describing: differenceOfDate.hour ?? 0) {
+                if differenceOfDate.hour ?? 0 > 1 {
+                    let systemLanguage = Locale.current.languageCode
+                    if systemLanguage != "tr" {
+                        counterText += hourText + " " + NSLocalizedString("Hours", comment: "")
+                    }
+                    else {
+                        counterText += hourText + " " + NSLocalizedString("Hour", comment: "")
+                    }
+                }
+                else {
+                    counterText += hourText + " " + NSLocalizedString("Hour", comment: "")
+                }
             }
         }
-        return "0 " + NSLocalizedString("Day", comment: "")
+        
+        return counterText
     }
 }
