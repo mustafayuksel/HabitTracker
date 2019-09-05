@@ -67,3 +67,7 @@
 "Cancel" = "İptal";
 "WidgetInfoMessage" = "Widgetta sadece 1 adet alışkanlık gösterilebilir";
 "Hour" = "Saat";
+"removeAds" = "Reklamları Kaldırın";
+"restorePurc" = "Satın Almaları Geri Yükle";
+"SmthWrong" = "Bir şeyler hatalı gitti";
+"PurchaseFailed" = "Satın alma gerçekleştirilemedi";

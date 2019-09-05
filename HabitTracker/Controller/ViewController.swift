@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, GADBannerViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var buttonLabel: UILabel!
@@ -16,6 +17,8 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     
     var habitEntityList : [HabitEntity] = []
     static var isSaveButtonClick:Bool!
+    var bannerView: GADBannerView!
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return habitEntityList.count
     }
@@ -54,7 +57,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
                 print("Delete")
                 self.habitEntityList = DatabaseHelper.app.getHabitEntityResults() as! [HabitEntity]
                 var identifiers : [String] = []
-            identifiers.append((self.habitEntityList[indexPath.row].notificationId?.uuidString.lowercased())!)
+                identifiers.append((self.habitEntityList[indexPath.row].notificationId?.uuidString.lowercased())!)
                 NotificationHelper.app.unscheduleNotification(identifiers: identifiers)
                 
                 DatabaseHelper.app.deleteHabitEntity(index: indexPath.row)
@@ -85,10 +88,8 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         UIApplication.shared.applicationIconBadgeNumber = 0
         self.navigationItem.hidesBackButton = true
         self.title = NSLocalizedString("HabitDayCounter", comment: "")
-        if ViewController.isSaveButtonClick == true {
-            ViewController.isSaveButtonClick = !ViewController.isSaveButtonClick
-            //callSecondFunction()
-        }
+        StoreReviewHelper.checkAndAskForReview()
+        
         buttonLabel.text = NSLocalizedString("NewHabitEvent", comment: "")
         habitEntityList = DatabaseHelper.app.getHabitEntityResults() as! [HabitEntity]
         tableView.dataSource = self
@@ -100,6 +101,19 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
             tableView.addSubview(refreshControl)
         }
         refreshControl.addTarget(self, action: #selector(refreshTable), for: .valueChanged)
+        
+        let removeAds = Constants.Defaults.value(forKey: Constants.Keys.RemoveAds)
+        
+        if removeAds == nil {
+            Constants.Defaults.set(false, forKey: Constants.Keys.RemoveAds)
+        }
+        
+        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        bannerView.adUnitID = "ca-app-pub-1847727001534987/9440673927"
+        bannerView.rootViewController = self
+        bannerView.delegate = self
+        bannerView.load(GADRequest())
+        addBannerViewToView(bannerView)
     }
     
     @IBAction func addButtonAction(_ sender: Any) {
@@ -111,5 +125,30 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     @objc private func refreshTable(_ sender: Any) {
         tableView.reloadData()
         self.refreshControl.endRefreshing()
+    }
+    
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+        let removeAds = Constants.Defaults.value(forKey: Constants.Keys.RemoveAds) as? Bool
+        
+        if removeAds == false {
+            bannerView.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(bannerView)
+            view.addConstraints(
+                [NSLayoutConstraint(item: bannerView,
+                                    attribute: .bottom,
+                                    relatedBy: .equal,
+                                    toItem: bottomLayoutGuide,
+                                    attribute: .top,
+                                    multiplier: 1,
+                                    constant: 0),
+                 NSLayoutConstraint(item: bannerView,
+                                    attribute: .centerX,
+                                    relatedBy: .equal,
+                                    toItem: view,
+                                    attribute: .centerX,
+                                    multiplier: 1,
+                                    constant: 0)
+                ])
+        }
     }
 }

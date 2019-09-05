@@ -69,3 +69,7 @@
 "WidgetInfoMessage" = "Only 1 habit could be shown on the widget";
 "Hours" = "Hours";
 "Hour" = "Hour";
+"removeAds" = "Remove Advertisements";
+"restorePurc" = "Restore Purchase";
+"SmthWrong" = "Something went wrong";
+"PurchaseFailed" = "Purchase failed";
