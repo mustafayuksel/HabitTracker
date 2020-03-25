@@ -71,3 +71,7 @@
 "restorePurc" = "Satın Almaları Geri Yükle";
 "SmthWrong" = "Bir şeyler hatalı gitti";
 "PurchaseFailed" = "Satın alma gerçekleştirilemedi";
+"PurchaseFailed" = "Satın alma gerçekleştirilemedi";
+"MissingField" = "Eksik alan bulunmaktadır.";
+"DateShouldBeEntered" = "Tarih bilgisi girilmelidir.";
+"TitleShouldBeEntered" = "Başlık bilgisi girilmelidir.";

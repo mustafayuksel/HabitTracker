@@ -29,7 +29,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
             let habitCategory = Int(habitEntityList[indexPath.row].habitCategory)
             let habitTitle = Int(habitEntityList[indexPath.row].habitTitle)
             if habitCategory != 0 {
-                cell.imageView?.image = UIImage(named: Constants.habitTitlesImages[habitCategory][habitTitle])
+                cell.imageView2.image = UIImage(named: Constants.habitTitlesImages[habitCategory][habitTitle])
             }
             else {
                 cell.imageView?.image = UIImage(named: "punctuality.png")
@@ -37,7 +37,8 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
             let startDate =  habitEntityList[indexPath.row].startDate
             let hour =  habitEntityList[indexPath.row].startHour
             let minute =  habitEntityList[indexPath.row].startMinute
-            cell.counter.text = DateHelper.app.calculateDays(startDate: startDate!, hour: Int(hour), minute: Int(minute))
+            let showYears = habitEntityList[indexPath.row].showYears
+            cell.counter.text = DateHelper.app.calculateDays(startDate: startDate!, hour: Int(hour), minute: Int(minute), isNotOnlyDays: showYears, showHours: false)
         }
         cell.preservesSuperviewLayoutMargins = false
         cell.separatorInset = UIEdgeInsets.zero
@@ -87,7 +88,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         super.viewDidLoad()
         UIApplication.shared.applicationIconBadgeNumber = 0
         self.navigationItem.hidesBackButton = true
-        self.title = NSLocalizedString("HabitDayCounter", comment: "")
+        self.navigationItem.title = NSLocalizedString("HabitDayCounter", comment: "")
         StoreReviewHelper.checkAndAskForReview()
         
         buttonLabel.text = NSLocalizedString("NewHabitEvent", comment: "")
@@ -126,7 +127,11 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         tableView.reloadData()
         self.refreshControl.endRefreshing()
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+    }
+    override func viewWillAppear(_ animated: Bool) {
+      self.navigationItem.title = NSLocalizedString("HabitDayCounter", comment: "")
+    }
     func addBannerViewToView(_ bannerView: GADBannerView) {
         let removeAds = Constants.Defaults.value(forKey: Constants.Keys.RemoveAds) as? Bool
         

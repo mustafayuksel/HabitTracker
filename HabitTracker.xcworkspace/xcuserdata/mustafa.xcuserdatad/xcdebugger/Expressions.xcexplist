@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "NotificationHelper.scheduleNotification(title:body:frequency:identifier:):NotificationHelper.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Date()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "SettingsViewController.tableView(_:didSelectRowAt:):SettingsViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -10,14 +18,6 @@
             </PersistentString>
             <PersistentString
                value = "indexPath.section">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "NotificationHelper.scheduleNotification(title:body:frequency:identifier:):NotificationHelper.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "Date()">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -67,6 +67,14 @@
             </PersistentString>
             <PersistentString
                value = "Locale.current">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "HabitCreatorController.viewDidLoad():HabitCreatorController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "titleOutlet">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

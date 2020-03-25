@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		452F456B22F627C6009E8210 /* HabitCategorySelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F456A22F627C6009E8210 /* HabitCategorySelectorController.swift */; };
 		4530A1CF23115C4500947C25 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4530A1CE23115C4500947C25 /* NotificationHelper.swift */; };
+		4534C00C24290AE0003AF5E4 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534C00B24290AE0003AF5E4 /* UIViewController.swift */; };
 		453BCD2523118A700082EDE1 /* ReminderFrequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453BCD2423118A700082EDE1 /* ReminderFrequency.swift */; };
 		453FF90222EB503C00214532 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453FF90122EB503C00214532 /* AppDelegate.swift */; };
 		453FF90422EB503C00214532 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453FF90322EB503C00214532 /* ViewController.swift */; };
@@ -46,7 +47,7 @@
 		45B523C32309E36300089212 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B523C22309E36300089212 /* CoreDataStack.swift */; };
 		45B523C42309E38500089212 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B3AEB522FF0C3E00AC43F9 /* Constants.swift */; };
 		45B523C72309E7C600089212 /* HabitTracker.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 453FF90822EB503C00214532 /* HabitTracker.xcdatamodeld */; };
-		45B7E8EF2321002700F81879 /* StoreReviewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7E8EE2321002700F81879 /* StoreReviewHelper.swift */; };
+		45BC2E802427663000C58A6D /* StoreReviewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7E8F02321002C00F81879 /* StoreReviewHelper.swift */; };
 		45BDE2A422EB8691004D7459 /* UnityAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45BDE2A322EB8691004D7459 /* UnityAds.framework */; };
 		45C260F4230C7B0800F3F6EE /* NSCustomPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C260F3230C7B0800F3F6EE /* NSCustomPersistentContainer.swift */; };
 		45C260F5230C7C0100F3F6EE /* NSCustomPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C260F3230C7B0800F3F6EE /* NSCustomPersistentContainer.swift */; };
@@ -101,6 +102,7 @@
 		31FC10C1735A4E1610E59204 /* Pods-HabitTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-HabitTracker/Pods-HabitTracker.release.xcconfig"; sourceTree = "<group>"; };
 		452F456A22F627C6009E8210 /* HabitCategorySelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCategorySelectorController.swift; sourceTree = "<group>"; };
 		4530A1CE23115C4500947C25 /* NotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
+		4534C00B24290AE0003AF5E4 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		453BCD2423118A700082EDE1 /* ReminderFrequency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderFrequency.swift; sourceTree = "<group>"; };
 		453FF8FE22EB503C00214532 /* HabitTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		453FF90122EB503C00214532 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -144,7 +146,6 @@
 		45B523BA2309E29500089212 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45B523C12309E2EF00089212 /* widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = widget.entitlements; sourceTree = "<group>"; };
 		45B523C22309E36300089212 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		45B7E8EE2321002700F81879 /* StoreReviewHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoreReviewHelper.swift; path = ../../LovelyDays/LovelyDays/StoreReviewHelper.swift; sourceTree = "<group>"; };
 		45B7E8F02321002C00F81879 /* StoreReviewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreReviewHelper.swift; sourceTree = "<group>"; };
 		45BDE2A322EB8691004D7459 /* UnityAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnityAds.framework; sourceTree = "<group>"; };
 		45C260F3230C7B0800F3F6EE /* NSCustomPersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCustomPersistentContainer.swift; sourceTree = "<group>"; };
@@ -230,7 +231,6 @@
 				453FF90D22EB503D00214532 /* LaunchScreen.storyboard */,
 				453FF91022EB503D00214532 /* Info.plist */,
 				453FF90822EB503C00214532 /* HabitTracker.xcdatamodeld */,
-				45B7E8EE2321002700F81879 /* StoreReviewHelper.swift */,
 				45B3AEB522FF0C3E00AC43F9 /* Constants.swift */,
 				45B3AF1022FF40C600AC43F9 /* Localizable.strings */,
 				45B3AF1522FF40D900AC43F9 /* Localizable.strings */,
@@ -298,6 +298,7 @@
 				4540FE032302A9DC00D8F990 /* ShowHabitViewController.swift */,
 				45A782052303156D0065C72A /* HabitEditViewController.swift */,
 				45A782072303432C0065C72A /* SettingsViewController.swift */,
+				4534C00B24290AE0003AF5E4 /* UIViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -468,6 +469,7 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				en,
 				Base,
 				tr,
 			);
@@ -556,24 +558,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-HabitTracker/Pods-HabitTracker-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/EFColorPicker/EFColorPicker.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-HabitTracker/Pods-HabitTracker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EFColorPicker.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-HabitTracker/Pods-HabitTracker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HabitTracker/Pods-HabitTracker-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HabitTracker/Pods-HabitTracker-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C4CF08ED346EFF869ADB74DC /* [CP] Check Pods Manifest.lock */ = {
@@ -610,7 +603,6 @@
 				453FF90422EB503C00214532 /* ViewController.swift in Sources */,
 				453FF90222EB503C00214532 /* AppDelegate.swift in Sources */,
 				4530A1CF23115C4500947C25 /* NotificationHelper.swift in Sources */,
-				45B7E8EF2321002700F81879 /* StoreReviewHelper.swift in Sources */,
 				45B3AEB422FF099700AC43F9 /* HabitTitleSelectorController.swift in Sources */,
 				45C260F5230C7C0100F3F6EE /* NSCustomPersistentContainer.swift in Sources */,
 				453FF90A22EB503C00214532 /* HabitTracker.xcdatamodeld in Sources */,
@@ -620,8 +612,10 @@
 				456D3E8B230021FA001C5D87 /* Habit.swift in Sources */,
 				45A782062303156D0065C72A /* HabitEditViewController.swift in Sources */,
 				45A782082303432C0065C72A /* SettingsViewController.swift in Sources */,
+				4534C00C24290AE0003AF5E4 /* UIViewController.swift in Sources */,
 				452F456B22F627C6009E8210 /* HabitCategorySelectorController.swift in Sources */,
 				4540FE062302AAC800D8F990 /* DateHelper.swift in Sources */,
+				45BC2E802427663000C58A6D /* StoreReviewHelper.swift in Sources */,
 				45718A5122FCAF5C00F78CCC /* HabitCreatorController.swift in Sources */,
 				4540FE042302A9DC00D8F990 /* ShowHabitViewController.swift in Sources */,
 			);
@@ -875,6 +869,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mustafayuksel.HabitTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -904,6 +899,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mustafayuksel.HabitTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -926,6 +922,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mustafayuksel.HabitTracker.onesignal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -948,6 +945,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mustafayuksel.HabitTracker.onesignal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1012,6 +1010,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mustafayuksel.HabitTracker.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1035,6 +1034,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mustafayuksel.HabitTracker.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

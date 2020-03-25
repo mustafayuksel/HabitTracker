@@ -55,10 +55,12 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                         let startDate = item.value(forKey: "startDate") as! String
                         let startHour = item.value(forKey: "startHour") as! Int
                         let startMinute = item.value(forKey: "startMinute") as! Int
+                        let showYears = item.value(forKey: "showYears") as! Bool
+                        let showHours = item.value(forKey: "showHours") as! Bool
                         if detailsText != nil {
                             habitLabel.text = detailsText as? String
                         }
-                        counterLabel.text = DateHelper.app.calculateDays(startDate: startDate, hour: Int(startHour), minute: Int(startMinute))
+                        counterLabel.text = DateHelper.app.calculateDays(startDate: startDate, hour: Int(startHour), minute: Int(startMinute), isNotOnlyDays: showYears, showHours: showHours)
                         imageView.image = UIImage(named: Constants.habitTitlesImages[habitCategory][habitTitle])
                         break
                     }

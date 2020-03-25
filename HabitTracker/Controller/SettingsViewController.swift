@@ -133,7 +133,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.dataSource = self
         tableView.delegate = self
         self.navigationController?.navigationBar.topItem?.title = NSLocalizedString("Back", comment: "")
-        self.title = NSLocalizedString("Settings", comment: "")
+        self.navigationItem.title = NSLocalizedString("Settings", comment: "")
         var section1 = [String]()
         section1.append(NSLocalizedString("Upgrade", comment: ""))
         section1.append(NSLocalizedString("Restore", comment: ""))

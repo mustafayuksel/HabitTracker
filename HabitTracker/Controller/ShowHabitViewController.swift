@@ -41,6 +41,8 @@ class ShowHabitViewController: UIViewController {
         let startDate =  habitEntityList[selectedHabit].startDate
         let hour =  habitEntityList[selectedHabit].startHour
         let minute =  habitEntityList[selectedHabit].startMinute
-        daysCounterLabel.text = DateHelper.app.calculateDays(startDate: startDate!, hour: Int(hour), minute: Int(minute))
+        let showYears = habitEntityList[selectedHabit].showYears
+        let showHours = habitEntityList[selectedHabit].showHours
+        daysCounterLabel.text = DateHelper.app.calculateDays(startDate: startDate!, hour: Int(hour), minute: Int(minute), isNotOnlyDays: showYears, showHours: showHours)
     }
 }

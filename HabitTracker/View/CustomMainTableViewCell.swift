@@ -11,4 +11,5 @@ import UIKit
 class CustomMainTableViewCell : UITableViewCell {
     @IBOutlet weak var counter: UILabel!
     @IBOutlet weak var details: UILabel!
+    @IBOutlet weak var imageView2: UIImageView!
 }
