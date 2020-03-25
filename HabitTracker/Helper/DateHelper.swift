@@ -17,83 +17,82 @@ class DateHelper {
     
     fileprivate func setHours(_ differenceOfDate: DateComponents, _ counterText: inout String) {
         if differenceOfDate.hour ?? 0 > 0 {
-            if let hourText: String = String(describing: differenceOfDate.hour ?? 0) {
-                if differenceOfDate.hour ?? 0 > 1 {
-                    if systemLanguage != "tr" {
-                        counterText += hourText + " " + NSLocalizedString("Hours", comment: "") + " "
-                    }
-                    else {
-                        counterText += hourText + " " + NSLocalizedString("Hour", comment: "") + " "
-                    }
+            let hourText = String(describing: differenceOfDate.hour ?? 0)
+            if differenceOfDate.hour ?? 0 > 1 {
+                if systemLanguage != "tr" {
+                    counterText += hourText + " " + NSLocalizedString("Hours", comment: "") + " "
                 }
                 else {
                     counterText += hourText + " " + NSLocalizedString("Hour", comment: "") + " "
                 }
             }
+            else {
+                counterText += hourText + " " + NSLocalizedString("Hour", comment: "") + " "
+            }
         }
+        
         if differenceOfDate.minute ?? 0 > 0 {
-            if let minuteText: String = String(describing: differenceOfDate.minute ?? 0) {
-                if differenceOfDate.minute ?? 0 > 1 {
-                    if systemLanguage != "tr" {
-                        counterText += minuteText + " " + NSLocalizedString("Minutes", comment: "") + " "
-                    }
-                    else {
-                        counterText += minuteText + " " + NSLocalizedString("Minute", comment: "") + " "
-                    }
+            let minuteText = String(differenceOfDate.minute ?? 0)
+            if differenceOfDate.minute ?? 0 > 1 {
+                if systemLanguage != "tr" {
+                    counterText += minuteText + " " + NSLocalizedString("Minutes", comment: "") + " "
                 }
                 else {
                     counterText += minuteText + " " + NSLocalizedString("Minute", comment: "") + " "
                 }
             }
+            else {
+                counterText += minuteText + " " + NSLocalizedString("Minute", comment: "") + " "
+            }
         }
     }
     
     fileprivate func setDays(_ differenceOfDate: DateComponents, _ counterText: inout String) {
-        if let dayText: String = String(describing: differenceOfDate.day ?? 0) {
-            if differenceOfDate.day ?? 0 > 1 {
-                if systemLanguage != "tr" {
-                    counterText += dayText + " " + NSLocalizedString("Days", comment: "") + " "
-                }
-                else {
-                    counterText += dayText + " " + NSLocalizedString("Day", comment: "") + " "
-                }
+        let dayText = String(differenceOfDate.day ?? 0)
+        if differenceOfDate.day ?? 0 > 1 {
+            if systemLanguage != "tr" {
+                counterText += dayText + " " + NSLocalizedString("Days", comment: "") + " "
             }
             else {
                 counterText += dayText + " " + NSLocalizedString("Day", comment: "") + " "
             }
         }
+        else {
+            counterText += dayText + " " + NSLocalizedString("Day", comment: "") + " "
+        }
     }
     
+    
     fileprivate func setYears(_ differenceOfDate: DateComponents, _ counterText: inout String) {
-        if let dayText: String = String(describing: differenceOfDate.year ?? 0) {
-            if differenceOfDate.year ?? 0 > 1 {
-                if systemLanguage != "tr" {
-                    counterText = dayText + " " + NSLocalizedString("Years", comment: "") + " "
-                }
-                else {
-                    counterText = dayText + " " + NSLocalizedString("Year", comment: "") + " "
-                }
+        let dayText = String( differenceOfDate.year ?? 0)
+        if differenceOfDate.year ?? 0 > 1 {
+            if systemLanguage != "tr" {
+                counterText = dayText + " " + NSLocalizedString("Years", comment: "") + " "
             }
             else {
                 counterText = dayText + " " + NSLocalizedString("Year", comment: "") + " "
             }
         }
+        else {
+            counterText = dayText + " " + NSLocalizedString("Year", comment: "") + " "
+        }
+        
     }
     
     fileprivate func setMonths(_ differenceOfDate: DateComponents, _ counterText: inout String) {
-        if let dayText: String = String(describing: differenceOfDate.month ?? 0) {
-            if differenceOfDate.month ?? 0 > 1 {
-                if systemLanguage != "tr" {
-                    counterText += dayText + " " + NSLocalizedString("Months", comment: "") + " "
-                }
-                else {
-                    counterText += dayText + " " + NSLocalizedString("Month", comment: "") + " "
-                }
+        let dayText = String( differenceOfDate.month ?? 0)
+        if differenceOfDate.month ?? 0 > 1 {
+            if systemLanguage != "tr" {
+                counterText += dayText + " " + NSLocalizedString("Months", comment: "") + " "
             }
             else {
                 counterText += dayText + " " + NSLocalizedString("Month", comment: "") + " "
             }
         }
+        else {
+            counterText += dayText + " " + NSLocalizedString("Month", comment: "") + " "
+        }
+        
     }
     
     func calculateDays (startDate : String, hour : Int, minute : Int, isNotOnlyDays : Bool, showHours : Bool) -> String {

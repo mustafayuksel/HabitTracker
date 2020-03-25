@@ -95,8 +95,8 @@ class HabitEditViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dateOutlet.placeholder = NSLocalizedString("Date", comment: "")
-        timeOutlet.placeholder = NSLocalizedString("Time", comment: "")
+        dateOutlet.placeholder = "  " + NSLocalizedString("Date", comment: "")
+        timeOutlet.placeholder = "  " + NSLocalizedString("Time", comment: "")
         showWidgetLabel.text =  NSLocalizedString("SetPrimaryForWidget", comment: "")
         reminderFrequencyLabel.text = NSLocalizedString("ReminderFrequency", comment: "")
         updateButton.title = NSLocalizedString("Update", comment: "")
@@ -112,7 +112,11 @@ class HabitEditViewController : UIViewController {
         dateOutlet.addTarget(self, action: #selector(showDatePicker), for: .editingDidBegin)
         dateOutlet.inputView = UIView()
         
-        timeOutlet.text = "  " + String(habitEntityList[selectedHabit].startHour) + " : " + String(habitEntityList[selectedHabit].startHour)
+        let startHour = habitEntityList[selectedHabit].startHour
+        let startMinute = habitEntityList[selectedHabit].startMinute
+        if startHour > 0 || startMinute > 0 {
+            timeOutlet.text = "  " + String(startHour) + " : " + String(startMinute)
+        }
         timeOutlet.addTarget(self, action: #selector(showTimePicker), for: .editingDidBegin)
         timeOutlet.inputView = UIView()
         
@@ -173,15 +177,23 @@ class HabitEditViewController : UIViewController {
         let cancelButton = UIBarButtonItem(title: NSLocalizedString("Cancel", comment: ""), style: .plain, target: self, action: #selector(cancelTimePicker));
         
         toolbar.setItems([cancelButton,spaceButton,doneButton], animated: false)
+        var hour = 0
+        var minute = 0
         let timeArray = timeOutlet.text?.trimmingCharacters(in: .whitespaces).split(separator: ":")
-        let hour = timeArray?[0].trimmingCharacters(in: .whitespaces) ?? "0"
-        let minute = timeArray?[1].trimmingCharacters(in: .whitespaces) ?? "0"
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat =  "HH:mm"
+        if !(timeArray?.isEmpty ?? true) {
+            hour = Int(timeArray?[0].trimmingCharacters(in: .whitespaces) ?? "0") ?? 0
+            minute = Int(timeArray?[1].trimmingCharacters(in: .whitespaces) ?? "0") ?? 0
+        }
+        if hour > 0 || minute > 0 {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat =  "HH:mm"
+            let parsedDate = String(hour) + ":" + String(minute)
+            let date = dateFormatter.date(from: parsedDate)
+            timePicker.date = date ?? Date()
+        }
+        
 
-        let date = dateFormatter.date(from: hour + ":" + minute)
-
-        timePicker.date = date ?? Date()
+        
         timeOutlet.inputAccessoryView = toolbar
         timeOutlet.inputView = timePicker
     }
