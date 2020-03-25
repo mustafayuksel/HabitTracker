@@ -69,8 +69,13 @@ class HabitCreatorController: UIViewController {
         let showHours = showHourSwitchOutlet.isOn
         let uuid = UUID()
         let timeArray = timeOutlet.text!.trimmingCharacters(in: .whitespaces).split(separator: ":")
-        let hour = Int(timeArray[0].trimmingCharacters(in: .whitespaces))!
-        let minute = Int(timeArray[1].trimmingCharacters(in: .whitespaces))!
+        var hour = 0
+        var minute = 0
+        if !timeArray.isEmpty {
+            hour = Int(timeArray[0].trimmingCharacters(in: .whitespaces)) ?? 0
+            minute = Int(timeArray[1].trimmingCharacters(in: .whitespaces)) ?? 0
+        }
+        
         let reminderFrequencyRawValue = frequencySegmentOutlet.selectedSegmentIndex
         let habitEntity = Habit(name: title!, habitCategory: selectedCategory, habitTitle: selectedTitle, reminderFrequency: reminderFrequencyRawValue, startDate: date, startHour: hour, startMinute : minute, isPrimary : isPrimary, notificationId : uuid, showYears : showYears, showHours : showHours)
         DatabaseHelper.app.insertHabitEntity(data: habitEntity)
@@ -145,6 +150,11 @@ class HabitCreatorController: UIViewController {
         let cancelButton = UIBarButtonItem(title: NSLocalizedString("Cancel", comment: ""), style: .plain, target: self, action: #selector(cancelDatePicker));
         
         toolbar.setItems([cancelButton,spaceButton,doneButton], animated: false)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        dateFormatter.locale = Locale.current
+        let date = dateFormatter.date(from:dateOutlet.text?.trimmingCharacters(in: .whitespaces) ?? Date().description)
+        datePicker.date = date ?? Date()
         datePicker.maximumDate = Date()
         dateOutlet.inputAccessoryView = toolbar
         dateOutlet.inputView = datePicker
@@ -158,7 +168,16 @@ class HabitCreatorController: UIViewController {
         let doneButton = UIBarButtonItem(title: NSLocalizedString("Done", comment: ""), style: .plain, target: self, action: #selector(doneTimePicker));
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
         let cancelButton = UIBarButtonItem(title: NSLocalizedString("Cancel", comment: ""), style: .plain, target: self, action: #selector(cancelTimePicker));
-        
+        let time = timeOutlet.text?.trimmingCharacters(in: .whitespaces)
+        if !(time?.isEmpty ?? true) {
+            let timeArray = timeOutlet.text?.trimmingCharacters(in: .whitespaces).split(separator: ":")
+            let hour = timeArray?[0].trimmingCharacters(in: .whitespaces) ?? "0"
+            let minute = timeArray?[1].trimmingCharacters(in: .whitespaces) ?? "0"
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat =  "HH:mm"
+            let date = dateFormatter.date(from: hour + ":" + minute)
+            timePicker.date = date ?? Date()
+        }
         toolbar.setItems([cancelButton,spaceButton,doneButton], animated: false)
         timeOutlet.inputAccessoryView = toolbar
         timeOutlet.inputView = timePicker

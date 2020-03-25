@@ -173,6 +173,15 @@ class HabitEditViewController : UIViewController {
         let cancelButton = UIBarButtonItem(title: NSLocalizedString("Cancel", comment: ""), style: .plain, target: self, action: #selector(cancelTimePicker));
         
         toolbar.setItems([cancelButton,spaceButton,doneButton], animated: false)
+        let timeArray = timeOutlet.text?.trimmingCharacters(in: .whitespaces).split(separator: ":")
+        let hour = timeArray?[0].trimmingCharacters(in: .whitespaces) ?? "0"
+        let minute = timeArray?[1].trimmingCharacters(in: .whitespaces) ?? "0"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat =  "HH:mm"
+
+        let date = dateFormatter.date(from: hour + ":" + minute)
+
+        timePicker.date = date ?? Date()
         timeOutlet.inputAccessoryView = toolbar
         timeOutlet.inputView = timePicker
     }
