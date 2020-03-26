@@ -76,3 +76,8 @@
 "DateShouldBeEntered" = "Tarih bilgisi girilmelidir.";
 "TitleShouldBeEntered" = "Başlık bilgisi girilmelidir.";
 "PassedTime" = "Geçen Zaman";
+"Year" = "Yıl";
+"Month" = "Ay";
+"Hour" = "Saat";
+"Minute" = "Dakika";
+"Passed" = "Geçti";

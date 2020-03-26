@@ -114,12 +114,20 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LHv-HB-vmX">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="settings.png" id="4bz-rY-vIl">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <action selector="settingsAction:" destination="BYZ-38-t0r" id="lmo-aO-CH8"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="settings.png" id="4bz-rY-vIl">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="settingsAction:" destination="BYZ-38-t0r" id="lmo-aO-CH8"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="share" id="wxL-DH-VZp">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="shareButtonAction:" destination="BYZ-38-t0r" id="XLT-fd-6iS"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="buttonLabel" destination="uv2-j0-FdP" id="gBs-wE-k3A"/>
@@ -186,6 +194,7 @@
                     <connections>
                         <outlet property="tableView" destination="IBa-r3-3si" id="Gmz-GP-JIu"/>
                         <segue destination="l2h-GA-9OV" kind="show" identifier="toHabitTitleSelectorVC" id="0b6-wi-ncu"/>
+                        <segue destination="gBB-1d-yDq" kind="show" identifier="toCreateHabitVC" id="Xbv-Gu-w7B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eTg-f6-U5I" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -593,7 +602,14 @@
                             <constraint firstItem="Vdp-zW-cBt" firstAttribute="top" secondItem="0ev-yP-Tjp" secondAttribute="topMargin" id="veY-ej-wr3"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="f92-cD-XD8"/>
+                    <navigationItem key="navigationItem" id="f92-cD-XD8">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="share" id="01P-Tq-DGO">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="shareButtonAction:" destination="4f3-A4-vuj" id="XLr-rp-ZT3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Vdp-zW-cBt" id="vQU-jo-E0e"/>
                     </connections>
@@ -618,7 +634,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="mainCell" editingAccessoryType="disclosureIndicator" rowHeight="100" id="kxF-2K-fJK" customClass="CustomShowHabitTableViewCell" customModule="HabitTracker" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="mainCell" editingAccessoryType="disclosureIndicator" rowHeight="100" id="kxF-2K-fJK" customClass="CustomShowHabitTableViewCell" customModule="HabitTracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kxF-2K-fJK" id="uQD-GV-ZYr">
@@ -653,6 +669,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="UGh-uI-pNl" firstAttribute="top" secondItem="uQD-GV-ZYr" secondAttribute="topMargin" constant="15" id="Gqs-VL-cdf"/>
                                                 <constraint firstItem="pme-kr-GaR" firstAttribute="centerY" secondItem="uQD-GV-ZYr" secondAttribute="centerY" constant="6.25" id="HEn-nQ-31X"/>
@@ -664,6 +681,7 @@
                                                 <constraint firstItem="UGh-uI-pNl" firstAttribute="leading" secondItem="3jS-TK-Nce" secondAttribute="leading" id="s1x-C3-zHw"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="detail" destination="3jS-TK-Nce" id="TsN-x4-4lp"/>
                                             <outlet property="iconImage" destination="pme-kr-GaR" id="K9n-j8-Utc"/>
@@ -950,12 +968,14 @@
         <image name="edit2" width="24" height="24"/>
         <image name="plus.png" width="512" height="512"/>
         <image name="settings.png" width="24" height="24"/>
+        <image name="share" width="24" height="24"/>
         <image name="share.png" width="24" height="24"/>
         <image name="update.png" width="60" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="D33-G5-xFk"/>
-        <segue reference="dca-Pr-5bB"/>
+        <segue reference="4nE-QR-eML"/>
+        <segue reference="Xbv-Gu-w7B"/>
+        <segue reference="h8s-Nv-4zo"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

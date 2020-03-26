@@ -20,8 +20,6 @@ class ShowHabitDetailsViewController: UIViewController, UITableViewDelegate, UIT
         tableView.delegate = self
         tableView.tableFooterView = UIView()
         selectedHabit = DatabaseHelper.app.getHabitEntityResults()[selectedHabitIndex]
-        //toShowDetailsVC
-        // Do any additional setup after loading the view.
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -59,6 +57,24 @@ class ShowHabitDetailsViewController: UIViewController, UITableViewDelegate, UIT
         }
         let text = "\(selectedHabit?.name ?? ""),\(dateDetails )\n\(cellText ) !"
         let activityViewController = UIActivityViewController(activityItems: [text], applicationActivities: nil)
+        let excludeActivities = [UIActivity.ActivityType.postToFacebook, UIActivity.ActivityType.postToTwitter, UIActivity.ActivityType.message, UIActivity.ActivityType.mail]
+        activityViewController.excludedActivityTypes = excludeActivities
+        if (UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad)
+        {
+            activityViewController.popoverPresentationController!.permittedArrowDirections = []
+            activityViewController.popoverPresentationController!.sourceView = self.view
+            activityViewController.popoverPresentationController!.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+        }
+        self.present(activityViewController, animated: true, completion: nil)
+    }
+    
+    @IBAction func shareButtonAction(_ sender: Any) {
+        let bounds = UIScreen.main.bounds
+        UIGraphicsBeginImageContextWithOptions(bounds.size, true, 0.0)
+        self.view.drawHierarchy(in: bounds, afterScreenUpdates: false)
+        let img = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        let activityViewController = UIActivityViewController(activityItems: [img!], applicationActivities: nil)
         let excludeActivities = [UIActivity.ActivityType.postToFacebook, UIActivity.ActivityType.postToTwitter, UIActivity.ActivityType.message, UIActivity.ActivityType.mail]
         activityViewController.excludedActivityTypes = excludeActivities
         if (UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad)

@@ -81,6 +81,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         return [deleteAction, editAction]
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         Constants.Defaults.set(indexPath.row, forKey: Constants.Keys.SelectedHabit)
         performSegue(withIdentifier: "toShowHabitVC", sender: nil)
     }
@@ -130,7 +131,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     override func viewDidAppear(_ animated: Bool) {
     }
     override func viewWillAppear(_ animated: Bool) {
-      self.navigationItem.title = NSLocalizedString("HabitDayCounter", comment: "")
+        self.navigationItem.title = NSLocalizedString("HabitDayCounter", comment: "")
     }
     func addBannerViewToView(_ bannerView: GADBannerView) {
         let removeAds = Constants.Defaults.value(forKey: Constants.Keys.RemoveAds) as? Bool
@@ -153,7 +154,25 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
                                     attribute: .centerX,
                                     multiplier: 1,
                                     constant: 0)
-                ])
+            ])
         }
+    }
+    
+    @IBAction func shareButtonAction(_ sender: Any) {
+        let bounds = UIScreen.main.bounds
+        UIGraphicsBeginImageContextWithOptions(bounds.size, true, 0.0)
+        self.view.drawHierarchy(in: bounds, afterScreenUpdates: false)
+        let img = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        let activityViewController = UIActivityViewController(activityItems: [img!], applicationActivities: nil)
+        let excludeActivities = [UIActivity.ActivityType.postToFacebook, UIActivity.ActivityType.postToTwitter, UIActivity.ActivityType.message, UIActivity.ActivityType.mail]
+        activityViewController.excludedActivityTypes = excludeActivities
+        if (UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad)
+        {
+            activityViewController.popoverPresentationController!.permittedArrowDirections = []
+            activityViewController.popoverPresentationController!.sourceView = self.view
+            activityViewController.popoverPresentationController!.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+        }
+        self.present(activityViewController, animated: true, completion: nil)
     }
 }

@@ -57,7 +57,7 @@
 "MoreApps" = "More Apps";
 "Subscription" = "Subscription";
 "Support" = "Support";
-"HabitDayCounter" = "Habit Day Counter";
+"HabitDayCounter" = "Habit Tracker";
 "Back" = "Back";
 "Settings" = "Settings";
 "PickCategory" = "Pick a Category";
@@ -77,3 +77,12 @@
 "TitleShouldBeEntered" = "Title information must be entered.";
 "DateShouldBeEntered" = "Date information must be entered.";
 "PassedTime" = "Passed Time";
+"Year" = "Year";
+"Month" = "Month";
+"Years" = "Years";
+"Months" = "Months";
+"Hour" = "Hour";
+"Minute" = "Minute";
+"Hours" = "Hours";
+"Minutes" = "Minutes";
+"Passed" = "Passed";

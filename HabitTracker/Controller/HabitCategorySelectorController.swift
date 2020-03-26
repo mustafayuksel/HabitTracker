@@ -25,12 +25,11 @@ class HabitCategorySelectorController: UIViewController,UITableViewDelegate, UIT
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        Constants.Defaults.set(indexPath.row, forKey: Constants.Keys.SelectedCategory)
         if indexPath.row == 0 {
-            Constants.Defaults.set(0, forKey: Constants.Keys.SelectedCategory)
-            performSegue(withIdentifier: "toCreateHabitOwnVC", sender: nil)
+            performSegue(withIdentifier: "toCreateHabitVC", sender: nil)
         }
         else{
-            Constants.Defaults.set(indexPath.row, forKey: Constants.Keys.SelectedCategory)
             performSegue(withIdentifier: "toHabitTitleSelectorVC", sender: nil)
         }
     }

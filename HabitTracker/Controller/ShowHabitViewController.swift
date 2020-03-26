@@ -67,7 +67,10 @@ class ShowHabitViewController: UIViewController ,UITableViewDelegate, UITableVie
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        Constants.Defaults.set(indexPath.row, forKey: Constants.Keys.SelectedHabit)
-        performSegue(withIdentifier: "toShowDetailsVC", sender: nil)
+        tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.row == 0 {
+            Constants.Defaults.set(selectedHabitIndex, forKey: Constants.Keys.SelectedHabit)
+            performSegue(withIdentifier: "toShowDetailsVC", sender: nil)
+        }
     }
 }
