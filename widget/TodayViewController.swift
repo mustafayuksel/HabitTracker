@@ -61,7 +61,12 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                             habitLabel.text = detailsText as? String
                         }
                         counterLabel.text = DateHelper.app.calculateDays(startDate: startDate, hour: Int(startHour), minute: Int(startMinute), isNotOnlyDays: showYears, showHours: showHours, hasSuffix: true)
-                        imageView.image = UIImage(named: Constants.habitTitlesImages[habitCategory][habitTitle])
+                        if habitCategory == 0 {
+                            imageView.image = UIImage(named: "time.png")
+                        }
+                        else {
+                            imageView.image = UIImage(named: Constants.habitTitlesImages[habitCategory][habitTitle])
+                        }
                         break
                     }
                 }

@@ -32,7 +32,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
                 cell.imageView2.image = UIImage(named: Constants.habitTitlesImages[habitCategory][habitTitle])
             }
             else {
-                cell.imageView?.image = UIImage(named: "punctuality.png")
+                cell.imageView2.image = UIImage(named: "time.png")
             }
             let startDate =  habitEntityList[indexPath.row].startDate
             let hour =  habitEntityList[indexPath.row].startHour

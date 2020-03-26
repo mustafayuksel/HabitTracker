@@ -12,7 +12,7 @@ import GoogleMobileAds
 class ShowHabitViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource, GADBannerViewDelegate{
     let selectedHabitIndex : Int = Constants.Defaults.value(forKey: Constants.Keys.SelectedHabit) as! Int
     
-    let showHabitImages = ["medal.png", "calendar.png"]
+    let showHabitImages = ["timer.png", "calendar.png"]
     @IBOutlet weak var tableView: UITableView!
     
     @IBAction func editButtonAction(_ sender: Any) {
