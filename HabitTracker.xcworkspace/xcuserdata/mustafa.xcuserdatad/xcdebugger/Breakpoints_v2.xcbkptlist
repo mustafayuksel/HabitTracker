@@ -707,7 +707,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "114"
             endingLineNumber = "114"
-            landmarkName = "calculateDays(startDate:hour:minute:isNotOnlyDays:showHours:)"
+            landmarkName = "calculateDays(startDate:hour:minute:isNotOnlyDays:showHours:hasSuffix:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -723,7 +723,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "103"
             endingLineNumber = "103"
-            landmarkName = "calculateDays(startDate:hour:minute:isNotOnlyDays:showHours:)"
+            landmarkName = "calculateDays(startDate:hour:minute:isNotOnlyDays:showHours:hasSuffix:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -739,7 +739,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "117"
             endingLineNumber = "117"
-            landmarkName = "calculateDays(startDate:hour:minute:isNotOnlyDays:showHours:)"
+            landmarkName = "calculateDays(startDate:hour:minute:isNotOnlyDays:showHours:hasSuffix:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -755,7 +755,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "116"
             endingLineNumber = "116"
-            landmarkName = "calculateDays(startDate:hour:minute:isNotOnlyDays:showHours:)"
+            landmarkName = "calculateDays(startDate:hour:minute:isNotOnlyDays:showHours:hasSuffix:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -835,7 +835,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "107"
             endingLineNumber = "107"
-            landmarkName = "calculateDays(startDate:hour:minute:isNotOnlyDays:showHours:)"
+            landmarkName = "calculateDays(startDate:hour:minute:isNotOnlyDays:showHours:hasSuffix:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -868,6 +868,22 @@
             startingLineNumber = "42"
             endingLineNumber = "42"
             landmarkName = "prepareWidget()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1F0398F3-EDA2-4E5B-A061-BB1A842459DE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HabitTracker/Controller/ShowHabitViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

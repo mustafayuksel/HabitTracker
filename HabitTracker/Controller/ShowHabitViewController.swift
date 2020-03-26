@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class ShowHabitViewController: UIViewController {
-    var selectedHabit : Int = Constants.Defaults.value(forKey: Constants.Keys.SelectedHabit) as! Int
-    var habitEntityList : [HabitEntity] = []
-    @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var icon: UIImageView!
-    @IBOutlet var daysCounterLabel: UILabel!
+class ShowHabitViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource, GADBannerViewDelegate{
+    let selectedHabitIndex : Int = Constants.Defaults.value(forKey: Constants.Keys.SelectedHabit) as! Int
     
+    let showHabitImages = ["medal.png", "calendar.png"]
+    @IBOutlet weak var tableView: UITableView!
+    
+    @IBAction func editButtonAction(_ sender: Any) {
+        Constants.Defaults.set(selectedHabitIndex, forKey: Constants.Keys.SelectedHabit)
+        self.performSegue(withIdentifier: "toHabitEditVC", sender: nil)
+    }
     @IBAction func shareButtonAction(_ sender: Any) {
         let bounds = UIScreen.main.bounds
         UIGraphicsBeginImageContextWithOptions(bounds.size, true, 0.0)
@@ -35,14 +39,35 @@ class ShowHabitViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        habitEntityList = DatabaseHelper.app.getHabitEntityResults() as! [HabitEntity]
-        titleLabel.text = habitEntityList[selectedHabit].name
-        icon.image = UIImage(named: Constants.habitTitlesImages[Int(habitEntityList[selectedHabit].habitCategory)][Int(habitEntityList[selectedHabit].habitTitle)])
-        let startDate =  habitEntityList[selectedHabit].startDate
-        let hour =  habitEntityList[selectedHabit].startHour
-        let minute =  habitEntityList[selectedHabit].startMinute
-        let showYears = habitEntityList[selectedHabit].showYears
-        let showHours = habitEntityList[selectedHabit].showHours
-        daysCounterLabel.text = DateHelper.app.calculateDays(startDate: startDate!, hour: Int(hour), minute: Int(minute), isNotOnlyDays: showYears, showHours: showHours)
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.tableFooterView = UIView()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return showHabitImages.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "mainCell", for: indexPath) as! CustomShowHabitTableViewCell
+        cell.iconImage.image = UIImage(named : showHabitImages[indexPath.row])
+        let selectedHabit = DatabaseHelper.app.getHabitEntityResults()[selectedHabitIndex]
+        let hour =  selectedHabit!.startHour
+        let minute =  selectedHabit!.startMinute
+        if indexPath.row == 0 {
+            cell.title.text = NSLocalizedString("PassedTime", comment: "")
+            cell.detail.text = DateHelper.app.calculateDays(startDate: selectedHabit?.startDate ?? Date().description, hour: Int(hour), minute: Int(minute), isNotOnlyDays: selectedHabit?.showYears ?? true, showHours: false,  hasSuffix: false)
+        }
+        else if indexPath.row == 1 {
+            cell.title.text = NSLocalizedString("Date", comment: "")
+            cell.detail.text = DateHelper.selectedDateToFormattedString(startDate: selectedHabit?.startDate ?? Date().description)
+        }
+        cell.preservesSuperviewLayoutMargins = false
+        cell.separatorInset = UIEdgeInsets.zero
+        cell.layoutMargins = UIEdgeInsets.zero
+        return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        Constants.Defaults.set(indexPath.row, forKey: Constants.Keys.SelectedHabit)
+        performSegue(withIdentifier: "toShowDetailsVC", sender: nil)
     }
 }

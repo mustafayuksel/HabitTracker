@@ -76,3 +76,4 @@
 "MissingField" = "There is a missing field.";
 "TitleShouldBeEntered" = "Title information must be entered.";
 "DateShouldBeEntered" = "Date information must be entered.";
+"PassedTime" = "Passed Time";

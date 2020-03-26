@@ -38,7 +38,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
             let hour =  habitEntityList[indexPath.row].startHour
             let minute =  habitEntityList[indexPath.row].startMinute
             let showYears = habitEntityList[indexPath.row].showYears
-            cell.counter.text = DateHelper.app.calculateDays(startDate: startDate!, hour: Int(hour), minute: Int(minute), isNotOnlyDays: showYears, showHours: false)
+            cell.counter.text = DateHelper.app.calculateDays(startDate: startDate!, hour: Int(hour), minute: Int(minute), isNotOnlyDays: showYears, showHours: false, hasSuffix:  true)
         }
         cell.preservesSuperviewLayoutMargins = false
         cell.separatorInset = UIEdgeInsets.zero
