@@ -14,7 +14,7 @@ class NotificationHelper: NSObject, UNUserNotificationCenterDelegate {
         return NotificationHelper()
     }()
     let notificationCenter = UNUserNotificationCenter.current()
-    
+    static var notificationIdInProgress = false
     func userRequest() {
         
         let options: UNAuthorizationOptions = [.alert, .sound, .badge]
@@ -85,34 +85,22 @@ class NotificationHelper: NSObject, UNUserNotificationCenterDelegate {
     func unscheduleNotification(identifiers : [String]){
         notificationCenter.removePendingNotificationRequests(withIdentifiers: identifiers)
     }
-    /*func userNotificationCenter(_ center: UNUserNotificationCenter,
-     willPresent notification: UNNotification,
-     withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-     
-     completionHandler([.alert,.sound])
-     }
-     
-     func userNotificationCenter(_ center: UNUserNotificationCenter,
-     didReceive response: UNNotificationResponse,
-     withCompletionHandler completionHandler: @escaping () -> Void) {
-     
-     if response.notification.request.identifier == "Local Notification" {
-     print("Handling notifications with the Local Notification Identifier")
-     }
-     
-     switch response.actionIdentifier {
-     case UNNotificationDismissActionIdentifier:
-     print("Dismiss Action")
-     case UNNotificationDefaultActionIdentifier:
-     print("Default")
-     case "Snooze":
-     print("Snooze")
-     scheduleNotification(notificationType: "sdfd")
-     case "Delete":
-     print("Delete")
-     default:
-     print("Unknown action")
-     }
-     completionHandler()
-     }*/
+    
+    func sendNotificationId(playerId : String){
+        let systemLanguage = Locale.current.languageCode
+        let request = ["applicationMnemonic":"HabitTracker", "associationStartDate": "", "language" : systemLanguage ?? "", "notificationId" : playerId, "timeZone" : ""]
+        NotificationHelper.notificationIdInProgress = true
+        let url = Constants.notificationServerUrl + "users/"
+        ApiUtil.app.call(url: url, request: request, httpMethod: "POST"){ (response) -> () in
+            print(response)
+            NotificationHelper.notificationIdInProgress = false
+            if let isSuccess = response["success"] as? Bool {
+                if isSuccess {
+                    if let response = response["response"] as? String {
+                        Constants.Defaults.set(response, forKey: Constants.Keys.UserId)
+                    }
+                }
+            }
+        }
+    }
 }

@@ -25,11 +25,14 @@ class Constants {
     
     static let MAIL_ADDRESS = "habitdaycounter@gmail.com"
     
+    static let notificationServerUrl = "https://notification-server-prod.herokuapp.com/"
+    
     struct Keys {
         static let SelectedCategory = "selectedCategory"
         static let SelectedTitle = "selectedTitle"
         static let SelectedHabit = "selectedHabit"
         static let RemoveAds = "removeAds"
         static let AppCount = "appCount"
+        static let UserId = "userId"
     }
 }

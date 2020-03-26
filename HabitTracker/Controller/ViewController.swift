@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMobileAds
+import OneSignal
 
 class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, GADBannerViewDelegate {
     
@@ -91,6 +92,14 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         self.navigationItem.hidesBackButton = true
         self.navigationItem.title = NSLocalizedString("HabitDayCounter", comment: "")
         StoreReviewHelper.checkAndAskForReview()
+        let userId = Constants.Defaults.value(forKey: Constants.Keys.UserId) as? String
+        if (userId ?? "").isEmpty {
+            Timer.scheduledTimer(timeInterval: 10,
+                                 target: self,
+                                 selector: #selector(self.checkPlayerId),
+                                 userInfo: nil,
+                                 repeats: true)
+        }
         
         buttonLabel.text = NSLocalizedString("NewHabitEvent", comment: "")
         habitEntityList = DatabaseHelper.app.getHabitEntityResults() as! [HabitEntity]
@@ -174,5 +183,15 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
             activityViewController.popoverPresentationController!.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
         }
         self.present(activityViewController, animated: true, completion: nil)
+    }
+    
+    @objc func checkPlayerId() {
+        let userId = Constants.Defaults.value(forKey: Constants.Keys.UserId) as? String
+        if (userId ?? "").isEmpty {
+            let playerId = OneSignal.getPermissionSubscriptionState().subscriptionStatus.userId
+            if playerId != nil {
+                NotificationHelper.init().sendNotificationId(playerId: playerId!)
+            }
+        }
     }
 }

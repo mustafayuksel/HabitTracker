@@ -12,6 +12,7 @@
 		4533BDBA242CC1C000323CA7 /* CustomShowHabitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4533BDB9242CC1C000323CA7 /* CustomShowHabitTableViewCell.swift */; };
 		4533BDBC242CD07E00323CA7 /* ShowHabitDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4533BDBB242CD07E00323CA7 /* ShowHabitDetailsViewController.swift */; };
 		4533BDBE242CD9AA00323CA7 /* CustomShowHabitDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4533BDBD242CD9AA00323CA7 /* CustomShowHabitDetailsTableViewCell.swift */; };
+		4533BDC0242D40DD00323CA7 /* ApiUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4533BDBF242D40DD00323CA7 /* ApiUtil.swift */; };
 		4534C00C24290AE0003AF5E4 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534C00B24290AE0003AF5E4 /* UIViewController.swift */; };
 		453BCD2523118A700082EDE1 /* ReminderFrequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453BCD2423118A700082EDE1 /* ReminderFrequency.swift */; };
 		453FF90222EB503C00214532 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453FF90122EB503C00214532 /* AppDelegate.swift */; };
@@ -108,6 +109,7 @@
 		4533BDB9242CC1C000323CA7 /* CustomShowHabitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomShowHabitTableViewCell.swift; sourceTree = "<group>"; };
 		4533BDBB242CD07E00323CA7 /* ShowHabitDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowHabitDetailsViewController.swift; sourceTree = "<group>"; };
 		4533BDBD242CD9AA00323CA7 /* CustomShowHabitDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomShowHabitDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		4533BDBF242D40DD00323CA7 /* ApiUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiUtil.swift; sourceTree = "<group>"; };
 		4534C00B24290AE0003AF5E4 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		453BCD2423118A700082EDE1 /* ReminderFrequency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderFrequency.swift; sourceTree = "<group>"; };
 		453FF8FE22EB503C00214532 /* HabitTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -319,6 +321,7 @@
 				4540FE052302AAC800D8F990 /* DateHelper.swift */,
 				4530A1CE23115C4500947C25 /* NotificationHelper.swift */,
 				45B7E8F02321002C00F81879 /* StoreReviewHelper.swift */,
+				4533BDBF242D40DD00323CA7 /* ApiUtil.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -615,6 +618,7 @@
 				4533BDBE242CD9AA00323CA7 /* CustomShowHabitDetailsTableViewCell.swift in Sources */,
 				4533BDBA242CC1C000323CA7 /* CustomShowHabitTableViewCell.swift in Sources */,
 				45B3AEB422FF099700AC43F9 /* HabitTitleSelectorController.swift in Sources */,
+				4533BDC0242D40DD00323CA7 /* ApiUtil.swift in Sources */,
 				45C260F5230C7C0100F3F6EE /* NSCustomPersistentContainer.swift in Sources */,
 				453FF90A22EB503C00214532 /* HabitTracker.xcdatamodeld in Sources */,
 				45D899E52304254A005B085C /* SettingsObject.swift in Sources */,
