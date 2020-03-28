@@ -49,23 +49,42 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?
     {
         let editAction = UITableViewRowAction(style: .normal, title: NSLocalizedString("Edit", comment: "") , handler: { (action:UITableViewRowAction, indexPath: IndexPath) -> Void in
-            Constants.Defaults.set(indexPath.row, forKey: Constants.Keys.SelectedHabit)
-            self.performSegue(withIdentifier: "toHabitEditVC", sender: nil)
+            if !Reachability.isConnectedToNetwork() {
+                self.showNetworkErrorPopup()
+            }
+            else {
+                Constants.Defaults.set(indexPath.row, forKey: Constants.Keys.SelectedHabit)
+                self.performSegue(withIdentifier: "toHabitEditVC", sender: nil)
+            }
         })
         let deleteAction = UITableViewRowAction(style: .default, title: NSLocalizedString("Delete", comment: "") , handler: { (action:UITableViewRowAction, indexPath:IndexPath) -> Void in
             let deleteMenu = UIAlertController(title: nil, message: NSLocalizedString("DeleteItem", comment: ""), preferredStyle: .actionSheet)
             
             let deleteAction = UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .default){ _ in
                 print("Delete")
-                self.habitEntityList = DatabaseHelper.app.getHabitEntityResults() as! [HabitEntity]
-                var identifiers : [String] = []
-                identifiers.append((self.habitEntityList[indexPath.row].notificationId?.uuidString.lowercased())!)
-                NotificationHelper.app.unscheduleNotification(identifiers: identifiers)
-                
-                DatabaseHelper.app.deleteHabitEntity(index: indexPath.row)
-                
-                self.habitEntityList = DatabaseHelper.app.getHabitEntityResults() as! [HabitEntity]
-                tableView.reloadData()
+                if !Reachability.isConnectedToNetwork() {
+                    self.showNetworkErrorPopup()
+                }
+                else {
+                    self.habitEntityList = DatabaseHelper.app.getHabitEntityResults() as! [HabitEntity]
+                    let userId = Constants.Defaults.value(forKey: Constants.Keys.UserId) as? String
+                    if !(userId ?? "").isEmpty {
+                        let url = Constants.notificationServerUrl + "specialdays/" + userId! + "/" + (self.habitEntityList[indexPath.row].notificationId?.uuidString ?? "")
+                        ApiUtil.app.call(url: url, request: Dictionary<String, String>.init(), httpMethod: "DELETE"){ (response) -> () in
+                            print(response)
+                            if let isSuccess = response["success"] as? Bool {
+                                print("Habit was deleted" + (isSuccess ? "successfully" :"unsuccessfully") )
+                                if isSuccess {
+                                    DatabaseHelper.app.deleteHabitEntity(index: indexPath.row)
+                                    self.habitEntityList = DatabaseHelper.app.getHabitEntityResults() as! [HabitEntity]
+                                    DispatchQueue.main.async {
+                                        self.tableView.reloadData()
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
             let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil)
             
@@ -193,5 +212,18 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
                 NotificationHelper.init().sendNotificationId(playerId: playerId!)
             }
         }
+    }
+    
+    fileprivate func showNetworkErrorPopup() {
+        print("Internet Connection is Not Available!")
+        let alert = UIAlertController(title: NSLocalizedString("SmthWrong", comment: ""), message: NSLocalizedString("NoInternetConnection", comment: ""), preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Done", comment: ""), style: UIAlertAction.Style.default, handler: nil))
+        if (UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad)
+        {
+            alert.popoverPresentationController!.permittedArrowDirections = []
+            alert.popoverPresentationController!.sourceView = self.view
+            alert.popoverPresentationController!.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+        }
+        self.present(alert, animated: true, completion: nil)
     }
 }

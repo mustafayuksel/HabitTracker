@@ -73,14 +73,23 @@ class HabitEditViewController : UIViewController {
         }
         let showYears = showYearSwitchOutlet.isOn
         let showHours = showHourSwitchOutlet.isOn
-        let timeArray = timeOutlet.text!.trimmingCharacters(in: .whitespaces).split(separator: ":")
-        let hour = Int(timeArray[0].trimmingCharacters(in: .whitespaces))!
-        let minute = Int(timeArray[1].trimmingCharacters(in: .whitespaces))!
-        let reminderFrequencyRawValue = reminderFrequencyOutlet.selectedSegmentIndex
-        let habit = Habit(name: title!, habitCategory: 0, habitTitle: 0, reminderFrequency: reminderFrequencyRawValue, startDate: date, startHour: hour, startMinute : minute, isPrimary : isPrimary, notificationId : UUID(), showYears : showYears, showHours : showHours)
-        DatabaseHelper.app.updateData(index: selectedHabit, habit: habit)
         
-        if Int(habitEntityList[selectedHabit].reminderFrequency) != reminderFrequencyRawValue {
+        var hour = 0
+        var minute = 0
+        let timeArray = timeOutlet.text!.trimmingCharacters(in: .whitespaces).split(separator: ":")
+        if !timeArray.isEmpty {
+            hour = Int(timeArray[0].trimmingCharacters(in: .whitespaces))!
+            minute = Int(timeArray[1].trimmingCharacters(in: .whitespaces))!
+        }
+        
+        let reminderFrequencyRawValue = reminderFrequencyOutlet.selectedSegmentIndex
+        let habit = Habit(name: title!, habitCategory: 0, habitTitle: 0, reminderFrequency: reminderFrequencyRawValue, startDate: date, startHour: hour, startMinute : minute, isPrimary : isPrimary, notificationId : habitEntityList[selectedHabit].notificationId ?? UUID(), showYears : showYears, showHours : showHours)
+        DatabaseHelper.app.updateData(index: selectedHabit, habit: habit)
+        let userId = Constants.Defaults.value(forKey: Constants.Keys.UserId) as? String
+        if !(userId ?? "").isEmpty {
+            ApiUtil.app.sendHabitDetails(habit: habit, userId: userId!, httpMethod: "PUT")
+        }
+        /*if Int(habitEntityList[selectedHabit].reminderFrequency) != reminderFrequencyRawValue {
             var identifiers : [String] = []
             identifiers.append((habitEntityList[selectedHabit].notificationId?.uuidString.lowercased())!)
             NotificationHelper.app.unscheduleNotification(identifiers: identifiers)
@@ -89,7 +98,7 @@ class HabitEditViewController : UIViewController {
             if frequency != ReminderFrequency.NEVER {
                 NotificationHelper.app.scheduleNotification(title: "Habit Reminder", body: habitEntityList[selectedHabit].name ?? "", frequency: frequency ?? ReminderFrequency.DAILY, identifier: uuid.uuidString.lowercased())
             }
-        }
+        }*/
         performSegue(withIdentifier: "fromEditToMainVC", sender: nil)
     }
     

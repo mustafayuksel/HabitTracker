@@ -33,4 +33,14 @@ class ApiUtil {
         })
         task.resume()
     }
+    
+    func sendHabitDetails(habit : Habit, userId : String, httpMethod : String){
+        let request = ["userId" : userId, "title": habit.name, "startDate" : habit.startDate, "reminderFrequency" : String(habit.reminderFrequency), "notificationId" : habit.notificationId.uuidString]
+        let url = Constants.notificationServerUrl + "specialdays/"
+        ApiUtil.app.call(url: url, request: request , httpMethod: httpMethod){ (response) -> () in
+            if let isSuccess = response["success"] as? Bool {
+                print("Habit details have been sent" + (isSuccess ? "successfully" :"unsuccessfully") )
+            }
+        }
+    }
 }

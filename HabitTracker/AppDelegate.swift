@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADInterstitialDelegate {
         //navigationBarAppearace.tintColor = UIColorFromHex(rgbValue: 0xffffff)
         navigationBarAppearace.barTintColor = AppDelegate.UIColorFromHex(rgbValue: 0x72bcd4)
         navigationBarAppearace.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
-        NotificationHelper.app.userRequest()
+        StoreReviewHelper.incrementAppOpenedCount()
         let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false]
         
         // Replace 'YOUR_APP_ID' with your OneSignal App ID.

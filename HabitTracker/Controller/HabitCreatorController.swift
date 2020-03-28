@@ -79,11 +79,16 @@ class HabitCreatorController: UIViewController {
         let reminderFrequencyRawValue = frequencySegmentOutlet.selectedSegmentIndex
         let habitEntity = Habit(name: title!, habitCategory: selectedCategory, habitTitle: selectedTitle, reminderFrequency: reminderFrequencyRawValue, startDate: date, startHour: hour, startMinute : minute, isPrimary : isPrimary, notificationId : uuid, showYears : showYears, showHours : showHours)
         DatabaseHelper.app.insertHabitEntity(data: habitEntity)
-        let frequency = ReminderFrequency(rawValue : reminderFrequencyRawValue)
-        
-        if frequency != ReminderFrequency.NEVER {
-            NotificationHelper.app.scheduleNotification(title: "Habit Reminder", body: habitEntity.name, frequency: frequency ?? ReminderFrequency.DAILY, identifier: uuid.uuidString.lowercased())
+        let userId = Constants.Defaults.value(forKey: Constants.Keys.UserId) as? String
+        if !(userId ?? "").isEmpty {
+            ApiUtil.app.sendHabitDetails(habit: habitEntity, userId: userId!, httpMethod: "POST")
         }
+        
+        //let frequency = ReminderFrequency(rawValue : reminderFrequencyRawValue)
+        
+        /*if frequency != ReminderFrequency.NEVER {
+            NotificationHelper.app.scheduleNotification(title: "Habit Reminder", body: habitEntity.name, frequency: frequency ?? ReminderFrequency.DAILY, identifier: uuid.uuidString.lowercased())
+        }*/
         performSegue(withIdentifier: "toMainVC", sender: nil)
     }
     @IBAction func infoButtonAction(_ sender: Any) {

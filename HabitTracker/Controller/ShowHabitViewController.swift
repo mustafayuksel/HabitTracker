@@ -16,8 +16,13 @@ class ShowHabitViewController: UIViewController ,UITableViewDelegate, UITableVie
     @IBOutlet weak var tableView: UITableView!
     
     @IBAction func editButtonAction(_ sender: Any) {
-        Constants.Defaults.set(selectedHabitIndex, forKey: Constants.Keys.SelectedHabit)
-        self.performSegue(withIdentifier: "toHabitEditVC", sender: nil)
+        if !Reachability.isConnectedToNetwork() {
+            self.showNetworkErrorPopup()
+        }
+        else {
+            Constants.Defaults.set(selectedHabitIndex, forKey: Constants.Keys.SelectedHabit)
+            self.performSegue(withIdentifier: "toHabitEditVC", sender: nil)
+        }
     }
     @IBAction func shareButtonAction(_ sender: Any) {
         let bounds = UIScreen.main.bounds
@@ -72,5 +77,18 @@ class ShowHabitViewController: UIViewController ,UITableViewDelegate, UITableVie
             Constants.Defaults.set(selectedHabitIndex, forKey: Constants.Keys.SelectedHabit)
             performSegue(withIdentifier: "toShowDetailsVC", sender: nil)
         }
+    }
+    
+    fileprivate func showNetworkErrorPopup() {
+        print("Internet Connection is Not Available!")
+        let alert = UIAlertController(title: NSLocalizedString("SmthWrong", comment: ""), message: NSLocalizedString("NoInternetConnection", comment: ""), preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Done", comment: ""), style: UIAlertAction.Style.default, handler: nil))
+        if (UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad)
+        {
+            alert.popoverPresentationController!.permittedArrowDirections = []
+            alert.popoverPresentationController!.sourceView = self.view
+            alert.popoverPresentationController!.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+        }
+        self.present(alert, animated: true, completion: nil)
     }
 }
