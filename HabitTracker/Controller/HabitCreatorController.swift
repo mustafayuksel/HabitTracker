@@ -113,6 +113,8 @@ class HabitCreatorController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupToHideKeyboardOnTapOnView()
+        showYearLabel.text = NSLocalizedString("ShowYears", comment: "")
+        showHourLabel.text = NSLocalizedString("ShowHours", comment: "")
         dateOutlet.placeholder = "  " + NSLocalizedString("Date", comment: "")
         timeOutlet.placeholder = "  " + NSLocalizedString("Time", comment: "")
         widgetLabel.text =  NSLocalizedString("SetPrimaryForWidget", comment: "")

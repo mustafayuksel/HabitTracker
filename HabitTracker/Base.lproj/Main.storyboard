@@ -422,7 +422,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="mQj-39-gRq" firstAttribute="centerY" secondItem="YGX-Hp-AtC" secondAttribute="centerY" id="27P-Uy-nqI"/>
                                             <constraint firstItem="rEm-nt-ufr" firstAttribute="trailing" secondItem="HxY-jp-IqQ" secondAttribute="trailing" id="7pe-bj-3fq"/>
@@ -843,7 +843,7 @@
                                                 <color key="selectedSegmentTintColor" red="0.44705882349999998" green="0.73725490199999999" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                                             </segmentedControl>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="dr4-aS-T38" firstAttribute="leading" secondItem="NfB-cO-gOA" secondAttribute="leading" id="1Xt-7f-ug7"/>
                                             <constraint firstItem="dyn-Gx-x68" firstAttribute="centerY" secondItem="9q5-PZ-6tN" secondAttribute="centerY" id="45T-3u-eut"/>

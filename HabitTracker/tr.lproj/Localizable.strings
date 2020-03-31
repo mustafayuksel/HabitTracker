@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   HabitTracker
 
@@ -81,3 +81,7 @@
 "Hour" = "Saat";
 "Minute" = "Dakika";
 "Passed" = "Geçti";
+"ShowYears" = "Yıl, Ay, Günleri Göster";
+"ShowHours" = "Saat, Dakikaları Göster";
+"Second" = "Saniye";
+"Title" = "Başlık";

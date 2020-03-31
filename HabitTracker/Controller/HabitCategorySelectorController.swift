@@ -25,6 +25,7 @@ class HabitCategorySelectorController: UIViewController,UITableViewDelegate, UIT
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         Constants.Defaults.set(indexPath.row, forKey: Constants.Keys.SelectedCategory)
         if indexPath.row == 0 {
             performSegue(withIdentifier: "toCreateHabitVC", sender: nil)

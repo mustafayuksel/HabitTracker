@@ -106,6 +106,8 @@ class HabitEditViewController : UIViewController {
         super.viewDidLoad()
         dateOutlet.placeholder = "  " + NSLocalizedString("Date", comment: "")
         timeOutlet.placeholder = "  " + NSLocalizedString("Time", comment: "")
+        showYearLabel.text = NSLocalizedString("ShowYears", comment: "")
+        showHourLabel.text = NSLocalizedString("ShowHours", comment: "")
         showWidgetLabel.text =  NSLocalizedString("SetPrimaryForWidget", comment: "")
         reminderFrequencyLabel.text = NSLocalizedString("ReminderFrequency", comment: "")
         updateButton.title = NSLocalizedString("Update", comment: "")

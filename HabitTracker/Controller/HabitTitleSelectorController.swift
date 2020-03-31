@@ -28,6 +28,7 @@ class HabitTitleSelectorController: UIViewController,UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         Constants.Defaults.set(indexPath.row, forKey: Constants.Keys.SelectedTitle)
         performSegue(withIdentifier: "toCreateHabitVC", sender: nil)
     }
