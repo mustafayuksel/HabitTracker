@@ -43,12 +43,13 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             let request = NSFetchRequest<NSFetchRequestResult>(entityName: Constants.HABIT_ENTITY)
             let results = try context.fetch(request)
             print(results.count)
-            
+            var hasPrimary = false
             if results.count > 0 {
                 
                 for item in results as! [NSManagedObject] {
                     let isPrimary = item.value(forKey: "isPrimary") as! Bool
                     if isPrimary {
+                        hasPrimary = true
                         let detailsText = item.value(forKey: "name")
                         let habitCategory = item.value(forKey: "habitCategory") as! Int
                         let habitTitle = item.value(forKey: "habitTitle") as! Int
@@ -69,6 +70,16 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                         }
                         break
                     }
+                }
+            }
+            if !hasPrimary {
+                habitLabel.text = NSLocalizedString("Title", comment: "")
+                let systemLanguage = Locale.current.languageCode
+                if systemLanguage != "tr" {
+                    counterLabel.text = "0 " + NSLocalizedString("Days", comment: "") + " " + NSLocalizedString("Passed", comment: "")
+                }
+                else {
+                    counterLabel.text = "0 " + NSLocalizedString("Day", comment: "") + " " + NSLocalizedString("Passed", comment: "")
                 }
             }
         } catch {

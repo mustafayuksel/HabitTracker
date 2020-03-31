@@ -848,8 +848,8 @@
             filePath = "widget/TodayViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "prepareWidget()"
             landmarkType = "7">
          </BreakpointContent>
@@ -931,6 +931,22 @@
             startingLineNumber = "101"
             endingLineNumber = "101"
             landmarkName = "calculateDays(startDate:hour:minute:isNotOnlyDays:showHours:hasSuffix:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B1C934E6-A545-4ADA-A9B6-3ECC918C7128"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "widget/TodayViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "prepareWidget()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
