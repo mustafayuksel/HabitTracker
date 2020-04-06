@@ -143,7 +143,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         bannerView.rootViewController = self
         bannerView.delegate = self
         bannerView.load(GADRequest())
-        addBannerViewToView(bannerView)
+        //addBannerViewToView(bannerView)
     }
     
     @IBAction func addButtonAction(_ sender: Any) {

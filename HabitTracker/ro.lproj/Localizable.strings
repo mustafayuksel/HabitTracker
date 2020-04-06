@@ -50,11 +50,11 @@
 "MoreApps" = "Mai multe aplicatii";
 "Subscription" = "Abonament";
 "Support" = "A sustine";
-"HabitDayCounter" = "Tracker de obicei";
+"HabitDayCounter" = "Contor de obicei";
 "Back" = "Înapoi";
 "Settings" = "Setări";
 "PickCategory" = "Alege o categorie";
-"SetPrimaryForWidget" = "Show on Widget";
+"SetPrimaryForWidget" = "arată pe widget";
 "Edit" = "Editați | ×";
 "Delete" = "Șterge";
 "DeleteItem" = "Ștergeți acest articol";
@@ -80,7 +80,7 @@
 "Minutes" = "Minute";
 "Passed" = "A trecut";
 "ShowYears" = "Arată ani, luni, zile";
-"ShowHours" = "Show Hours, Minutes";
+"ShowHours" = "Arată ore, minute";
 "Seconds" = "secunde";
 "Second" = "Al doilea";
 "Title" = "Titlu";
