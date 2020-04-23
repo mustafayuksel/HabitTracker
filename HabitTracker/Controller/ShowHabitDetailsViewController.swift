@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class ShowHabitDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ShowHabitDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, GADBannerViewDelegate {
     let dateComponents : [Calendar.Component] = [Calendar.Component.year, Calendar.Component.month, Calendar.Component.day, Calendar.Component.hour, Calendar.Component.minute, Calendar.Component.second]
     let selectedHabitIndex : Int = Constants.Defaults.value(forKey: Constants.Keys.SelectedHabit) as! Int
     var selectedHabit : HabitEntity? = nil
+    var bannerView: GADBannerView!
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
@@ -20,6 +22,18 @@ class ShowHabitDetailsViewController: UIViewController, UITableViewDelegate, UIT
         tableView.delegate = self
         tableView.tableFooterView = UIView()
         selectedHabit = DatabaseHelper.app.getHabitEntityResults()[selectedHabitIndex]
+        let removeAds = Constants.Defaults.value(forKey: Constants.Keys.RemoveAds)
+        
+        if removeAds == nil {
+            Constants.Defaults.set(false, forKey: Constants.Keys.RemoveAds)
+        }
+        
+        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        bannerView.adUnitID = "ca-app-pub-1847727001534987/9440673927"
+        bannerView.rootViewController = self
+        bannerView.delegate = self
+        bannerView.load(GADRequest())
+        addBannerViewToView(bannerView)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -84,5 +98,30 @@ class ShowHabitDetailsViewController: UIViewController, UITableViewDelegate, UIT
             activityViewController.popoverPresentationController!.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
         }
         self.present(activityViewController, animated: true, completion: nil)
+    }
+    
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+        let removeAds = Constants.Defaults.value(forKey: Constants.Keys.RemoveAds) as? Bool
+        
+        if removeAds == false {
+            bannerView.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(bannerView)
+            view.addConstraints(
+                [NSLayoutConstraint(item: bannerView,
+                                    attribute: .bottom,
+                                    relatedBy: .equal,
+                                    toItem: bottomLayoutGuide,
+                                    attribute: .top,
+                                    multiplier: 1,
+                                    constant: 0),
+                 NSLayoutConstraint(item: bannerView,
+                                    attribute: .centerX,
+                                    relatedBy: .equal,
+                                    toItem: view,
+                                    attribute: .centerX,
+                                    multiplier: 1,
+                                    constant: 0)
+            ])
+        }
     }
 }

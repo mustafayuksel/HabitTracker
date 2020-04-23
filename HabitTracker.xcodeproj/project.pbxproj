@@ -54,6 +54,7 @@
 		45C260F4230C7B0800F3F6EE /* NSCustomPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C260F3230C7B0800F3F6EE /* NSCustomPersistentContainer.swift */; };
 		45C260F5230C7C0100F3F6EE /* NSCustomPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C260F3230C7B0800F3F6EE /* NSCustomPersistentContainer.swift */; };
 		45D899E52304254A005B085C /* SettingsObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D899E42304254A005B085C /* SettingsObject.swift */; };
+		45DF57022441F435004A4B9F /* AdsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DF57012441F435004A4B9F /* AdsHelper.swift */; };
 		507E080EB53A884DC5B8A84E /* Pods_HabitTracker_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA44EC19F6AC5818B90C69D4 /* Pods_HabitTracker_OneSignalNotificationServiceExtension.framework */; };
 		C8147D46BCB39F1BCD255F46 /* Pods_HabitTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 253BA197D139DCB10595D90F /* Pods_HabitTracker.framework */; };
 /* End PBXBuildFile section */
@@ -228,6 +229,7 @@
 		45C260F3230C7B0800F3F6EE /* NSCustomPersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCustomPersistentContainer.swift; sourceTree = "<group>"; };
 		45D2F30C2313026A00F40231 /* OneSignalNotificationServiceExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OneSignalNotificationServiceExtension.entitlements; sourceTree = "<group>"; };
 		45D899E42304254A005B085C /* SettingsObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsObject.swift; sourceTree = "<group>"; };
+		45DF57012441F435004A4B9F /* AdsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsHelper.swift; sourceTree = "<group>"; };
 		ACAB98CB9F93C72BCE6EA201 /* Pods-HabitTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HabitTracker/Pods-HabitTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		BA44EC19F6AC5818B90C69D4 /* Pods_HabitTracker_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HabitTracker_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -389,6 +391,7 @@
 				45B7E8F02321002C00F81879 /* StoreReviewHelper.swift */,
 				4533BDBF242D40DD00323CA7 /* ApiUtil.swift */,
 				45272DCC242F8B76002BB751 /* Reachability.swift */,
+				45DF57012441F435004A4B9F /* AdsHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -729,6 +732,7 @@
 				45B3AEB622FF0C3E00AC43F9 /* Constants.swift in Sources */,
 				456D3E8B230021FA001C5D87 /* Habit.swift in Sources */,
 				45A782062303156D0065C72A /* HabitEditViewController.swift in Sources */,
+				45DF57022441F435004A4B9F /* AdsHelper.swift in Sources */,
 				45A782082303432C0065C72A /* SettingsViewController.swift in Sources */,
 				4533BDBC242CD07E00323CA7 /* ShowHabitDetailsViewController.swift in Sources */,
 				4534C00C24290AE0003AF5E4 /* UIViewController.swift in Sources */,
@@ -1054,7 +1058,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mustafayuksel.HabitTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1085,7 +1089,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mustafayuksel.HabitTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1109,7 +1113,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mustafayuksel.HabitTracker.onesignal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1133,7 +1137,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mustafayuksel.HabitTracker.onesignal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1199,7 +1203,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mustafayuksel.HabitTracker.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1224,7 +1228,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mustafayuksel.HabitTracker.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

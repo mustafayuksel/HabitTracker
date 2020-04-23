@@ -112,6 +112,7 @@ class HabitCreatorController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        AdsHelper.checkAndAskForAds(uiViewController: self)
         self.setupToHideKeyboardOnTapOnView()
         showYearLabel.text = NSLocalizedString("ShowYears", comment: "")
         showHourLabel.text = NSLocalizedString("ShowHours", comment: "")

@@ -16,6 +16,8 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate, GADInterstitialDelegate {
     
     var window: UIWindow?
+    var mInterstitial: GADInterstitial!
+    var gViewController: UIViewController?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -48,6 +50,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADInterstitialDelegate {
         let blue = CGFloat(rgbValue & 0xFF)/256.0
         
         return UIColor(red:red, green:green, blue:blue, alpha:CGFloat(alpha))
+    }
+    func showAdmobInterstitial()
+    {
+        self.mInterstitial = GADInterstitial.init(adUnitID:"ca-app-pub-1847727001534987/5107211352" )
+        mInterstitial.delegate = self
+        let Request  = GADRequest()
+        mInterstitial.load(Request)
+    }
+    
+    func interstitialDidReceiveAd(_ ad: GADInterstitial)
+    {
+        ad.present(fromRootViewController: self.gViewController!)
     }
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

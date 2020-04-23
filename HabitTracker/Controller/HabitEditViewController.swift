@@ -104,6 +104,7 @@ class HabitEditViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        AdsHelper.checkAndAskForAds(uiViewController: self)
         dateOutlet.placeholder = "  " + NSLocalizedString("Date", comment: "")
         timeOutlet.placeholder = "  " + NSLocalizedString("Time", comment: "")
         showYearLabel.text = NSLocalizedString("ShowYears", comment: "")
