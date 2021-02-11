@@ -197,9 +197,11 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     @objc func checkPlayerId() {
         let userId = Constants.Defaults.value(forKey: Constants.Keys.UserId) as? String
         if (userId ?? "").isEmpty {
-            let playerId = OneSignal.getPermissionSubscriptionState().subscriptionStatus.userId
-            if playerId != nil {
-                NotificationHelper.init().sendNotificationId(playerId: playerId!)
+            if let deviceState = OneSignal.getDeviceState() {
+                let playerId = deviceState.userId
+                if playerId != nil {
+                    NotificationHelper.init().sendNotificationId(playerId: playerId!)
+                }
             }
         }
     }

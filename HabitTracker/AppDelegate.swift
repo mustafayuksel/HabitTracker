@@ -27,15 +27,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADFullScreenContentDeleg
         navigationBarAppearace.barTintColor = AppDelegate.UIColorFromHex(rgbValue: 0x0866c2)
         navigationBarAppearace.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         StoreReviewHelper.incrementAppOpenedCount()
-        let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false]
+        
+        OneSignal.initWithLaunchOptions(launchOptions)
         
         // Replace 'YOUR_APP_ID' with your OneSignal App ID.
-        OneSignal.initWithLaunchOptions(launchOptions,
-                                        appId: "ecc8009c-1e95-4966-9b68-916538139fee",
-                                        handleNotificationAction: nil,
-                                        settings: onesignalInitSettings)
-        
-        OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification;
+        OneSignal.setAppId("ecc8009c-1e95-4966-9b68-916538139fee")
         
         // Recommend moving the below line to prompt for push after informing the user about
         //   how your app will use them.

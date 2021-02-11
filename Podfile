@@ -5,7 +5,7 @@ target 'HabitTracker' do
   use_frameworks!
   pod 'Google-Mobile-Ads-SDK'
   target 'OneSignalNotificationServiceExtension' do
-  pod 'OneSignal', '>= 2.6.2', '< 3.0'
+  pod 'OneSignal', '>= 3.0.0', '< 4.0'
   end
   # Pods for HabitTracker
 
