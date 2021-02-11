@@ -7,23 +7,21 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class HabitCreatorController: UIViewController {
+class HabitCreatorController: UIViewController, GADBannerViewDelegate {
     
     var selectedCategory : Int = Constants.Defaults.value(forKey: Constants.Keys.SelectedCategory) as! Int
     var selectedTitle : Int = Constants.Defaults.value(forKey: Constants.Keys.SelectedTitle) as? Int ?? 0
     let datePicker = UIDatePicker()
     let timePicker = UIDatePicker()
+    var bannerView: GADBannerView!
     
     @IBOutlet weak var titleOutlet: UITextField!
     @IBOutlet weak var timeOutlet: UITextField!
     @IBOutlet weak var frequencyLabel: UILabel!
     @IBOutlet weak var widgetLabel: UILabel!
     @IBOutlet weak var showYearLabel: UILabel!
-    
-    @IBAction func titleAction(_ sender: Any) {
-        
-    }
     @IBOutlet weak var showHourLabel: UILabel!
     @IBOutlet weak var dateOutlet: UITextField!
     @IBOutlet weak var widgetSwitchOutlet: UISwitch!
@@ -31,6 +29,53 @@ class HabitCreatorController: UIViewController {
     @IBOutlet weak var showYearSwitchOutlet: UISwitch!
     @IBOutlet weak var saveButtonOutlet: UIBarButtonItem!
     @IBOutlet weak var showHourSwitchOutlet: UISwitch!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        AdsHelper().checkAndAskForAds(uiViewController: self, unitId: "ca-app-pub-1847727001534987/2086352499")
+        self.setupToHideKeyboardOnTapOnView()
+        
+        let adSize = GADAdSizeFromCGSize(CGSize(width: 320, height: 100))
+        bannerView = GADBannerView(adSize: adSize)
+        bannerView.adUnitID = "ca-app-pub-1847727001534987/6520421525"
+        bannerView.rootViewController = self
+        bannerView.delegate = self
+        bannerView.load(GADRequest())
+        AdsHelper().addBannerViewToView(bannerView, view)
+        
+        showYearLabel.text = NSLocalizedString("ShowYears", comment: "")
+        showHourLabel.text = NSLocalizedString("ShowHours", comment: "")
+        dateOutlet.placeholder = "  " + NSLocalizedString("Date", comment: "")
+        timeOutlet.placeholder = "  " + NSLocalizedString("Time", comment: "")
+        widgetLabel.text =  NSLocalizedString("SetPrimaryForWidget", comment: "")
+        frequencyLabel.text = NSLocalizedString("ReminderFrequency", comment: "")
+        saveButtonOutlet.title = NSLocalizedString("Save", comment: "")
+        dateOutlet.addTarget(self, action: #selector(showDatePicker), for: .editingDidBegin)
+        dateOutlet.inputView = UIView()
+        
+        timeOutlet.addTarget(self, action: #selector(showTimePicker), for: .editingDidBegin)
+        timeOutlet.inputView = UIView()
+        
+        frequencySegmentOutlet.setTitle(NSLocalizedString("Daily", comment: ""), forSegmentAt: 0)
+        frequencySegmentOutlet.setTitle(NSLocalizedString("Weekly", comment: ""), forSegmentAt: 1)
+        frequencySegmentOutlet.setTitle(NSLocalizedString("Monthly", comment: ""), forSegmentAt: 2)
+        frequencySegmentOutlet.setTitle(NSLocalizedString("Yearly", comment: ""), forSegmentAt: 3)
+        frequencySegmentOutlet.setTitle(NSLocalizedString("Never", comment: ""), forSegmentAt: 4)
+        if selectedCategory != 0 {
+            titleOutlet.text = "  " + NSLocalizedString(Constants.habitTitles[selectedCategory][selectedTitle], comment: "")
+        }
+        else {
+            titleOutlet.text = "  " + NSLocalizedString("Title", comment:"")
+        }
+        let habitEntities = DatabaseHelper.app.getHabitEntityResults() as! [HabitEntity]
+        
+        if habitEntities.isEmpty {
+            widgetSwitchOutlet.isOn = true
+        }
+        else {
+            widgetSwitchOutlet.isOn = false
+        }
+    }
     
     fileprivate func showAlertForMissingField(errorMessage : String) {
         let alert = UIAlertController(title: NSLocalizedString("MissingField", comment: ""), message: NSLocalizedString(errorMessage, comment: ""), preferredStyle: UIAlertController.Style.alert)
@@ -83,12 +128,6 @@ class HabitCreatorController: UIViewController {
         if !(userId ?? "").isEmpty {
             ApiUtil.app.sendHabitDetails(habit: habitEntity, userId: userId!, httpMethod: "POST")
         }
-        
-        //let frequency = ReminderFrequency(rawValue : reminderFrequencyRawValue)
-        
-        /*if frequency != ReminderFrequency.NEVER {
-            NotificationHelper.app.scheduleNotification(title: "Habit Reminder", body: habitEntity.name, frequency: frequency ?? ReminderFrequency.DAILY, identifier: uuid.uuidString.lowercased())
-        }*/
         performSegue(withIdentifier: "toMainVC", sender: nil)
     }
     @IBAction func infoButtonAction(_ sender: Any) {
@@ -108,44 +147,6 @@ class HabitCreatorController: UIViewController {
         }, completion: {(isCompleted) in
             toastLabel.removeFromSuperview()
         })
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        AdsHelper.checkAndAskForAds(uiViewController: self)
-        self.setupToHideKeyboardOnTapOnView()
-        showYearLabel.text = NSLocalizedString("ShowYears", comment: "")
-        showHourLabel.text = NSLocalizedString("ShowHours", comment: "")
-        dateOutlet.placeholder = "  " + NSLocalizedString("Date", comment: "")
-        timeOutlet.placeholder = "  " + NSLocalizedString("Time", comment: "")
-        widgetLabel.text =  NSLocalizedString("SetPrimaryForWidget", comment: "")
-        frequencyLabel.text = NSLocalizedString("ReminderFrequency", comment: "")
-        saveButtonOutlet.title = NSLocalizedString("Save", comment: "")
-        dateOutlet.addTarget(self, action: #selector(showDatePicker), for: .editingDidBegin)
-        dateOutlet.inputView = UIView()
-        
-        timeOutlet.addTarget(self, action: #selector(showTimePicker), for: .editingDidBegin)
-        timeOutlet.inputView = UIView()
-        
-        frequencySegmentOutlet.setTitle(NSLocalizedString("Daily", comment: ""), forSegmentAt: 0)
-        frequencySegmentOutlet.setTitle(NSLocalizedString("Weekly", comment: ""), forSegmentAt: 1)
-        frequencySegmentOutlet.setTitle(NSLocalizedString("Monthly", comment: ""), forSegmentAt: 2)
-        frequencySegmentOutlet.setTitle(NSLocalizedString("Yearly", comment: ""), forSegmentAt: 3)
-        frequencySegmentOutlet.setTitle(NSLocalizedString("Never", comment: ""), forSegmentAt: 4)
-        if selectedCategory != 0 {
-            titleOutlet.text = "  " + NSLocalizedString(Constants.habitTitles[selectedCategory][selectedTitle], comment: "")
-        }
-        else {
-            titleOutlet.text = "  " + NSLocalizedString("Title", comment:"")
-        }
-        let habitEntities = DatabaseHelper.app.getHabitEntityResults() as! [HabitEntity]
-        
-        if habitEntities.isEmpty {
-            widgetSwitchOutlet.isOn = true
-        }
-        else {
-            widgetSwitchOutlet.isOn = false
-        }
     }
     
     @objc func showDatePicker(){

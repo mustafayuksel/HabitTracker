@@ -33,7 +33,7 @@ class ShowHabitDetailsViewController: UIViewController, UITableViewDelegate, UIT
         bannerView.rootViewController = self
         bannerView.delegate = self
         bannerView.load(GADRequest())
-        addBannerViewToView(bannerView)
+        AdsHelper().addBannerViewToView(bannerView, view)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -98,30 +98,5 @@ class ShowHabitDetailsViewController: UIViewController, UITableViewDelegate, UIT
             activityViewController.popoverPresentationController!.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
         }
         self.present(activityViewController, animated: true, completion: nil)
-    }
-    
-    func addBannerViewToView(_ bannerView: GADBannerView) {
-        let removeAds = Constants.Defaults.value(forKey: Constants.Keys.RemoveAds) as? Bool
-        
-        if removeAds == false {
-            bannerView.translatesAutoresizingMaskIntoConstraints = false
-            view.addSubview(bannerView)
-            view.addConstraints(
-                [NSLayoutConstraint(item: bannerView,
-                                    attribute: .bottom,
-                                    relatedBy: .equal,
-                                    toItem: bottomLayoutGuide,
-                                    attribute: .top,
-                                    multiplier: 1,
-                                    constant: 0),
-                 NSLayoutConstraint(item: bannerView,
-                                    attribute: .centerX,
-                                    relatedBy: .equal,
-                                    toItem: view,
-                                    attribute: .centerX,
-                                    multiplier: 1,
-                                    constant: 0)
-            ])
-        }
     }
 }

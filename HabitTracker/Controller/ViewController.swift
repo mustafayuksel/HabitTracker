@@ -9,16 +9,67 @@
 import UIKit
 import GoogleMobileAds
 import OneSignal
+import AppTrackingTransparency
 
 class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, GADBannerViewDelegate {
     
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var buttonLabel: UILabel!
     private let refreshControl = UIRefreshControl()
-    
     var habitEntityList : [HabitEntity] = []
     static var isSaveButtonClick:Bool!
     var bannerView: GADBannerView!
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var buttonLabel: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        UIApplication.shared.applicationIconBadgeNumber = 0
+        self.navigationItem.hidesBackButton = true
+        self.navigationItem.title = NSLocalizedString("HabitDayCounter", comment: "")
+        
+        if #available(iOS 14, *) {
+            ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+                Constants.Defaults.set(true, forKey: Constants.Keys.RequestIDFAComplete)
+            })
+        } else {
+            Constants.Defaults.set(true, forKey: Constants.Keys.RequestIDFAComplete)
+        }
+        
+        StoreReviewHelper.checkAndAskForReview()
+        let userId = Constants.Defaults.value(forKey: Constants.Keys.UserId) as? String
+        if (userId ?? "").isEmpty {
+            Timer.scheduledTimer(timeInterval: 10,
+                                 target: self,
+                                 selector: #selector(self.checkPlayerId),
+                                 userInfo: nil,
+                                 repeats: true)
+        }
+        
+        buttonLabel.text = NSLocalizedString("NewHabitEvent", comment: "")
+        habitEntityList = DatabaseHelper.app.getHabitEntityResults() as! [HabitEntity]
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.tableFooterView = UIView()
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
+        refreshControl.addTarget(self, action: #selector(refreshTable), for: .valueChanged)
+        
+        let removeAds = Constants.Defaults.value(forKey: Constants.Keys.RemoveAds)
+        
+        if removeAds == nil {
+            Constants.Defaults.set(false, forKey: Constants.Keys.RemoveAds)
+        }
+        
+        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        bannerView.adUnitID = "ca-app-pub-1847727001534987/9440673927"
+        bannerView.rootViewController = self
+        bannerView.delegate = self
+        bannerView.load(GADRequest())
+        AdsHelper().addBannerViewToView(bannerView, view)
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return habitEntityList.count
@@ -46,6 +97,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         cell.layoutMargins = UIEdgeInsets.zero
         return cell
     }
+    
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?
     {
         let editAction = UITableViewRowAction(style: .normal, title: NSLocalizedString("Edit", comment: "") , handler: { (action:UITableViewRowAction, indexPath: IndexPath) -> Void in
@@ -100,90 +152,28 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         })
         return [deleteAction, editAction]
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         Constants.Defaults.set(indexPath.row, forKey: Constants.Keys.SelectedHabit)
         performSegue(withIdentifier: "toShowHabitVC", sender: nil)
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        UIApplication.shared.applicationIconBadgeNumber = 0
-        self.navigationItem.hidesBackButton = true
-        self.navigationItem.title = NSLocalizedString("HabitDayCounter", comment: "")
-        StoreReviewHelper.checkAndAskForReview()
-        let userId = Constants.Defaults.value(forKey: Constants.Keys.UserId) as? String
-        if (userId ?? "").isEmpty {
-            Timer.scheduledTimer(timeInterval: 10,
-                                 target: self,
-                                 selector: #selector(self.checkPlayerId),
-                                 userInfo: nil,
-                                 repeats: true)
-        }
-        
-        buttonLabel.text = NSLocalizedString("NewHabitEvent", comment: "")
-        habitEntityList = DatabaseHelper.app.getHabitEntityResults() as! [HabitEntity]
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.tableFooterView = UIView()
-        if #available(iOS 10.0, *) {
-            tableView.refreshControl = refreshControl
-        } else {
-            tableView.addSubview(refreshControl)
-        }
-        refreshControl.addTarget(self, action: #selector(refreshTable), for: .valueChanged)
-        
-        let removeAds = Constants.Defaults.value(forKey: Constants.Keys.RemoveAds)
-        
-        if removeAds == nil {
-            Constants.Defaults.set(false, forKey: Constants.Keys.RemoveAds)
-        }
-        
-        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
-        bannerView.adUnitID = "ca-app-pub-1847727001534987/9440673927"
-        bannerView.rootViewController = self
-        bannerView.delegate = self
-        bannerView.load(GADRequest())
-        addBannerViewToView(bannerView)
-    }
     
     @IBAction func addButtonAction(_ sender: Any) {
         performSegue(withIdentifier: "toHabitCategorySelectorVC", sender: nil)
     }
+    
     @IBAction func settingsAction(_ sender: Any) {
         performSegue(withIdentifier: "toSettingsVC", sender: nil)
     }
+    
     @objc private func refreshTable(_ sender: Any) {
         tableView.reloadData()
         self.refreshControl.endRefreshing()
     }
-    override func viewDidAppear(_ animated: Bool) {
-    }
+    
     override func viewWillAppear(_ animated: Bool) {
         self.navigationItem.title = NSLocalizedString("HabitDayCounter", comment: "")
-    }
-    func addBannerViewToView(_ bannerView: GADBannerView) {
-        let removeAds = Constants.Defaults.value(forKey: Constants.Keys.RemoveAds) as? Bool
-        
-        if removeAds == false {
-            bannerView.translatesAutoresizingMaskIntoConstraints = false
-            view.addSubview(bannerView)
-            view.addConstraints(
-                [NSLayoutConstraint(item: bannerView,
-                                    attribute: .bottom,
-                                    relatedBy: .equal,
-                                    toItem: bottomLayoutGuide,
-                                    attribute: .top,
-                                    multiplier: 1,
-                                    constant: 0),
-                 NSLayoutConstraint(item: bannerView,
-                                    attribute: .centerX,
-                                    relatedBy: .equal,
-                                    toItem: view,
-                                    attribute: .centerX,
-                                    multiplier: 1,
-                                    constant: 0)
-            ])
-        }
     }
     
     @IBAction func shareButtonAction(_ sender: Any) {

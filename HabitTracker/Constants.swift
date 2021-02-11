@@ -34,5 +34,6 @@ class Constants {
         static let RemoveAds = "removeAds"
         static let AppCount = "appCount"
         static let UserId = "userId"
+        static let RequestIDFAComplete = "RequestIDFAComplete"
     }
 }

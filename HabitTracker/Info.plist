@@ -66,6 +66,8 @@
 	<string>$(PRODUCT_NAME) access only photo library</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>To select photos</string>
+    <key>NSUserTrackingUsageDescription</key>
+    <string>This identifier will be used to deliver personalized ads to you.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>To select photos</string>
 	<key>UIBackgroundModes</key>

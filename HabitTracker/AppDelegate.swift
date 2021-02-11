@@ -13,10 +13,10 @@ import OneSignal
 import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, GADInterstitialDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GADFullScreenContentDelegate {
     
     var window: UIWindow?
-    var mInterstitial: GADInterstitial!
+    var mInterstitial: GADInterstitialAd!
     var gViewController: UIViewController?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADInterstitialDelegate {
         
         let navigationBarAppearace = UINavigationBar.appearance()
         //navigationBarAppearace.tintColor = UIColorFromHex(rgbValue: 0xffffff)
-        navigationBarAppearace.barTintColor = AppDelegate.UIColorFromHex(rgbValue: 0x72bcd4)
+        navigationBarAppearace.barTintColor = AppDelegate.UIColorFromHex(rgbValue: 0x0866c2)
         navigationBarAppearace.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         StoreReviewHelper.incrementAppOpenedCount()
         let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false]
@@ -51,18 +51,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADInterstitialDelegate {
         
         return UIColor(red:red, green:green, blue:blue, alpha:CGFloat(alpha))
     }
-    func showAdmobInterstitial()
+    
+    func showAdmobInterstitial(unitId : String)
     {
-        self.mInterstitial = GADInterstitial.init(adUnitID:"ca-app-pub-1847727001534987/5107211352" )
-        mInterstitial.delegate = self
-        let Request  = GADRequest()
-        mInterstitial.load(Request)
+        let request = GADRequest()
+        GADInterstitialAd.load(withAdUnitID:unitId,
+                                        request: request,
+                              completionHandler: { (ad, error) in
+                                if let error = error {
+                                  print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                                  return
+                                }
+                                self.mInterstitial = ad
+                                self.mInterstitial.fullScreenContentDelegate = self
+                                ad?.present(fromRootViewController: self.gViewController!)
+                              }
+            )
     }
     
-    func interstitialDidReceiveAd(_ ad: GADInterstitial)
-    {
-        ad.present(fromRootViewController: self.gViewController!)
-    }
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
@@ -88,22 +94,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADInterstitialDelegate {
     }
     
     // MARK: - Core Data stack
-    
     lazy var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
          creates and returns a container, having loaded the store for the
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
-         */
-        // Change from NSPersistentContainer to your custom class
-        let container = NSCustomPersistentContainer(name: "HabitTracker")
+        */
+        let container = NSPersistentContainer(name: "HabitTracker")
+        var persistentStoreDescriptions: NSPersistentStoreDescription
         
+        let storeUrl =  FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.habittracker")!.appendingPathComponent("HabitTracker.xcdatamodeld")
+        
+        
+        let description = NSPersistentStoreDescription()
+        description.shouldInferMappingModelAutomatically = true
+        description.shouldMigrateStoreAutomatically = true
+        description.url = storeUrl
+        
+        container.persistentStoreDescriptions = [NSPersistentStoreDescription(url:  FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.habittracker")!.appendingPathComponent("HabitTracker.xcdatamodeld"))]
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                
+                 
                 /*
                  Typical reasons for an error here include:
                  * The parent directory does not exist, cannot be created, or disallows writing.
@@ -117,9 +131,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADInterstitialDelegate {
         })
         return container
     }()
-    
+
     // MARK: - Core Data Saving support
-    
+
     func saveContext () {
         let context = persistentContainer.viewContext
         if context.hasChanges {

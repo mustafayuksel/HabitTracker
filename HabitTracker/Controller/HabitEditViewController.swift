@@ -8,41 +8,85 @@
 
 
 import UIKit
+import GoogleMobileAds
 
-class HabitEditViewController : UIViewController {
+class HabitEditViewController : UIViewController, GADBannerViewDelegate {
     
     var selectedHabit : Int = Constants.Defaults.value(forKey: Constants.Keys.SelectedHabit) as! Int
     var habitEntityList : [HabitEntity] = []
     
     let datePicker = UIDatePicker()
     let timePicker = UIDatePicker()
+    var bannerView: GADBannerView!
     
     @IBOutlet weak var titleOutlet: UITextField!
-    
     @IBOutlet weak var dateOutlet: UITextField!
-    
     @IBOutlet weak var timeOutlet: UITextField!
-    
     @IBOutlet weak var reminderFrequencyLabel: UILabel!
-    
     @IBOutlet weak var showWidgetLabel: UILabel!
-    
     @IBOutlet weak var showYearLabel: UILabel!
-    
     @IBOutlet weak var showHourLabel: UILabel!
     @IBOutlet weak var reminderFrequencyOutlet: UISegmentedControl!
-    
     @IBOutlet weak var widgetSwitchOutlet: UISwitch!
-    
     @IBOutlet weak var showYearSwitchOutlet: UISwitch!
     @IBOutlet weak var showHourSwitchOutlet: UISwitch!
-    
     @IBOutlet var updateButton: UIBarButtonItem!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        AdsHelper().checkAndAskForAds(uiViewController: self, unitId: "ca-app-pub-1847727001534987/9581699134")
+        self.setupToHideKeyboardOnTapOnView()
+
+        let adSize = GADAdSizeFromCGSize(CGSize(width: 320, height: 100))
+        bannerView = GADBannerView(adSize: adSize)
+        bannerView.adUnitID = "ca-app-pub-1847727001534987/1754523462"
+        bannerView.rootViewController = self
+        bannerView.delegate = self
+        bannerView.load(GADRequest())
+        AdsHelper().addBannerViewToView(bannerView, view)
+        
+        dateOutlet.placeholder = "  " + NSLocalizedString("Date", comment: "")
+        timeOutlet.placeholder = "  " + NSLocalizedString("Time", comment: "")
+        showYearLabel.text = NSLocalizedString("ShowYears", comment: "")
+        showHourLabel.text = NSLocalizedString("ShowHours", comment: "")
+        showWidgetLabel.text =  NSLocalizedString("SetPrimaryForWidget", comment: "")
+        reminderFrequencyLabel.text = NSLocalizedString("ReminderFrequency", comment: "")
+        updateButton.title = NSLocalizedString("Update", comment: "")
+        reminderFrequencyOutlet.setTitle(NSLocalizedString("Daily", comment: ""), forSegmentAt: 0)
+        reminderFrequencyOutlet.setTitle(NSLocalizedString("Weekly", comment: ""), forSegmentAt: 1)
+        reminderFrequencyOutlet.setTitle(NSLocalizedString("Monthly", comment: ""), forSegmentAt: 2)
+        reminderFrequencyOutlet.setTitle(NSLocalizedString("Yearly", comment: ""), forSegmentAt: 3)
+        reminderFrequencyOutlet.setTitle(NSLocalizedString("Never", comment: ""), forSegmentAt: 4)
+        
+        habitEntityList = DatabaseHelper.app.getHabitEntityResults() as! [HabitEntity]
+        let startDate = habitEntityList[selectedHabit].startDate ?? ""
+        dateOutlet.text = "  " + startDate
+        dateOutlet.addTarget(self, action: #selector(showDatePicker), for: .editingDidBegin)
+        dateOutlet.inputView = UIView()
+        
+        let startHour = habitEntityList[selectedHabit].startHour
+        let startMinute = habitEntityList[selectedHabit].startMinute
+        if startHour > 0 || startMinute > 0 {
+            timeOutlet.text = "  " + String(startHour) + " : " + String(startMinute)
+        }
+        timeOutlet.addTarget(self, action: #selector(showTimePicker), for: .editingDidBegin)
+        timeOutlet.inputView = UIView()
+        
+        titleOutlet.text = "  " + (habitEntityList[selectedHabit].name ?? "")
+        
+        reminderFrequencyOutlet.selectedSegmentIndex = Int(habitEntityList[selectedHabit].reminderFrequency)
+        
+        widgetSwitchOutlet.isOn = habitEntityList[selectedHabit].isPrimary
+        showYearSwitchOutlet.isOn = habitEntityList[selectedHabit].showYears
+        showHourSwitchOutlet.isOn = habitEntityList[selectedHabit].showHours
+    }
+    
     fileprivate func showAlertForMissingField(errorMessage : String) {
         let alert = UIAlertController(title: NSLocalizedString("MissingField", comment: ""), message: NSLocalizedString(errorMessage, comment: ""), preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Done", comment: ""), style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
+    
     @IBAction func updateAction(_ sender: Any) {
         var title = titleOutlet.text
         if !(title ?? "").isEmpty {
@@ -89,56 +133,7 @@ class HabitEditViewController : UIViewController {
         if !(userId ?? "").isEmpty {
             ApiUtil.app.sendHabitDetails(habit: habit, userId: userId!, httpMethod: "PUT")
         }
-        /*if Int(habitEntityList[selectedHabit].reminderFrequency) != reminderFrequencyRawValue {
-            var identifiers : [String] = []
-            identifiers.append((habitEntityList[selectedHabit].notificationId?.uuidString.lowercased())!)
-            NotificationHelper.app.unscheduleNotification(identifiers: identifiers)
-            let frequency = ReminderFrequency(rawValue : reminderFrequencyRawValue)
-            let uuid = UUID()
-            if frequency != ReminderFrequency.NEVER {
-                NotificationHelper.app.scheduleNotification(title: "Habit Reminder", body: habitEntityList[selectedHabit].name ?? "", frequency: frequency ?? ReminderFrequency.DAILY, identifier: uuid.uuidString.lowercased())
-            }
-        }*/
         performSegue(withIdentifier: "fromEditToMainVC", sender: nil)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        AdsHelper.checkAndAskForAds(uiViewController: self)
-        dateOutlet.placeholder = "  " + NSLocalizedString("Date", comment: "")
-        timeOutlet.placeholder = "  " + NSLocalizedString("Time", comment: "")
-        showYearLabel.text = NSLocalizedString("ShowYears", comment: "")
-        showHourLabel.text = NSLocalizedString("ShowHours", comment: "")
-        showWidgetLabel.text =  NSLocalizedString("SetPrimaryForWidget", comment: "")
-        reminderFrequencyLabel.text = NSLocalizedString("ReminderFrequency", comment: "")
-        updateButton.title = NSLocalizedString("Update", comment: "")
-        reminderFrequencyOutlet.setTitle(NSLocalizedString("Daily", comment: ""), forSegmentAt: 0)
-        reminderFrequencyOutlet.setTitle(NSLocalizedString("Weekly", comment: ""), forSegmentAt: 1)
-        reminderFrequencyOutlet.setTitle(NSLocalizedString("Monthly", comment: ""), forSegmentAt: 2)
-        reminderFrequencyOutlet.setTitle(NSLocalizedString("Yearly", comment: ""), forSegmentAt: 3)
-        reminderFrequencyOutlet.setTitle(NSLocalizedString("Never", comment: ""), forSegmentAt: 4)
-        
-        habitEntityList = DatabaseHelper.app.getHabitEntityResults() as! [HabitEntity]
-        let startDate = habitEntityList[selectedHabit].startDate ?? ""
-        dateOutlet.text = "  " + startDate
-        dateOutlet.addTarget(self, action: #selector(showDatePicker), for: .editingDidBegin)
-        dateOutlet.inputView = UIView()
-        
-        let startHour = habitEntityList[selectedHabit].startHour
-        let startMinute = habitEntityList[selectedHabit].startMinute
-        if startHour > 0 || startMinute > 0 {
-            timeOutlet.text = "  " + String(startHour) + " : " + String(startMinute)
-        }
-        timeOutlet.addTarget(self, action: #selector(showTimePicker), for: .editingDidBegin)
-        timeOutlet.inputView = UIView()
-        
-        titleOutlet.text = "  " + (habitEntityList[selectedHabit].name ?? "")
-        
-        reminderFrequencyOutlet.selectedSegmentIndex = Int(habitEntityList[selectedHabit].reminderFrequency)
-        
-        widgetSwitchOutlet.isOn = habitEntityList[selectedHabit].isPrimary
-        showYearSwitchOutlet.isOn = habitEntityList[selectedHabit].showYears
-        showHourSwitchOutlet.isOn = habitEntityList[selectedHabit].showHours
     }
     
     @IBAction func infoButtonAction(_ sender: Any) {

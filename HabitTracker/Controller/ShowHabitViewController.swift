@@ -11,11 +11,29 @@ import GoogleMobileAds
 
 class ShowHabitViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource, GADBannerViewDelegate {
     let selectedHabitIndex : Int = Constants.Defaults.value(forKey: Constants.Keys.SelectedHabit) as! Int
-    
-    let showHabitImages = ["timer.png", "calendar.png"]
+    let showHabitImages = ["timer.png", "calendar.png", "success.png"]
     var bannerView: GADBannerView!
     
     @IBOutlet weak var tableView: UITableView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.tableFooterView = UIView()
+        let removeAds = Constants.Defaults.value(forKey: Constants.Keys.RemoveAds)
+        
+        if removeAds == nil {
+            Constants.Defaults.set(false, forKey: Constants.Keys.RemoveAds)
+        }
+        
+        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        bannerView.adUnitID = "ca-app-pub-1847727001534987/9440673927"
+        bannerView.rootViewController = self
+        bannerView.delegate = self
+        bannerView.load(GADRequest())
+        AdsHelper().addBannerViewToView(bannerView, view)
+    }
     
     @IBAction func editButtonAction(_ sender: Any) {
         if !Reachability.isConnectedToNetwork() {
@@ -44,28 +62,10 @@ class ShowHabitViewController: UIViewController ,UITableViewDelegate, UITableVie
         self.present(activityViewController, animated: true, completion: nil)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.tableFooterView = UIView()
-        let removeAds = Constants.Defaults.value(forKey: Constants.Keys.RemoveAds)
-        
-        if removeAds == nil {
-            Constants.Defaults.set(false, forKey: Constants.Keys.RemoveAds)
-        }
-        
-        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
-        bannerView.adUnitID = "ca-app-pub-1847727001534987/9440673927"
-        bannerView.rootViewController = self
-        bannerView.delegate = self
-        bannerView.load(GADRequest())
-        addBannerViewToView(bannerView)
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return showHabitImages.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "mainCell", for: indexPath) as! CustomShowHabitTableViewCell
         cell.iconImage.image = UIImage(named : showHabitImages[indexPath.row])
@@ -80,11 +80,16 @@ class ShowHabitViewController: UIViewController ,UITableViewDelegate, UITableVie
             cell.title.text = NSLocalizedString("Date", comment: "")
             cell.detail.text = DateHelper.selectedDateToFormattedString(startDate: selectedHabit?.startDate ?? Date().description)
         }
+        else if indexPath.row == 2 {
+            cell.title.text = NSLocalizedString("Trophy", comment: "")
+            cell.detail.text = DateHelper.app.calculateDays(startDate: selectedHabit?.startDate ?? Date().description, hour: Int(hour), minute: Int(minute), isNotOnlyDays: selectedHabit?.showYears ?? true, showHours: false,  hasSuffix: false)
+        }
         cell.preservesSuperviewLayoutMargins = false
         cell.separatorInset = UIEdgeInsets.zero
         cell.layoutMargins = UIEdgeInsets.zero
         return cell
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.row == 0 {
@@ -104,29 +109,5 @@ class ShowHabitViewController: UIViewController ,UITableViewDelegate, UITableVie
             alert.popoverPresentationController!.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
         }
         self.present(alert, animated: true, completion: nil)
-    }
-    func addBannerViewToView(_ bannerView: GADBannerView) {
-        let removeAds = Constants.Defaults.value(forKey: Constants.Keys.RemoveAds) as? Bool
-        
-        if removeAds == false {
-            bannerView.translatesAutoresizingMaskIntoConstraints = false
-            view.addSubview(bannerView)
-            view.addConstraints(
-                [NSLayoutConstraint(item: bannerView,
-                                    attribute: .bottom,
-                                    relatedBy: .equal,
-                                    toItem: bottomLayoutGuide,
-                                    attribute: .top,
-                                    multiplier: 1,
-                                    constant: 0),
-                 NSLayoutConstraint(item: bannerView,
-                                    attribute: .centerX,
-                                    relatedBy: .equal,
-                                    toItem: view,
-                                    attribute: .centerX,
-                                    multiplier: 1,
-                                    constant: 0)
-            ])
-        }
     }
 }
