@@ -14,10 +14,9 @@ import AppTrackingTransparency
 class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, GADBannerViewDelegate {
     
     private let refreshControl = UIRefreshControl()
-    var habitEntityList : [HabitEntity] = []
     static var isSaveButtonClick:Bool!
     var bannerView: GADBannerView!
-    
+    private var habitEntityListVM: CustomMainTableListViewModel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var buttonLabel: UILabel!
     
@@ -46,15 +45,15 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         }
         
         buttonLabel.text = NSLocalizedString("NewHabitEvent", comment: "")
-        habitEntityList = DatabaseHelper.app.getHabitEntityResults() as! [HabitEntity]
+        
+        setup()
         tableView.dataSource = self
         tableView.delegate = self
+
         tableView.tableFooterView = UIView()
-        if #available(iOS 10.0, *) {
-            tableView.refreshControl = refreshControl
-        } else {
-            tableView.addSubview(refreshControl)
-        }
+        
+        tableView.addSubview(refreshControl)
+        
         refreshControl.addTarget(self, action: #selector(refreshTable), for: .valueChanged)
         
         let removeAds = Constants.Defaults.value(forKey: Constants.Keys.RemoveAds)
@@ -69,29 +68,29 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         bannerView.delegate = self
         bannerView.load(GADRequest())
         AdsHelper().addBannerViewToView(bannerView, view)
+        
+        setup()
+    }
+    
+    private func setup() {
+        self.habitEntityListVM = CustomMainTableListViewModel(habitEntities: DatabaseHelper.app.getHabitEntityResults() as! [HabitEntity])
+        
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return habitEntityList.count
+        return self.habitEntityListVM.numberOfRowsInSection(section)
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "mainCell", for: indexPath) as! CustomMainTableViewCell
-        if !habitEntityList.isEmpty {
-            cell.details.text = habitEntityList[indexPath.row].name
-            let habitCategory = Int(habitEntityList[indexPath.row].habitCategory)
-            let habitTitle = Int(habitEntityList[indexPath.row].habitTitle)
-            if habitCategory != 0 {
-                cell.imageView2.image = UIImage(named: Constants.habitTitlesImages[habitCategory][habitTitle])
-            }
-            else {
-                cell.imageView2.image = UIImage(named: "time.png")
-            }
-            let startDate =  habitEntityList[indexPath.row].startDate
-            let hour =  habitEntityList[indexPath.row].startHour
-            let minute =  habitEntityList[indexPath.row].startMinute
-            let showYears = habitEntityList[indexPath.row].showYears
-            cell.counter.text = DateHelper.app.calculateDays(startDate: startDate!, hour: Int(hour), minute: Int(minute), isNotOnlyDays: showYears, showHours: false, hasSuffix:  true)
-        }
+        
+        let habitEntityVM = self.habitEntityListVM.habitEntityAtIndex(indexPath.row)
+        cell.details.text = habitEntityVM.details
+        cell.imageView2.image = habitEntityVM.image
+        cell.counter.text = habitEntityVM.counterDescription
         cell.preservesSuperviewLayoutMargins = false
         cell.separatorInset = UIEdgeInsets.zero
         cell.layoutMargins = UIEdgeInsets.zero
@@ -109,6 +108,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
                 self.performSegue(withIdentifier: "toHabitEditVC", sender: nil)
             }
         })
+        
         let deleteAction = UITableViewRowAction(style: .default, title: NSLocalizedString("Delete", comment: "") , handler: { (action:UITableViewRowAction, indexPath:IndexPath) -> Void in
             let deleteMenu = UIAlertController(title: nil, message: NSLocalizedString("DeleteItem", comment: ""), preferredStyle: .actionSheet)
             
@@ -118,20 +118,17 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
                     self.showNetworkErrorPopup()
                 }
                 else {
-                    self.habitEntityList = DatabaseHelper.app.getHabitEntityResults() as! [HabitEntity]
+                    let habitEntityList = DatabaseHelper.app.getHabitEntityResults() as! [HabitEntity]
                     let userId = Constants.Defaults.value(forKey: Constants.Keys.UserId) as? String
                     if !(userId ?? "").isEmpty {
-                        let url = Constants.notificationServerUrl + "specialdays/" + userId! + "/" + (self.habitEntityList[indexPath.row].notificationId?.uuidString ?? "")
+                        let url = Constants.notificationServerUrl + "specialdays/" + userId! + "/" + (habitEntityList[indexPath.row].notificationId?.uuidString ?? "")
                         ApiUtil.app.call(url: url, request: Dictionary<String, String>.init(), httpMethod: "DELETE"){ (response) -> () in
                             print(response)
                             if let isSuccess = response["success"] as? Bool {
                                 print("Habit was deleted" + (isSuccess ? "successfully" :"unsuccessfully") )
                                 if isSuccess {
                                     DatabaseHelper.app.deleteHabitEntity(index: indexPath.row)
-                                    self.habitEntityList = DatabaseHelper.app.getHabitEntityResults() as! [HabitEntity]
-                                    DispatchQueue.main.async {
-                                        self.tableView.reloadData()
-                                    }
+                                    self.setup()
                                 }
                             }
                         }

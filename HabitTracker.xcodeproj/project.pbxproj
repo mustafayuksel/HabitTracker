@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A76337425D6F51600C05AC2 /* CustomMainTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A76337325D6F51600C05AC2 /* CustomMainTableViewModel.swift */; };
 		3F7E10150087B0A2EA456D05 /* Pods_HabitTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3625821635243F86DE868B32 /* Pods_HabitTracker.framework */; };
 		45272DCD242F8B76002BB751 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45272DCC242F8B76002BB751 /* Reachability.swift */; };
 		452F456B22F627C6009E8210 /* HabitCategorySelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F456A22F627C6009E8210 /* HabitCategorySelectorController.swift */; };
@@ -99,6 +100,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2A76337325D6F51600C05AC2 /* CustomMainTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMainTableViewModel.swift; sourceTree = "<group>"; };
 		2AFEF15E25D5D641006DC809 /* GoogleAppMeasurement.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleAppMeasurement.xcframework; path = Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework; sourceTree = "<group>"; };
 		2AFEF16025D5D641006DC809 /* GoogleMobileAds.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleMobileAds.xcframework; path = "Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAdsFramework-Current/GoogleMobileAds.xcframework"; sourceTree = "<group>"; };
 		3625821635243F86DE868B32 /* Pods_HabitTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HabitTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -272,6 +274,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A76337225D6F4E700C05AC2 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				2A76337325D6F51600C05AC2 /* CustomMainTableViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
 		453FF8F522EB503C00214532 = {
 			isa = PBXGroup;
 			children = (
@@ -300,6 +310,7 @@
 		453FF90022EB503C00214532 /* HabitTracker */ = {
 			isa = PBXGroup;
 			children = (
+				2A76337225D6F4E700C05AC2 /* View Models */,
 				45AFEE60231087860027B8E6 /* Model */,
 				45AFEE612310879C0027B8E6 /* View */,
 				45AFEE62231087A90027B8E6 /* Controller */,
@@ -736,6 +747,7 @@
 				45C260F5230C7C0100F3F6EE /* NSCustomPersistentContainer.swift in Sources */,
 				453FF90A22EB503C00214532 /* HabitTracker.xcdatamodeld in Sources */,
 				45D899E52304254A005B085C /* SettingsObject.swift in Sources */,
+				2A76337425D6F51600C05AC2 /* CustomMainTableViewModel.swift in Sources */,
 				45AFA98B2300A3E600BEE5D8 /* CustomMainTableViewCell.swift in Sources */,
 				45B3AEB622FF0C3E00AC43F9 /* Constants.swift in Sources */,
 				456D3E8B230021FA001C5D87 /* Habit.swift in Sources */,
