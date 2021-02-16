@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A17A64125DB0334009F65EF /* TrophyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A17A64025DB0334009F65EF /* TrophyViewController.swift */; };
+		2A17A64A25DB08A6009F65EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AEFE22FF29B500AC43F9 /* Main.storyboard */; };
+		2A5D839B25DBDA5A0012FEEB /* CustomTrophyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5D839A25DBDA5A0012FEEB /* CustomTrophyTableViewCell.swift */; };
+		2A5D83A125DBDAFB0012FEEB /* CustomTrophyTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5D83A025DBDAFB0012FEEB /* CustomTrophyTableViewModel.swift */; };
+		2A5D83A725DBDB7B0012FEEB /* Trophy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5D83A625DBDB7B0012FEEB /* Trophy.swift */; };
+		2A5D83AD25DBDD550012FEEB /* TrophyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5D83AC25DBDD550012FEEB /* TrophyWrapper.swift */; };
+		2A5D83C725DC5ECA0012FEEB /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5D83C625DC5ECA0012FEEB /* UIImage.swift */; };
+		2A5D83CD25DC7DF60012FEEB /* TrophyViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5D83CC25DC7DF60012FEEB /* TrophyViewControllerHelper.swift */; };
 		2A76337425D6F51600C05AC2 /* CustomMainTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A76337325D6F51600C05AC2 /* CustomMainTableViewModel.swift */; };
 		3F7E10150087B0A2EA456D05 /* Pods_HabitTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3625821635243F86DE868B32 /* Pods_HabitTracker.framework */; };
 		45272DCD242F8B76002BB751 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45272DCC242F8B76002BB751 /* Reachability.swift */; };
@@ -43,7 +51,6 @@
 		45AFEE57231085600027B8E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 453FF90B22EB503D00214532 /* Assets.xcassets */; };
 		45B3AEB422FF099700AC43F9 /* HabitTitleSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B3AEB322FF099700AC43F9 /* HabitTitleSelectorController.swift */; };
 		45B3AEB622FF0C3E00AC43F9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B3AEB522FF0C3E00AC43F9 /* Constants.swift */; };
-		45B3AEFC22FF29B500AC43F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AEFE22FF29B500AC43F9 /* Main.storyboard */; };
 		45B3AF0E22FF40C600AC43F9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AF1022FF40C600AC43F9 /* Localizable.strings */; };
 		45B523B32309E29500089212 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B523B22309E29500089212 /* NotificationCenter.framework */; };
 		45B523B62309E29500089212 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B523B52309E29500089212 /* TodayViewController.swift */; };
@@ -100,6 +107,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2A17A64025DB0334009F65EF /* TrophyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrophyViewController.swift; sourceTree = "<group>"; };
+		2A5D839A25DBDA5A0012FEEB /* CustomTrophyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTrophyTableViewCell.swift; sourceTree = "<group>"; };
+		2A5D83A025DBDAFB0012FEEB /* CustomTrophyTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTrophyTableViewModel.swift; sourceTree = "<group>"; };
+		2A5D83A625DBDB7B0012FEEB /* Trophy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trophy.swift; sourceTree = "<group>"; };
+		2A5D83AC25DBDD550012FEEB /* TrophyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrophyWrapper.swift; sourceTree = "<group>"; };
+		2A5D83C625DC5ECA0012FEEB /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		2A5D83CC25DC7DF60012FEEB /* TrophyViewControllerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrophyViewControllerHelper.swift; sourceTree = "<group>"; };
 		2A76337325D6F51600C05AC2 /* CustomMainTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMainTableViewModel.swift; sourceTree = "<group>"; };
 		2AFEF15E25D5D641006DC809 /* GoogleAppMeasurement.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleAppMeasurement.xcframework; path = Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework; sourceTree = "<group>"; };
 		2AFEF16025D5D641006DC809 /* GoogleMobileAds.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleMobileAds.xcframework; path = "Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAdsFramework-Current/GoogleMobileAds.xcframework"; sourceTree = "<group>"; };
@@ -278,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				2A76337325D6F51600C05AC2 /* CustomMainTableViewModel.swift */,
+				2A5D83A025DBDAFB0012FEEB /* CustomTrophyTableViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -367,6 +382,8 @@
 			children = (
 				456D3E8A230021FA001C5D87 /* Habit.swift */,
 				45D899E42304254A005B085C /* SettingsObject.swift */,
+				2A5D83A625DBDB7B0012FEEB /* Trophy.swift */,
+				2A5D83AC25DBDD550012FEEB /* TrophyWrapper.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -377,6 +394,7 @@
 				45AFA98A2300A3E600BEE5D8 /* CustomMainTableViewCell.swift */,
 				4533BDB9242CC1C000323CA7 /* CustomShowHabitTableViewCell.swift */,
 				4533BDBD242CD9AA00323CA7 /* CustomShowHabitDetailsTableViewCell.swift */,
+				2A5D839A25DBDA5A0012FEEB /* CustomTrophyTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -393,6 +411,7 @@
 				45A782072303432C0065C72A /* SettingsViewController.swift */,
 				4534C00B24290AE0003AF5E4 /* UIViewController.swift */,
 				4533BDBB242CD07E00323CA7 /* ShowHabitDetailsViewController.swift */,
+				2A17A64025DB0334009F65EF /* TrophyViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -407,6 +426,8 @@
 				4533BDBF242D40DD00323CA7 /* ApiUtil.swift */,
 				45272DCC242F8B76002BB751 /* Reachability.swift */,
 				45DF57012441F435004A4B9F /* AdsHelper.swift */,
+				2A5D83C625DC5ECA0012FEEB /* UIImage.swift */,
+				2A5D83CC25DC7DF60012FEEB /* TrophyViewControllerHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -630,8 +651,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45B3AEFC22FF29B500AC43F9 /* Main.storyboard in Resources */,
 				455368C2230F323400DD2D77 /* InfoPlist.strings in Resources */,
+				2A17A64A25DB08A6009F65EF /* Main.storyboard in Resources */,
 				45B3AF0E22FF40C600AC43F9 /* Localizable.strings in Resources */,
 				453FF90F22EB503D00214532 /* LaunchScreen.storyboard in Resources */,
 				453FF90C22EB503D00214532 /* Assets.xcassets in Resources */,
@@ -741,11 +762,14 @@
 				453FF90222EB503C00214532 /* AppDelegate.swift in Sources */,
 				4530A1CF23115C4500947C25 /* NotificationHelper.swift in Sources */,
 				4533BDBE242CD9AA00323CA7 /* CustomShowHabitDetailsTableViewCell.swift in Sources */,
+				2A17A64125DB0334009F65EF /* TrophyViewController.swift in Sources */,
 				4533BDBA242CC1C000323CA7 /* CustomShowHabitTableViewCell.swift in Sources */,
 				45B3AEB422FF099700AC43F9 /* HabitTitleSelectorController.swift in Sources */,
 				4533BDC0242D40DD00323CA7 /* ApiUtil.swift in Sources */,
 				45C260F5230C7C0100F3F6EE /* NSCustomPersistentContainer.swift in Sources */,
 				453FF90A22EB503C00214532 /* HabitTracker.xcdatamodeld in Sources */,
+				2A5D83C725DC5ECA0012FEEB /* UIImage.swift in Sources */,
+				2A5D83A125DBDAFB0012FEEB /* CustomTrophyTableViewModel.swift in Sources */,
 				45D899E52304254A005B085C /* SettingsObject.swift in Sources */,
 				2A76337425D6F51600C05AC2 /* CustomMainTableViewModel.swift in Sources */,
 				45AFA98B2300A3E600BEE5D8 /* CustomMainTableViewCell.swift in Sources */,
@@ -753,6 +777,7 @@
 				456D3E8B230021FA001C5D87 /* Habit.swift in Sources */,
 				45A782062303156D0065C72A /* HabitEditViewController.swift in Sources */,
 				45DF57022441F435004A4B9F /* AdsHelper.swift in Sources */,
+				2A5D839B25DBDA5A0012FEEB /* CustomTrophyTableViewCell.swift in Sources */,
 				45A782082303432C0065C72A /* SettingsViewController.swift in Sources */,
 				4533BDBC242CD07E00323CA7 /* ShowHabitDetailsViewController.swift in Sources */,
 				4534C00C24290AE0003AF5E4 /* UIViewController.swift in Sources */,
@@ -760,8 +785,11 @@
 				4540FE062302AAC800D8F990 /* DateHelper.swift in Sources */,
 				45BC2E802427663000C58A6D /* StoreReviewHelper.swift in Sources */,
 				45718A5122FCAF5C00F78CCC /* HabitCreatorController.swift in Sources */,
+				2A5D83A725DBDB7B0012FEEB /* Trophy.swift in Sources */,
+				2A5D83CD25DC7DF60012FEEB /* TrophyViewControllerHelper.swift in Sources */,
 				45272DCD242F8B76002BB751 /* Reachability.swift in Sources */,
 				4540FE042302A9DC00D8F990 /* ShowHabitViewController.swift in Sources */,
+				2A5D83AD25DBDD550012FEEB /* TrophyWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -990,7 +1018,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1048,7 +1076,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1075,7 +1103,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = HabitTracker/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1106,7 +1134,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = HabitTracker/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1129,7 +1157,7 @@
 				DEVELOPMENT_TEAM = LEFRQUV8R6;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = OneSignal/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1153,7 +1181,7 @@
 				DEVELOPMENT_TEAM = LEFRQUV8R6;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = OneSignal/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1219,7 +1247,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LEFRQUV8R6;
 				INFOPLIST_FILE = widget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1244,7 +1272,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LEFRQUV8R6;
 				INFOPLIST_FILE = widget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

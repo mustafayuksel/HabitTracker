@@ -23,9 +23,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADFullScreenContentDeleg
         // Override point for customization after application launch.
         
         let navigationBarAppearace = UINavigationBar.appearance()
-        //navigationBarAppearace.tintColor = UIColorFromHex(rgbValue: 0xffffff)
         navigationBarAppearace.barTintColor = AppDelegate.UIColorFromHex(rgbValue: 0x0866c2)
-        navigationBarAppearace.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        
+        navigationBarAppearace.backgroundColor = AppDelegate.UIColorFromHex(rgbValue: 0x0866c2)
+        navigationBarAppearace.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationBarAppearace.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationBarAppearace.tintColor = AppDelegate.UIColorFromHex(rgbValue: 0xffffff)
+        
         StoreReviewHelper.incrementAppOpenedCount()
         
         OneSignal.initWithLaunchOptions(launchOptions)
@@ -52,17 +56,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADFullScreenContentDeleg
     {
         let request = GADRequest()
         GADInterstitialAd.load(withAdUnitID:unitId,
-                                        request: request,
-                              completionHandler: { (ad, error) in
+                               request: request,
+                               completionHandler: { (ad, error) in
                                 if let error = error {
-                                  print("Failed to load interstitial ad with error: \(error.localizedDescription)")
-                                  return
+                                    print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                                    return
                                 }
                                 self.mInterstitial = ad
                                 self.mInterstitial.fullScreenContentDelegate = self
                                 ad?.present(fromRootViewController: self.gViewController!)
-                              }
-            )
+                               }
+        )
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
@@ -96,7 +100,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADFullScreenContentDeleg
          creates and returns a container, having loaded the store for the
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
-        */
+         */
         let container = NSPersistentContainer(name: "HabitTracker")
         var persistentStoreDescriptions: NSPersistentStoreDescription
         
@@ -113,7 +117,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADFullScreenContentDeleg
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                 
+                
                 /*
                  Typical reasons for an error here include:
                  * The parent directory does not exist, cannot be created, or disallows writing.
@@ -127,9 +131,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADFullScreenContentDeleg
         })
         return container
     }()
-
+    
     // MARK: - Core Data Saving support
-
+    
     func saveContext () {
         let context = persistentContainer.viewContext
         if context.hasChanges {

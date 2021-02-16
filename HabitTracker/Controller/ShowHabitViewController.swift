@@ -11,13 +11,14 @@ import GoogleMobileAds
 
 class ShowHabitViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource, GADBannerViewDelegate {
     let selectedHabitIndex : Int = Constants.Defaults.value(forKey: Constants.Keys.SelectedHabit) as! Int
-    let showHabitImages = ["timer.png", "calendar.png", "success.png"]
+    let showHabitImages = ["timer.png", "calendar.png", "gold10.png"]
     var bannerView: GADBannerView!
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.prefersLargeTitles = true
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
@@ -33,6 +34,8 @@ class ShowHabitViewController: UIViewController ,UITableViewDelegate, UITableVie
         bannerView.delegate = self
         bannerView.load(GADRequest())
         AdsHelper().addBannerViewToView(bannerView, view)
+        
+        self.navigationItem.title = DatabaseHelper.app.getHabitEntityResults()[selectedHabitIndex]?.name
     }
     
     @IBAction func editButtonAction(_ sender: Any) {
@@ -44,6 +47,7 @@ class ShowHabitViewController: UIViewController ,UITableViewDelegate, UITableVie
             self.performSegue(withIdentifier: "toHabitEditVC", sender: nil)
         }
     }
+    
     @IBAction func shareButtonAction(_ sender: Any) {
         let bounds = UIScreen.main.bounds
         UIGraphicsBeginImageContextWithOptions(bounds.size, true, 0.0)
@@ -95,6 +99,9 @@ class ShowHabitViewController: UIViewController ,UITableViewDelegate, UITableVie
         if indexPath.row == 0 {
             Constants.Defaults.set(selectedHabitIndex, forKey: Constants.Keys.SelectedHabit)
             performSegue(withIdentifier: "toShowDetailsVC", sender: nil)
+        }
+        else if indexPath.row == 2 {
+            performSegue(withIdentifier: "toTrophyVC", sender: nil)
         }
     }
     

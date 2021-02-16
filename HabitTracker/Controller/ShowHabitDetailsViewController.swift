@@ -18,6 +18,7 @@ class ShowHabitDetailsViewController: UIViewController, UITableViewDelegate, UIT
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.prefersLargeTitles = false
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()

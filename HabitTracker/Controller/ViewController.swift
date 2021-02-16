@@ -22,9 +22,11 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.prefersLargeTitles = true
         UIApplication.shared.applicationIconBadgeNumber = 0
         self.navigationItem.hidesBackButton = true
         self.navigationItem.title = NSLocalizedString("HabitDayCounter", comment: "")
+        prepareAppearance()
         
         if #available(iOS 14, *) {
             ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
@@ -49,7 +51,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         setup()
         tableView.dataSource = self
         tableView.delegate = self
-
+        
         tableView.tableFooterView = UIView()
         
         tableView.addSubview(refreshControl)
@@ -70,6 +72,16 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         AdsHelper().addBannerViewToView(bannerView, view)
         
         setup()
+    }
+    
+    fileprivate func prepareAppearance() {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithDefaultBackground()
+        appearance.backgroundColor = AppDelegate.UIColorFromHex(rgbValue: 0x0866c2)
+        appearance.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
     }
     
     private func setup() {
