@@ -16,6 +16,7 @@ class ShowHabitDetailsViewController: UIViewController, UITableViewDelegate, UIT
     var bannerView: GADBannerView!
     
     @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.prefersLargeTitles = false

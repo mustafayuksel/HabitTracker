@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class TrophyViewControllerHelper {
+    
     func prepareTrophyObject() -> [TrophyWrapper] {
         var trophyObject = [TrophyWrapper]()
         var trophySection1 = [Trophy]()
@@ -36,5 +37,4 @@ class TrophyViewControllerHelper {
         trophyObject.append(TrophyWrapper(trophyList: trophySection3, headerName: NSLocalizedString("Gold", comment: "") + " " + NSLocalizedString("Series", comment: "")))
         return trophyObject
     }
-
 }

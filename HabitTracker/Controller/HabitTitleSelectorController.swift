@@ -9,9 +9,18 @@
 import UIKit
 
 class HabitTitleSelectorController: UIViewController,UITableViewDelegate, UITableViewDataSource {
+    
     var selectedCategory : Int = Constants.Defaults.value(forKey: Constants.Keys.SelectedCategory) as! Int
     
     @IBOutlet weak var tableView: UITableView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.dataSource = self
+        tableView.delegate = self
+        self.title = NSLocalizedString(Constants.habitCategories[selectedCategory], comment: "")
+        tableView.tableFooterView = UIView()
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Constants.habitTitles[selectedCategory].count
@@ -31,13 +40,5 @@ class HabitTitleSelectorController: UIViewController,UITableViewDelegate, UITabl
         tableView.deselectRow(at: indexPath, animated: true)
         Constants.Defaults.set(indexPath.row, forKey: Constants.Keys.SelectedTitle)
         performSegue(withIdentifier: "toCreateHabitVC", sender: nil)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.dataSource = self
-        tableView.delegate = self
-        self.title = NSLocalizedString(Constants.habitCategories[selectedCategory], comment: "")
-        tableView.tableFooterView = UIView()
     }
 }

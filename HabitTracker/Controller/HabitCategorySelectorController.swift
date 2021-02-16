@@ -10,11 +10,20 @@ import UIKit
 
 class HabitCategorySelectorController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     
-    
     @IBOutlet weak var tableView: UITableView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.title = NSLocalizedString("PickCategory", comment: "")
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.tableFooterView = UIView()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Constants.habitCategories.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath)
         cell.imageView!.image = UIImage(named: Constants.habitCategoryImages[indexPath.row]);
@@ -24,6 +33,7 @@ class HabitCategorySelectorController: UIViewController,UITableViewDelegate, UIT
         cell.layoutMargins = UIEdgeInsets.zero
         return cell
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         Constants.Defaults.set(indexPath.row, forKey: Constants.Keys.SelectedCategory)
@@ -33,13 +43,5 @@ class HabitCategorySelectorController: UIViewController,UITableViewDelegate, UIT
         else{
             performSegue(withIdentifier: "toHabitTitleSelectorVC", sender: nil)
         }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.title = NSLocalizedString("PickCategory", comment: "")
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.tableFooterView = UIView()
     }
 }
