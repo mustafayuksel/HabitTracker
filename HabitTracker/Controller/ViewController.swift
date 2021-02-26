@@ -22,6 +22,10 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        TrophyHelper().findTrophyIndex(calculatedDays: 364)
+        
         self.navigationController?.navigationBar.prefersLargeTitles = true
         UIApplication.shared.applicationIconBadgeNumber = 0
         self.navigationItem.hidesBackButton = true
@@ -240,10 +244,21 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
             
             if trophyIndexParts.index != savedIndex || trophyIndexParts.sectionIndex != savedSectionIndex {
                 DatabaseHelper.app.updateTrophyData(index: i, trophyParts: trophyIndexParts)
-                
-                //display popover
-               // break
+                Constants.Defaults.set(i, forKey: Constants.Keys.SelectedHabit)
+                performSegue(withIdentifier: "toShowTrophyVC", sender: nil)
+                break
             }
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "toShowTrophyVC") {
+            let vc = segue.destination as! ShowTrophyViewController
+            vc.viewController = self
+        }
+    }
+    
+    func popoverDismissed() {
+        updateHabitsTrophy()
     }
 }

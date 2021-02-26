@@ -11,9 +11,13 @@ import UIKit
 
 class ShowTrophyViewController : UIViewController {
     
+    var viewController : ViewController? = nil
+    var trophyViewController : TrophyViewController? = nil
+    
     @IBOutlet weak var trophyImage: UIImageView!
     @IBOutlet weak var trophyTitle: UILabel!
     @IBOutlet weak var trophyDescription: UILabel!
+    
     
     let selectedHabitIndex : Int = Constants.Defaults.value(forKey: Constants.Keys.SelectedHabit) as! Int
     
@@ -29,7 +33,6 @@ class ShowTrophyViewController : UIViewController {
         
         let innerSectionIndex = selectedHabit?.trophyInnerSectionIndex
         
-        
         if innerSectionIndex == 0 {
             trophyImage.image = trophy.image1
             trophyDescription.text = trophy.description1
@@ -43,5 +46,12 @@ class ShowTrophyViewController : UIViewController {
     
     @IBAction func dismissPopover(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+        
+        if viewController != nil {
+            viewController?.popoverDismissed()
+        }
+        else if trophyViewController != nil {
+            trophyViewController?.popoverDismissed()
+        }
     }
 }

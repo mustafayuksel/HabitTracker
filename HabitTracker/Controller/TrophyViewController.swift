@@ -62,4 +62,14 @@ class TrophyViewController : UITableViewController {
         cell.backgroundImage2.image = trophyVM.backgroundImage2
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "toShowTrophyVC") {
+            let vc = segue.destination as! ShowTrophyViewController
+            vc.trophyViewController = self
+        }
+    }
+    
+    func popoverDismissed() {
+    }
 }

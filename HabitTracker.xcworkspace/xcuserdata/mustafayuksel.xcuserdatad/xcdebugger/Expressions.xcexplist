@@ -26,5 +26,13 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "TrophyHelper.findTrophyIndex(calculatedDays:):TrophyHelper.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "(index ?? -1, sectionIndex ?? -1, innerSectionIndex ?? -1)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>
