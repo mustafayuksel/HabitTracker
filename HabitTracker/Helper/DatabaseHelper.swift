@@ -47,6 +47,8 @@ class DatabaseHelper {
         entity.setValue(data.notificationId, forKey: "notificationId")
         entity.setValue(data.showYears, forKey: "showYears")
         entity.setValue(data.showHours, forKey: "showHours")
+        entity.setValue(data.trophyIndex, forKey: "trophyIndex")
+        entity.setValue(data.trophySectionIndex, forKey: "trophySectionIndex")
         do{
             try context.save()
             print("no error")
@@ -112,6 +114,30 @@ class DatabaseHelper {
             objectToUpdate.setValue(habit.isPrimary, forKey: "isPrimary")
             objectToUpdate.setValue(habit.showYears, forKey: "showYears")
             objectToUpdate.setValue(habit.showHours, forKey: "showHours")
+            objectToUpdate.setValue(habit.trophyIndex, forKey: "trophyIndex")
+            objectToUpdate.setValue(habit.trophySectionIndex, forKey: "trophySectionIndex")
+            objectToUpdate.setValue(habit.trophyInnerSectionIndex, forKey: "trophyInnerSectionIndex")
+            try context.save()
+        }
+        catch
+        {
+            print(error)
+        }
+    }
+    
+    func updateTrophyData(index : Int, trophyParts : (index: Int, sectionIndex: Int, innerSectionIndex : Int)) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: Constants.HABIT_ENTITY)
+        request.returnsObjectsAsFaults = false
+        
+        do {
+            let resultList = try context.fetch(request)
+            let objectToUpdate = resultList[index] as! NSManagedObject
+            objectToUpdate.setValue(trophyParts.index, forKey: "trophyIndex")
+            objectToUpdate.setValue(trophyParts.sectionIndex, forKey: "trophySectionIndex")
+            objectToUpdate.setValue(trophyParts.innerSectionIndex, forKey: "trophyInnerSectionIndex")
             try context.save()
         }
         catch

@@ -92,10 +92,13 @@ class DateHelper {
         else {
             counterText += dayText + " " + NSLocalizedString("Month", comment: "") + " "
         }
-        
     }
     
-    func calculateDays (startDate : String, hour : Int, minute : Int, isNotOnlyDays : Bool, showHours : Bool, hasSuffix : Bool) -> String {
+    func calculatePassedDays (startDate : String) -> Int? {
+        return calculateDifferenceOfDate(startDate: startDate, components: [Calendar.Component.day]).day ?? 0
+    }
+    
+    func calculatePassedDate (startDate : String, hour : Int, minute : Int, isNotOnlyDays : Bool, showHours : Bool, hasSuffix : Bool) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
@@ -219,5 +222,30 @@ class DateHelper {
             counterText = "0 " + NSLocalizedString(timeLocalizable, comment: "") + " " + NSLocalizedString("Passed", comment: "")
         }
         return counterText
+    }
+    
+    func calculateTrophyDays(calculatedDays : Int) -> Int{
+        for trophyDaysSections in Constants.TROPHY_DAYS {
+            for i in 0..<trophyDaysSections.count {
+                let trophyDaysSection = trophyDaysSections[i]
+                if trophyDaysSection.contains(calculatedDays) {
+                    break
+                }
+                else {
+                    for j in 0..<trophyDaysSection.count - 1 {
+                        let firstTrophyDay = trophyDaysSection[j]
+                        let secondTrophyDay = trophyDaysSection[j + 1]
+                        
+                        if firstTrophyDay < calculatedDays && calculatedDays < secondTrophyDay {
+                            return firstTrophyDay
+                        }
+                        else if calculatedDays < firstTrophyDay && calculatedDays < secondTrophyDay {
+                            return trophyDaysSections[i - 1][1]
+                        }
+                    }
+                }
+            }
+        }
+        return calculatedDays
     }
 }

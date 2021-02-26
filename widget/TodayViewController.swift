@@ -61,7 +61,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                         if detailsText != nil {
                             habitLabel.text = detailsText as? String
                         }
-                        counterLabel.text = DateHelper.app.calculateDays(startDate: startDate, hour: Int(startHour), minute: Int(startMinute), isNotOnlyDays: showYears, showHours: showHours, hasSuffix: true)
+                        counterLabel.text = DateHelper.app.calculatePassedDate(startDate: startDate, hour: Int(startHour), minute: Int(startMinute), isNotOnlyDays: showYears, showHours: showHours, hasSuffix: true)
                         if habitCategory == 0 {
                             imageView.image = UIImage(named: "time.png")
                         }

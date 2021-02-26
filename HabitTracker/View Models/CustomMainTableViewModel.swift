@@ -50,7 +50,7 @@ extension CustomMainTableViewModel {
         let hour =  habitEntity.startHour
         let minute =  habitEntity.startMinute
         let showYears = habitEntity.showYears
-        return DateHelper.app.calculateDays(startDate: startDate!, hour: Int(hour), minute: Int(minute), isNotOnlyDays: showYears, showHours: false, hasSuffix:  true)
+        return DateHelper.app.calculatePassedDate(startDate: startDate!, hour: Int(hour), minute: Int(minute), isNotOnlyDays: showYears, showHours: false, hasSuffix:  true)
     }
     
     var image: UIImage? {

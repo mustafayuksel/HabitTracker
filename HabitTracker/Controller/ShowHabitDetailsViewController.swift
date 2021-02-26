@@ -47,7 +47,7 @@ class ShowHabitDetailsViewController: UIViewController, UITableViewDelegate, UIT
         if indexPath.row == 0 {
             let hour =  selectedHabit!.startHour
             let minute =  selectedHabit!.startMinute
-            cell.textLabel?.text = DateHelper.app.calculateDays(startDate: selectedHabit?.startDate ?? Date().description, hour: Int(hour), minute: Int(minute), isNotOnlyDays: selectedHabit?.showYears ?? true, showHours:  false,  hasSuffix: true)
+            cell.textLabel?.text = DateHelper.app.calculatePassedDate(startDate: selectedHabit?.startDate ?? Date().description, hour: Int(hour), minute: Int(minute), isNotOnlyDays: selectedHabit?.showYears ?? true, showHours:  false,  hasSuffix: true)
         }
         else {
             cell.textLabel?.text = DateHelper.app.calculatePassedByDateComponent(startDate: selectedHabit?.startDate ?? Date().description, dateComponent: dateComponents[indexPath.row - 1])
@@ -66,7 +66,7 @@ class ShowHabitDetailsViewController: UIViewController, UITableViewDelegate, UIT
         if indexPath.row == 0 {
             let hour =  selectedHabit!.startHour
             let minute =  selectedHabit!.startMinute
-            cellText = DateHelper.app.calculateDays(startDate: selectedHabit?.startDate ?? Date().description, hour: Int(hour), minute: Int(minute), isNotOnlyDays: selectedHabit?.showYears ?? true, showHours:  false,  hasSuffix: true)
+            cellText = DateHelper.app.calculatePassedDate(startDate: selectedHabit?.startDate ?? Date().description, hour: Int(hour), minute: Int(minute), isNotOnlyDays: selectedHabit?.showYears ?? true, showHours:  false,  hasSuffix: true)
         }
         else {
             cellText = DateHelper.app.calculatePassedByDateComponent(startDate: startDate, dateComponent: dateComponents[indexPath.row - 1]) ?? ""

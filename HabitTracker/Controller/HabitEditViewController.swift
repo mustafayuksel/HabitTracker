@@ -127,7 +127,8 @@ class HabitEditViewController : UIViewController, GADBannerViewDelegate {
         }
         
         let reminderFrequencyRawValue = reminderFrequencyOutlet.selectedSegmentIndex
-        let habit = Habit(name: title!, habitCategory: 0, habitTitle: 0, reminderFrequency: reminderFrequencyRawValue, startDate: date, startHour: hour, startMinute : minute, isPrimary : isPrimary, notificationId : habitEntityList[selectedHabit].notificationId ?? UUID(), showYears : showYears, showHours : showHours)
+        let trophyIndexParts = TrophyHelper().findTrophyIndex(calculatedDays: DateHelper.app.calculatePassedDays(startDate: date) ?? 0)
+        let habit = Habit(name: title!, habitCategory: 0, habitTitle: 0, reminderFrequency: reminderFrequencyRawValue, startDate: date, startHour: hour, startMinute : minute, isPrimary : isPrimary, notificationId : habitEntityList[selectedHabit].notificationId ?? UUID(), showYears : showYears, showHours : showHours, trophyIndex : trophyIndexParts.0, trophySectionIndex : trophyIndexParts.1, trophyInnerSectionIndex : trophyIndexParts.2)
         DatabaseHelper.app.updateData(index: selectedHabit, habit: habit)
         let userId = Constants.Defaults.value(forKey: Constants.Keys.UserId) as? String
         if !(userId ?? "").isEmpty {

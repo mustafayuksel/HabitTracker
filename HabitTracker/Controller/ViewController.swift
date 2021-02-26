@@ -28,6 +28,8 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         self.navigationItem.title = NSLocalizedString("HabitDayCounter", comment: "")
         prepareAppearance()
         
+        updateHabitsTrophy()
+        
         if #available(iOS 14, *) {
             ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
                 Constants.Defaults.set(true, forKey: Constants.Keys.RequestIDFAComplete)
@@ -109,9 +111,9 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         return cell
     }
     
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?
     {
-        let editAction = UITableViewRowAction(style: .normal, title: NSLocalizedString("Edit", comment: "") , handler: { (action:UITableViewRowAction, indexPath: IndexPath) -> Void in
+        let editAction = UIContextualAction(style: .normal, title: NSLocalizedString("Edit", comment: "")) {  (contextualAction, view, boolValue) in
             if !Reachability.isConnectedToNetwork() {
                 self.showNetworkErrorPopup()
             }
@@ -119,9 +121,8 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
                 Constants.Defaults.set(indexPath.row, forKey: Constants.Keys.SelectedHabit)
                 self.performSegue(withIdentifier: "toHabitEditVC", sender: nil)
             }
-        })
-        
-        let deleteAction = UITableViewRowAction(style: .default, title: NSLocalizedString("Delete", comment: "") , handler: { (action:UITableViewRowAction, indexPath:IndexPath) -> Void in
+        }
+        let deleteAction = UIContextualAction(style: .destructive, title: NSLocalizedString("Delete", comment: "")) {  (contextualAction, view, boolValue) in
             let deleteMenu = UIAlertController(title: nil, message: NSLocalizedString("DeleteItem", comment: ""), preferredStyle: .actionSheet)
             
             let deleteAction = UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .default){ _ in
@@ -158,8 +159,8 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
                 deleteMenu.popoverPresentationController!.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
             }
             self.present(deleteMenu, animated: true, completion: nil)
-        })
-        return [deleteAction, editAction]
+        }
+        return UISwipeActionsConfiguration(actions: [deleteAction, editAction])
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -226,5 +227,23 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
             alert.popoverPresentationController!.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
         }
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    fileprivate func updateHabitsTrophy() {
+        let habitEntities = DatabaseHelper.app.getHabitEntityResults()
+        
+        for i in 0..<habitEntities.count {
+            let trophyIndexParts = TrophyHelper().findTrophyIndex(calculatedDays: DateHelper.app.calculatePassedDays(startDate: habitEntities[i]?.startDate ?? Date().description) ?? 0)
+            
+            let savedIndex = habitEntities[i]?.trophyIndex ?? -1
+            let savedSectionIndex = habitEntities[i]?.trophySectionIndex ?? -1
+            
+            if trophyIndexParts.index != savedIndex || trophyIndexParts.sectionIndex != savedSectionIndex {
+                DatabaseHelper.app.updateTrophyData(index: i, trophyParts: trophyIndexParts)
+                
+                //display popover
+               // break
+            }
+        }
     }
 }

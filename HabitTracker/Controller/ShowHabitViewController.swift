@@ -78,7 +78,7 @@ class ShowHabitViewController: UIViewController ,UITableViewDelegate, UITableVie
         let minute =  selectedHabit!.startMinute
         if indexPath.row == 0 {
             cell.title.text = NSLocalizedString("PassedTime", comment: "")
-            cell.detail.text = DateHelper.app.calculateDays(startDate: selectedHabit?.startDate ?? Date().description, hour: Int(hour), minute: Int(minute), isNotOnlyDays: selectedHabit?.showYears ?? true, showHours: false,  hasSuffix: false)
+            cell.detail.text = DateHelper.app.calculatePassedDate(startDate: selectedHabit?.startDate ?? Date().description, hour: Int(hour), minute: Int(minute), isNotOnlyDays: selectedHabit?.showYears ?? true, showHours: false,  hasSuffix: false)
         }
         else if indexPath.row == 1 {
             cell.title.text = NSLocalizedString("Date", comment: "")
@@ -86,7 +86,18 @@ class ShowHabitViewController: UIViewController ,UITableViewDelegate, UITableVie
         }
         else if indexPath.row == 2 {
             cell.title.text = NSLocalizedString("Trophy", comment: "")
-            cell.detail.text = DateHelper.app.calculateDays(startDate: selectedHabit?.startDate ?? Date().description, hour: Int(hour), minute: Int(minute), isNotOnlyDays: selectedHabit?.showYears ?? true, showHours: false,  hasSuffix: false)
+            cell.detail.text = "-"
+            
+            let calculatedDays = DateHelper.app.calculateTrophyDays(calculatedDays: DateHelper.app.calculatePassedDays(startDate: selectedHabit?.startDate ?? Date().description) ?? 0)
+            if calculatedDays > 0 {
+                let systemLanguage = Locale.current.languageCode
+                if systemLanguage != "tr" {
+                    cell.detail.text = "\(calculatedDays)" + " " + NSLocalizedString("Days", comment: "")
+                }
+                else {
+                    cell.detail.text = "\(calculatedDays)" + " " + NSLocalizedString("Day", comment: "")
+                }
+            }
         }
         cell.preservesSuperviewLayoutMargins = false
         cell.separatorInset = UIEdgeInsets.zero
@@ -101,6 +112,7 @@ class ShowHabitViewController: UIViewController ,UITableViewDelegate, UITableVie
             performSegue(withIdentifier: "toShowDetailsVC", sender: nil)
         }
         else if indexPath.row == 2 {
+            Constants.Defaults.set(selectedHabitIndex, forKey: Constants.Keys.SelectedHabit)
             performSegue(withIdentifier: "toTrophyVC", sender: nil)
         }
     }

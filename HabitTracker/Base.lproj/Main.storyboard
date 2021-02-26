@@ -137,6 +137,9 @@
                         <segue destination="SbM-sG-vIu" kind="show" identifier="toShowHabitVC" id="a38-KP-M1q"/>
                         <segue destination="yzg-c0-HB3" kind="show" identifier="toHabitEditVC" id="4nE-QR-eML"/>
                         <segue destination="fDQ-VJ-iOT" kind="show" identifier="toSettingsVC" id="4Vh-ln-BKO"/>
+                        <segue destination="eEo-QU-aDp" kind="popoverPresentation" identifier="toShowTrophyVC" popoverAnchorView="8bC-Xf-vdC" id="kyz-WR-YKY">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES"/>
+                        </segue>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -314,6 +317,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Trophies" id="WLO-1n-rWm"/>
+                    <connections>
+                        <segue destination="eEo-QU-aDp" kind="popoverPresentation" identifier="toShowTrophyVC" popoverAnchorView="BwY-7Q-8yB" id="fQA-JD-Du1">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES"/>
+                        </segue>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xmT-Jl-yet" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -400,6 +408,82 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tbr-nC-Fql" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3070" y="-30"/>
+        </scene>
+        <!--Show Trophy View Controller-->
+        <scene sceneID="YPO-Jr-PMC">
+            <objects>
+                <viewController id="eEo-QU-aDp" customClass="ShowTrophyViewController" customModule="HabitTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Fv-6C-EtS"/>
+                        <viewControllerLayoutGuide type="bottom" id="BJT-8f-FFv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4M3-8w-Pky">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bronze1" translatesAutoresizingMaskIntoConstraints="NO" id="AIX-cw-UiC">
+                                <rect key="frame" x="67.5" y="270" width="240" height="108"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="T6C-qZ-uvD"/>
+                                    <constraint firstAttribute="width" constant="240" id="apJ-Pj-tV7"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOB-EV-9QR">
+                                <rect key="frame" x="57.5" y="168" width="260" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59" id="LA7-QW-43z"/>
+                                    <constraint firstAttribute="width" constant="260" id="sHO-Me-56K"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z7a-JQ-fM2">
+                                <rect key="frame" x="54.5" y="456" width="266" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="266" id="Gye-br-qWf"/>
+                                    <constraint firstAttribute="height" constant="61" id="HaM-9T-X7i"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6c4-Ew-rrs">
+                                <rect key="frame" x="11" y="15" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="24" id="Cos-RQ-3u1"/>
+                                    <constraint firstAttribute="width" constant="24" id="P1a-k1-3W5"/>
+                                    <constraint firstAttribute="height" constant="24" id="Z5I-LZ-onQ"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="close"/>
+                                <connections>
+                                    <action selector="dismissPopover:" destination="eEo-QU-aDp" eventType="touchUpInside" id="ySl-1w-oct"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="z7a-JQ-fM2" firstAttribute="top" secondItem="AIX-cw-UiC" secondAttribute="bottom" constant="78" id="0Js-jd-8rA"/>
+                            <constraint firstItem="BJT-8f-FFv" firstAttribute="top" secondItem="z7a-JQ-fM2" secondAttribute="bottom" constant="130" id="0tT-L2-qFc"/>
+                            <constraint firstItem="IOB-EV-9QR" firstAttribute="top" secondItem="2Fv-6C-EtS" secondAttribute="bottom" constant="168" id="1km-GM-tXd"/>
+                            <constraint firstItem="AIX-cw-UiC" firstAttribute="centerX" secondItem="4M3-8w-Pky" secondAttribute="centerX" id="1sr-fC-Ork"/>
+                            <constraint firstItem="IOB-EV-9QR" firstAttribute="centerX" secondItem="4M3-8w-Pky" secondAttribute="centerX" id="4NC-Fo-br1"/>
+                            <constraint firstItem="z7a-JQ-fM2" firstAttribute="centerX" secondItem="4M3-8w-Pky" secondAttribute="centerX" id="Zn2-3Y-BgL"/>
+                            <constraint firstItem="AIX-cw-UiC" firstAttribute="centerY" secondItem="4M3-8w-Pky" secondAttribute="centerY" id="dyT-GZ-i5m"/>
+                            <constraint firstItem="6c4-Ew-rrs" firstAttribute="leading" secondItem="4M3-8w-Pky" secondAttribute="leadingMargin" constant="-5" id="i5I-N9-175"/>
+                            <constraint firstItem="6c4-Ew-rrs" firstAttribute="top" secondItem="2Fv-6C-EtS" secondAttribute="bottom" constant="15" id="nCn-8V-m6V"/>
+                            <constraint firstItem="AIX-cw-UiC" firstAttribute="top" secondItem="IOB-EV-9QR" secondAttribute="bottom" constant="43" id="sXF-Oy-M4h"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="trophyDescription" destination="z7a-JQ-fM2" id="R9O-EP-3aQ"/>
+                        <outlet property="trophyImage" destination="AIX-cw-UiC" id="i0g-6Y-nAN"/>
+                        <outlet property="trophyTitle" destination="IOB-EV-9QR" id="mnb-PS-Wcr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BgF-Cy-nPr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3776.8000000000002" y="169.56521739130437"/>
         </scene>
         <!--Habit Creator Controller-->
         <scene sceneID="sHc-ma-fid">
@@ -1067,12 +1151,15 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="D33-G5-xFk"/>
+        <segue reference="4nE-QR-eML"/>
         <segue reference="UIc-ce-diw"/>
+        <segue reference="kyz-WR-YKY"/>
         <segue reference="h8s-Nv-4zo"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
+        <image name="bronze1" width="512" height="512"/>
+        <image name="close" width="512" height="512"/>
         <image name="edit2" width="24" height="24"/>
         <image name="plus" width="512" height="512"/>
         <image name="settings.png" width="24" height="24"/>

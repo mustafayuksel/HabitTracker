@@ -23,6 +23,8 @@ class Constants {
     static let HABIT_ENTITY = "HabitEntity"
     static let PRUDUCT_ID: NSString = "com.mustafayuksel.HabitTracker.removeAds"
     
+    static let TROPHY_DAYS = [[[1, 2], [3, 4], [5, 6]], [[7, 10], [15, 20], [25, 30], [40, 50] ,[60, 75]], [[90, 120], [150, 180], [210, 240], [270, 300], [330, 365]]]
+    
     static let MAIL_ADDRESS = "habitdaycounter@gmail.com"
     
     static let notificationServerUrl = "https://notification-server-prod.herokuapp.com/"

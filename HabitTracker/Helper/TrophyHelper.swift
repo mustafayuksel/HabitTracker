@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class TrophyViewControllerHelper {
+class TrophyHelper {
     
     func prepareTrophyObject() -> [TrophyWrapper] {
         var trophyObject = [TrophyWrapper]()
@@ -36,5 +36,41 @@ class TrophyViewControllerHelper {
         trophyObject.append(TrophyWrapper(trophyList: trophySection2, headerName: NSLocalizedString("Silver", comment: "") + " " + NSLocalizedString("Series", comment: "")))
         trophyObject.append(TrophyWrapper(trophyList: trophySection3, headerName: NSLocalizedString("Gold", comment: "") + " " + NSLocalizedString("Series", comment: "")))
         return trophyObject
+    }
+    
+    func findTrophyIndex(calculatedDays : Int) -> (index: Int, sectionIndex: Int, innerSectionIndex : Int){
+        if calculatedDays > 0 {
+            for trophyDaysSections in Constants.TROPHY_DAYS {
+                for i in 0..<trophyDaysSections.count {
+                    let trophyDaysSection = trophyDaysSections[i]
+                    if trophyDaysSection.contains(calculatedDays) {
+                        let innerSectionIndex = trophyDaysSection.firstIndex(of: calculatedDays)
+                        let sectionIndex = trophyDaysSections.firstIndex(of: trophyDaysSection)
+                        let index = Constants.TROPHY_DAYS.firstIndex(of: trophyDaysSections)
+                        return (index ?? -1, sectionIndex ?? -1, innerSectionIndex ?? -1)
+                    }
+                    else {
+                        for j in 0..<trophyDaysSection.count - 1 {
+                            let firstTrophyDay = trophyDaysSection[j]
+                            let secondTrophyDay = trophyDaysSection[j + 1]
+                            
+                            if firstTrophyDay < calculatedDays && calculatedDays < secondTrophyDay {
+                                let innerSectionIndex = trophyDaysSection.firstIndex(of: firstTrophyDay)
+                                let sectionIndex = trophyDaysSections.firstIndex(of: trophyDaysSection)
+                                let index = Constants.TROPHY_DAYS.firstIndex(of: trophyDaysSections)
+                                return (index ?? -1, sectionIndex ?? -1, innerSectionIndex ?? -1)
+                            }
+                            else if calculatedDays < firstTrophyDay && calculatedDays < secondTrophyDay {
+                                let innerSectionIndex = 1
+                                let sectionIndex = i - 1
+                                let index = Constants.TROPHY_DAYS.firstIndex(of: trophyDaysSections)
+                                return (index ?? -1, sectionIndex , innerSectionIndex )
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return (-1 , -1, -1)
     }
 }

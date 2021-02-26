@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A05706D25E27DA400C93C67 /* ShowTrophyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A05706C25E27DA400C93C67 /* ShowTrophyViewController.swift */; };
 		2A17A64125DB0334009F65EF /* TrophyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A17A64025DB0334009F65EF /* TrophyViewController.swift */; };
 		2A17A64A25DB08A6009F65EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B3AEFE22FF29B500AC43F9 /* Main.storyboard */; };
 		2A5D839B25DBDA5A0012FEEB /* CustomTrophyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5D839A25DBDA5A0012FEEB /* CustomTrophyTableViewCell.swift */; };
@@ -14,7 +15,7 @@
 		2A5D83A725DBDB7B0012FEEB /* Trophy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5D83A625DBDB7B0012FEEB /* Trophy.swift */; };
 		2A5D83AD25DBDD550012FEEB /* TrophyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5D83AC25DBDD550012FEEB /* TrophyWrapper.swift */; };
 		2A5D83C725DC5ECA0012FEEB /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5D83C625DC5ECA0012FEEB /* UIImage.swift */; };
-		2A5D83CD25DC7DF60012FEEB /* TrophyViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5D83CC25DC7DF60012FEEB /* TrophyViewControllerHelper.swift */; };
+		2A5D83CD25DC7DF60012FEEB /* TrophyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5D83CC25DC7DF60012FEEB /* TrophyHelper.swift */; };
 		2A76337425D6F51600C05AC2 /* CustomMainTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A76337325D6F51600C05AC2 /* CustomMainTableViewModel.swift */; };
 		3F7E10150087B0A2EA456D05 /* Pods_HabitTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3625821635243F86DE868B32 /* Pods_HabitTracker.framework */; };
 		45272DCD242F8B76002BB751 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45272DCC242F8B76002BB751 /* Reachability.swift */; };
@@ -107,13 +108,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2A05706C25E27DA400C93C67 /* ShowTrophyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTrophyViewController.swift; sourceTree = "<group>"; };
 		2A17A64025DB0334009F65EF /* TrophyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrophyViewController.swift; sourceTree = "<group>"; };
 		2A5D839A25DBDA5A0012FEEB /* CustomTrophyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTrophyTableViewCell.swift; sourceTree = "<group>"; };
 		2A5D83A025DBDAFB0012FEEB /* CustomTrophyTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTrophyTableViewModel.swift; sourceTree = "<group>"; };
 		2A5D83A625DBDB7B0012FEEB /* Trophy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trophy.swift; sourceTree = "<group>"; };
 		2A5D83AC25DBDD550012FEEB /* TrophyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrophyWrapper.swift; sourceTree = "<group>"; };
 		2A5D83C625DC5ECA0012FEEB /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
-		2A5D83CC25DC7DF60012FEEB /* TrophyViewControllerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrophyViewControllerHelper.swift; sourceTree = "<group>"; };
+		2A5D83CC25DC7DF60012FEEB /* TrophyHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrophyHelper.swift; sourceTree = "<group>"; };
 		2A76337325D6F51600C05AC2 /* CustomMainTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMainTableViewModel.swift; sourceTree = "<group>"; };
 		2AFEF15E25D5D641006DC809 /* GoogleAppMeasurement.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleAppMeasurement.xcframework; path = Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework; sourceTree = "<group>"; };
 		2AFEF16025D5D641006DC809 /* GoogleMobileAds.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleMobileAds.xcframework; path = "Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAdsFramework-Current/GoogleMobileAds.xcframework"; sourceTree = "<group>"; };
@@ -412,6 +414,7 @@
 				4534C00B24290AE0003AF5E4 /* UIViewController.swift */,
 				4533BDBB242CD07E00323CA7 /* ShowHabitDetailsViewController.swift */,
 				2A17A64025DB0334009F65EF /* TrophyViewController.swift */,
+				2A05706C25E27DA400C93C67 /* ShowTrophyViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -427,7 +430,7 @@
 				45272DCC242F8B76002BB751 /* Reachability.swift */,
 				45DF57012441F435004A4B9F /* AdsHelper.swift */,
 				2A5D83C625DC5ECA0012FEEB /* UIImage.swift */,
-				2A5D83CC25DC7DF60012FEEB /* TrophyViewControllerHelper.swift */,
+				2A5D83CC25DC7DF60012FEEB /* TrophyHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -766,6 +769,7 @@
 				4533BDBA242CC1C000323CA7 /* CustomShowHabitTableViewCell.swift in Sources */,
 				45B3AEB422FF099700AC43F9 /* HabitTitleSelectorController.swift in Sources */,
 				4533BDC0242D40DD00323CA7 /* ApiUtil.swift in Sources */,
+				2A05706D25E27DA400C93C67 /* ShowTrophyViewController.swift in Sources */,
 				45C260F5230C7C0100F3F6EE /* NSCustomPersistentContainer.swift in Sources */,
 				453FF90A22EB503C00214532 /* HabitTracker.xcdatamodeld in Sources */,
 				2A5D83C725DC5ECA0012FEEB /* UIImage.swift in Sources */,
@@ -786,7 +790,7 @@
 				45BC2E802427663000C58A6D /* StoreReviewHelper.swift in Sources */,
 				45718A5122FCAF5C00F78CCC /* HabitCreatorController.swift in Sources */,
 				2A5D83A725DBDB7B0012FEEB /* Trophy.swift in Sources */,
-				2A5D83CD25DC7DF60012FEEB /* TrophyViewControllerHelper.swift in Sources */,
+				2A5D83CD25DC7DF60012FEEB /* TrophyHelper.swift in Sources */,
 				45272DCD242F8B76002BB751 /* Reachability.swift in Sources */,
 				4540FE042302A9DC00D8F990 /* ShowHabitViewController.swift in Sources */,
 				2A5D83AD25DBDD550012FEEB /* TrophyWrapper.swift in Sources */,

@@ -3,10 +3,26 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "ViewController.updateHabitsTrophy():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "DateHelper.app.calculatePassedDays(startDate: habitEntities[i]?.startDate ?? Date().description)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "TrophyViewController.tableView(_:cellForRowAt:):TrophyViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "trophyListVM">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ShowTrophyViewController.viewDidLoad():ShowTrophyViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "selectedHabit?.trophyIndex">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

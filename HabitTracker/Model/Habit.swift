@@ -21,8 +21,11 @@ class Habit {
     public private(set) var showYears : Bool
     public private(set) var showHours : Bool
     public private(set) var notificationId : UUID
+    public private(set) var trophyIndex : Int
+    public private(set) var trophySectionIndex : Int
+    public private(set) var trophyInnerSectionIndex : Int
     
-    init(name: String, habitCategory : Int, habitTitle : Int, reminderFrequency : Int, startDate : String, startHour : Int, startMinute : Int, isPrimary : Bool, notificationId : UUID, showYears : Bool, showHours : Bool) {
+    init(name: String, habitCategory : Int, habitTitle : Int, reminderFrequency : Int, startDate : String, startHour : Int, startMinute : Int, isPrimary : Bool, notificationId : UUID, showYears : Bool, showHours : Bool, trophyIndex : Int, trophySectionIndex : Int, trophyInnerSectionIndex : Int) {
         self.name = name
         self.habitCategory = habitCategory
         self.habitTitle = habitTitle
@@ -34,5 +37,8 @@ class Habit {
         self.notificationId = notificationId
         self.showYears = showYears
         self.showHours = showHours
+        self.trophyIndex = trophyIndex
+        self.trophySectionIndex = trophySectionIndex
+        self.trophyInnerSectionIndex = trophyInnerSectionIndex
     }
 }

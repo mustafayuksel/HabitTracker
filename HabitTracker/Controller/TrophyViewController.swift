@@ -22,7 +22,7 @@ class TrophyViewController : UITableViewController {
         self.tableView.separatorStyle = .none
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
-        self.trophyListVM = CustomTrophyListTableViewModel(trophies: TrophyViewControllerHelper().prepareTrophyObject())
+        self.trophyListVM = CustomTrophyListTableViewModel(trophies: TrophyHelper().prepareTrophyObject())
         
         DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -39,6 +39,11 @@ class TrophyViewController : UITableViewController {
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return self.trophyListVM.trophies[section].headerName
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "toShowTrophyVC", sender: nil)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
