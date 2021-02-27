@@ -23,9 +23,6 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        TrophyHelper().findTrophyIndex(calculatedDays: 364)
-        
         self.navigationController?.navigationBar.prefersLargeTitles = true
         UIApplication.shared.applicationIconBadgeNumber = 0
         self.navigationItem.hidesBackButton = true

@@ -14,7 +14,16 @@
          contextName = "TrophyViewController.tableView(_:cellForRowAt:):TrophyViewController.swift">
          <PersistentStrings>
             <PersistentString
+               value = "selectedHabit?.trophyIndex">
+            </PersistentString>
+            <PersistentString
                value = "trophyListVM">
+            </PersistentString>
+            <PersistentString
+               value = "selectedHabit?.trophySectionIndex">
+            </PersistentString>
+            <PersistentString
+               value = "selectedHabit?.trophyInnerSectionIndex">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

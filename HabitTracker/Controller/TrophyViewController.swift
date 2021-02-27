@@ -13,8 +13,14 @@ class TrophyViewController : UITableViewController {
     
     private var trophyListVM: CustomTrophyListTableViewModel!
     
+    let selectedHabitIndex : Int = Constants.Defaults.value(forKey: Constants.Keys.SelectedHabit) as! Int
+    var selectedHabit : HabitEntity?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        selectedHabit = DatabaseHelper.app.getHabitEntityResults()[selectedHabitIndex]
+        
         setup()
     }
     
@@ -60,6 +66,9 @@ class TrophyViewController : UITableViewController {
         cell.image2.image = trophyVM.image2
         cell.backgroundImage1.image = trophyVM.backgroundImage1
         cell.backgroundImage2.image = trophyVM.backgroundImage2
+        
+        changeCellAlpha(indexPath, cell)
+        
         return cell
     }
     
@@ -71,5 +80,34 @@ class TrophyViewController : UITableViewController {
     }
     
     func popoverDismissed() {
+    }
+    
+    private func setAlpha(_ cell: CustomTrophyTableViewCell, alpha1 : Float, alpha2 : Float) {
+        cell.descriptionLabel1.alpha = CGFloat(alpha1)
+        cell.image1.alpha = CGFloat(alpha1)
+        cell.backgroundImage1.alpha = CGFloat(alpha1)
+        cell.descriptionLabel2.alpha = CGFloat(alpha2)
+        cell.image2.alpha = CGFloat(alpha2)
+        cell.backgroundImage2.alpha = CGFloat(alpha2)
+    }
+    
+    fileprivate func changeCellAlpha(_ indexPath: IndexPath, _ cell: CustomTrophyTableViewCell) {
+        if indexPath.section > Int(selectedHabit?.trophyIndex ?? 100) || (indexPath.section >= Int(selectedHabit?.trophyIndex ?? 100) &&  indexPath.row >= Int(selectedHabit?.trophySectionIndex ?? 100)) {
+            
+            if indexPath.section == Int(selectedHabit?.trophyIndex ?? 100) && indexPath.row == Int(selectedHabit?.trophySectionIndex ?? 100) {
+                if selectedHabit?.trophyInnerSectionIndex == 0 {
+                    setAlpha(cell, alpha1: 1, alpha2: 0.45)
+                }
+                else {
+                    setAlpha(cell, alpha1: 1, alpha2: 1)
+                }
+            }
+            else {
+                setAlpha(cell, alpha1: 0.45, alpha2: 0.45)
+            }
+        }
+        else {
+            setAlpha(cell, alpha1: 1, alpha2: 1)
+        }
     }
 }

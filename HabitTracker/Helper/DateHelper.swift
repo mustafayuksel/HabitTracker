@@ -225,11 +225,15 @@ class DateHelper {
     }
     
     func calculateTrophyDays(calculatedDays : Int) -> Int{
-        for trophyDaysSections in Constants.TROPHY_DAYS {
+        if calculatedDays >= 365 {
+            return 365
+        }
+        
+        outerLoop : for trophyDaysSections in Constants.TROPHY_DAYS {
             for i in 0..<trophyDaysSections.count {
                 let trophyDaysSection = trophyDaysSections[i]
                 if trophyDaysSection.contains(calculatedDays) {
-                    break
+                    break outerLoop
                 }
                 else {
                     for j in 0..<trophyDaysSection.count - 1 {

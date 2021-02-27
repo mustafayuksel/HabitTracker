@@ -28,10 +28,21 @@ class ShowTrophyViewController : UIViewController {
         
         let preparedTrophies = TrophyHelper().prepareTrophyObject()
         
-        let trophyList = preparedTrophies[Int(selectedHabit?.trophyIndex ?? 0)].trophyList
-        let trophy = trophyList[Int(selectedHabit?.trophySectionIndex ?? 0)]
+        var trophyIndex = 0
+        if Int(selectedHabit?.trophyIndex ?? 0) > -1 {
+            trophyIndex = Int(selectedHabit?.trophyIndex ?? 0)
+        }
         
-        let innerSectionIndex = selectedHabit?.trophyInnerSectionIndex
+        let trophyList = preparedTrophies[trophyIndex].trophyList
+        
+        var trophySectionIndex = 0
+        if Int(selectedHabit?.trophySectionIndex ?? 0) > -1 {
+            trophySectionIndex = Int(selectedHabit?.trophySectionIndex ?? 0)
+        }
+        
+        let trophy = trophyList[trophySectionIndex]
+        
+        let innerSectionIndex = selectedHabit?.trophyInnerSectionIndex ?? 0 > -1 ? selectedHabit?.trophyInnerSectionIndex ?? 0 : 0
         
         if innerSectionIndex == 0 {
             trophyImage.image = trophy.image1

@@ -70,7 +70,7 @@ class TrophyHelper {
                     }
                 }
             }
-            return (100, 100 , 100)
+            return (2, 4 , 1)
         }
         return (-1 , -1, -1)
     }
