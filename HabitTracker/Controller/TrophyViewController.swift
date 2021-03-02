@@ -18,6 +18,7 @@ class TrophyViewController : UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = NSLocalizedString("Trophies", comment: "")
         
         selectedHabit = DatabaseHelper.app.getHabitEntityResults()[selectedHabitIndex]
         
