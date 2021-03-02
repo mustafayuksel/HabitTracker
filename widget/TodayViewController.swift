@@ -37,8 +37,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         completionHandler(NCUpdateResult.newData)
     }
     func prepareWidget(){
-        let coreDataStack = CoreDataStack()
-        let context  = coreDataStack.getContext()
+        let context  = CoreDataStack.persistentContainer.viewContext
         do {
             let request = NSFetchRequest<NSFetchRequestResult>(entityName: Constants.HABIT_ENTITY)
             let results = try context.fetch(request)
