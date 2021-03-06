@@ -15,6 +15,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     
     private let refreshControl = UIRefreshControl()
     static var isSaveButtonClick:Bool!
+    static var showAd = true
     var bannerView: GADBannerView!
     private var habitEntityListVM: CustomMainTableListViewModel!
     @IBOutlet weak var tableView: UITableView!
@@ -27,6 +28,12 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         UIApplication.shared.applicationIconBadgeNumber = 0
         self.navigationItem.hidesBackButton = true
         self.navigationItem.title = NSLocalizedString("HabitDayCounter", comment: "")
+        
+        if(ViewController.showAd) {
+            AdsHelper().checkAndAskForAds(uiViewController: self, unitId: "ca-app-pub-1847727001534987/9055444314")
+            ViewController.showAd = false
+        }
+        
         prepareAppearance()
         
         updateHabitsTrophy()
@@ -68,7 +75,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         }
         
         bannerView = GADBannerView(adSize: kGADAdSizeBanner)
-        bannerView.adUnitID = "ca-app-pub-1847727001534987/9440673927"
+        bannerView.adUnitID = "ca-app-pub-1847727001534987/7529969028"
         bannerView.rootViewController = self
         bannerView.delegate = self
         bannerView.load(GADRequest())

@@ -34,12 +34,12 @@ class HabitEditViewController : UIViewController, GADBannerViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        AdsHelper().checkAndAskForAds(uiViewController: self, unitId: "ca-app-pub-1847727001534987/9581699134")
+        AdsHelper().checkAndAskForAds(uiViewController: self, unitId: "ca-app-pub-1847727001534987/4875885525")
         self.setupToHideKeyboardOnTapOnView()
 
         let adSize = GADAdSizeFromCGSize(CGSize(width: 320, height: 100))
         bannerView = GADBannerView(adSize: adSize)
-        bannerView.adUnitID = "ca-app-pub-1847727001534987/1754523462"
+        bannerView.adUnitID = "ca-app-pub-1847727001534987/8815130538"
         bannerView.rootViewController = self
         bannerView.delegate = self
         bannerView.load(GADRequest())

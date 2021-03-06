@@ -41,7 +41,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         
         let adSize = GADAdSizeFromCGSize(CGSize(width: 320, height: 100))
         bannerView = GADBannerView(adSize: adSize)
-        bannerView.adUnitID = "ca-app-pub-1847727001534987/2460332609"
+        bannerView.adUnitID = "ca-app-pub-1847727001534987/3371232165"
         bannerView.rootViewController = self
         bannerView.delegate = self
         bannerView.load(GADRequest())

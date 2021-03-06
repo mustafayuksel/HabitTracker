@@ -26,12 +26,12 @@ struct AdsHelper {
                 return
             }
             switch appOpenCount {
-            case 1..<1:
+            case 1..<2:
                 print("App run count is : \(appOpenCount)")
             default:
                 let App = UIApplication.shared.delegate as! AppDelegate
                 App.gViewController = uiViewController
-               // App.showAdmobInterstitial(unitId: unitId)
+                App.showAdmobInterstitial(unitId: unitId)
             }
         }
     }
@@ -44,7 +44,7 @@ struct AdsHelper {
         if requestIDFAComplete as? Bool == true {
             let removeAds = Constants.Defaults.value(forKey: Constants.Keys.RemoveAds) as? Bool
             if removeAds == false {
-          /*     bannerView.translatesAutoresizingMaskIntoConstraints = false
+                bannerView.translatesAutoresizingMaskIntoConstraints = false
                 view.addSubview(bannerView)
                 view.addConstraints(
                     [NSLayoutConstraint(item: bannerView,
@@ -61,7 +61,7 @@ struct AdsHelper {
                                         attribute: .centerX,
                                         multiplier: 1,
                                         constant: 0)
-                    ])*/
+                    ])
             }
         }
     }

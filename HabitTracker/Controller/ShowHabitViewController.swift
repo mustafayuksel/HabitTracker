@@ -29,7 +29,7 @@ class ShowHabitViewController: UIViewController ,UITableViewDelegate, UITableVie
         }
         
         bannerView = GADBannerView(adSize: kGADAdSizeBanner)
-        bannerView.adUnitID = "ca-app-pub-1847727001534987/9440673927"
+        bannerView.adUnitID = "ca-app-pub-1847727001534987/6572110576"
         bannerView.rootViewController = self
         bannerView.delegate = self
         bannerView.load(GADRequest())

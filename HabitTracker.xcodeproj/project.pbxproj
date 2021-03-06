@@ -116,6 +116,12 @@
 		2A5D83AC25DBDD550012FEEB /* TrophyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrophyWrapper.swift; sourceTree = "<group>"; };
 		2A5D83C625DC5ECA0012FEEB /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		2A5D83CC25DC7DF60012FEEB /* TrophyHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrophyHelper.swift; sourceTree = "<group>"; };
+		2A6FF1F325F410F800A92FFB /* km */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = km; path = km.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2A6FF1F425F410F800A92FFB /* km */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = km; path = km.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2A6FF1F525F4110F00A92FFB /* km-KH */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "km-KH"; path = "km-KH.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		2A6FF1F625F4110F00A92FFB /* km-KH */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "km-KH"; path = "km-KH.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		2A6FF1F725F4119F00A92FFB /* en-AU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-AU"; path = "en-AU.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		2A6FF1F825F411A100A92FFB /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		2A76337325D6F51600C05AC2 /* CustomMainTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMainTableViewModel.swift; sourceTree = "<group>"; };
 		2AFEF15E25D5D641006DC809 /* GoogleAppMeasurement.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleAppMeasurement.xcframework; path = Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework; sourceTree = "<group>"; };
 		2AFEF16025D5D641006DC809 /* GoogleMobileAds.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleMobileAds.xcframework; path = "Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAdsFramework-Current/GoogleMobileAds.xcframework"; sourceTree = "<group>"; };
@@ -635,6 +641,8 @@
 				hy,
 				az,
 				tr,
+				km,
+				"km-KH",
 			);
 			mainGroup = 453FF8F522EB503C00214532;
 			productRefGroup = 453FF8FF22EB503C00214532 /* Products */;
@@ -897,6 +905,10 @@
 				4567C6DE2433A4CD00061218 /* hy */,
 				4567C6E02433A4DD00061218 /* az */,
 				4567C6E22433A57800061218 /* tr */,
+				2A6FF1F425F410F800A92FFB /* km */,
+				2A6FF1F625F4110F00A92FFB /* km-KH */,
+				2A6FF1F725F4119F00A92FFB /* en-AU */,
+				2A6FF1F825F411A100A92FFB /* en-GB */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -953,6 +965,8 @@
 				4567C6DD2433A4CC00061218 /* hy */,
 				4567C6DF2433A4DC00061218 /* az */,
 				4567C6E12433A57700061218 /* tr */,
+				2A6FF1F325F410F800A92FFB /* km */,
+				2A6FF1F525F4110F00A92FFB /* km-KH */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1112,7 +1126,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5.2;
+				MARKETING_VERSION = 1.5.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mustafayuksel.HabitTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1143,7 +1157,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5.2;
+				MARKETING_VERSION = 1.5.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mustafayuksel.HabitTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1167,7 +1181,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.5.2;
+				MARKETING_VERSION = 1.5.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mustafayuksel.HabitTracker.onesignal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1191,7 +1205,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.5.2;
+				MARKETING_VERSION = 1.5.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mustafayuksel.HabitTracker.onesignal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1257,7 +1271,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.5.2;
+				MARKETING_VERSION = 1.5.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mustafayuksel.HabitTracker.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1282,7 +1296,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.5.2;
+				MARKETING_VERSION = 1.5.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mustafayuksel.HabitTracker.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
