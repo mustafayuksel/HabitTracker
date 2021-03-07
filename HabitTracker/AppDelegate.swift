@@ -104,7 +104,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADFullScreenContentDeleg
         let container = NSPersistentContainer(name: "HabitTracker")
         var persistentStoreDescriptions: NSPersistentStoreDescription
         
-        let storeUrl =  FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.habittracker")!.appendingPathComponent("HabitTracker.xcdatamodeld")
+        let storeUrl =  FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.habittrackercounter")!.appendingPathComponent("HabitTracker.xcdatamodeld")
         
         
         let description = NSPersistentStoreDescription()
@@ -112,7 +112,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADFullScreenContentDeleg
         description.shouldMigrateStoreAutomatically = true
         description.url = storeUrl
         
-        container.persistentStoreDescriptions = [NSPersistentStoreDescription(url:  FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.habittracker")!.appendingPathComponent("HabitTracker.xcdatamodeld"))]
+        container.persistentStoreDescriptions = [description]
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.

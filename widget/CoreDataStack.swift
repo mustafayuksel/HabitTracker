@@ -23,7 +23,7 @@ class CoreDataStack {
         let appName: String = "xx"
         var persistentStoreDescriptions: NSPersistentStoreDescription
         
-        let storeUrl =  FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.habittracker")!.appendingPathComponent("HabitTracker.xcdatamodeld")
+        let storeUrl =  FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.habittrackercounter")!.appendingPathComponent("HabitTracker.xcdatamodeld")
         
         
         let description = NSPersistentStoreDescription()
@@ -31,7 +31,7 @@ class CoreDataStack {
         description.shouldMigrateStoreAutomatically = true
         description.url = storeUrl
         
-        container.persistentStoreDescriptions = [NSPersistentStoreDescription(url:  FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.habittracker")!.appendingPathComponent("HabitTracker.xcdatamodeld"))]
+        container.persistentStoreDescriptions = [NSPersistentStoreDescription(url:  FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.habittrackercounter")!.appendingPathComponent("HabitTracker.xcdatamodeld"))]
         
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {

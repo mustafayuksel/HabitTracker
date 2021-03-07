@@ -24,6 +24,16 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let migrator = UserStandardsMigrator(
+              from: .standard,
+              to: UserDefaults(suiteName: "group.com.habittrackercounter") ?? .standard)
+
+
+          let _: UserDefaults = {
+              migrator.migrate()
+              return migrator.defaults()
+          }()
+        
         self.navigationController?.navigationBar.prefersLargeTitles = true
         UIApplication.shared.applicationIconBadgeNumber = 0
         self.navigationItem.hidesBackButton = true
@@ -80,8 +90,6 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         bannerView.delegate = self
         bannerView.load(GADRequest())
         AdsHelper().addBannerViewToView(bannerView, view)
-        
-        setup()
     }
     
     fileprivate func prepareAppearance() {
