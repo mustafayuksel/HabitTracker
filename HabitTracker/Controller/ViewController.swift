@@ -24,16 +24,6 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let migrator = UserStandardsMigrator(
-              from: .standard,
-              to: UserDefaults(suiteName: "group.com.habittrackercounter") ?? .standard)
-
-
-          let _: UserDefaults = {
-              migrator.migrate()
-              return migrator.defaults()
-          }()
-        
         self.navigationController?.navigationBar.prefersLargeTitles = true
         UIApplication.shared.applicationIconBadgeNumber = 0
         self.navigationItem.hidesBackButton = true

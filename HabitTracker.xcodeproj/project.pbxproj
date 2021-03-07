@@ -16,8 +16,6 @@
 		2A5D83AD25DBDD550012FEEB /* TrophyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5D83AC25DBDD550012FEEB /* TrophyWrapper.swift */; };
 		2A5D83C725DC5ECA0012FEEB /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5D83C625DC5ECA0012FEEB /* UIImage.swift */; };
 		2A5D83CD25DC7DF60012FEEB /* TrophyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5D83CC25DC7DF60012FEEB /* TrophyHelper.swift */; };
-		2A6FF21225F41FA900A92FFB /* UserStandardsMigrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FF21125F41FA900A92FFB /* UserStandardsMigrator.swift */; };
-		2A6FF21825F4205E00A92FFB /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FF21725F4205E00A92FFB /* UserDefaults.swift */; };
 		2A6FF21D25F4264C00A92FFB /* HabitTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 453FF90822EB503C00214532 /* HabitTracker.xcdatamodeld */; };
 		2A76337425D6F51600C05AC2 /* CustomMainTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A76337325D6F51600C05AC2 /* CustomMainTableViewModel.swift */; };
 		3F7E10150087B0A2EA456D05 /* Pods_HabitTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3625821635243F86DE868B32 /* Pods_HabitTracker.framework */; };
@@ -112,7 +110,6 @@
 /* Begin PBXFileReference section */
 		2A05706C25E27DA400C93C67 /* ShowTrophyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTrophyViewController.swift; sourceTree = "<group>"; };
 		2A17A64025DB0334009F65EF /* TrophyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrophyViewController.swift; sourceTree = "<group>"; };
-		2A34AB6B25F4ED6900383E10 /* HabitTracker v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "HabitTracker v2.xcdatamodel"; sourceTree = "<group>"; };
 		2A5D839A25DBDA5A0012FEEB /* CustomTrophyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTrophyTableViewCell.swift; sourceTree = "<group>"; };
 		2A5D83A025DBDAFB0012FEEB /* CustomTrophyTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTrophyTableViewModel.swift; sourceTree = "<group>"; };
 		2A5D83A625DBDB7B0012FEEB /* Trophy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trophy.swift; sourceTree = "<group>"; };
@@ -125,8 +122,6 @@
 		2A6FF1F625F4110F00A92FFB /* km-KH */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "km-KH"; path = "km-KH.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		2A6FF1F725F4119F00A92FFB /* en-AU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-AU"; path = "en-AU.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		2A6FF1F825F411A100A92FFB /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		2A6FF21125F41FA900A92FFB /* UserStandardsMigrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStandardsMigrator.swift; sourceTree = "<group>"; };
-		2A6FF21725F4205E00A92FFB /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		2A76337325D6F51600C05AC2 /* CustomMainTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMainTableViewModel.swift; sourceTree = "<group>"; };
 		2AFEF15E25D5D641006DC809 /* GoogleAppMeasurement.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleAppMeasurement.xcframework; path = Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework; sourceTree = "<group>"; };
 		2AFEF16025D5D641006DC809 /* GoogleMobileAds.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleMobileAds.xcframework; path = "Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAdsFramework-Current/GoogleMobileAds.xcframework"; sourceTree = "<group>"; };
@@ -442,8 +437,6 @@
 				45DF57012441F435004A4B9F /* AdsHelper.swift */,
 				2A5D83C625DC5ECA0012FEEB /* UIImage.swift */,
 				2A5D83CC25DC7DF60012FEEB /* TrophyHelper.swift */,
-				2A6FF21125F41FA900A92FFB /* UserStandardsMigrator.swift */,
-				2A6FF21725F4205E00A92FFB /* UserDefaults.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -794,13 +787,11 @@
 				45B3AEB622FF0C3E00AC43F9 /* Constants.swift in Sources */,
 				456D3E8B230021FA001C5D87 /* Habit.swift in Sources */,
 				45A782062303156D0065C72A /* HabitEditViewController.swift in Sources */,
-				2A6FF21825F4205E00A92FFB /* UserDefaults.swift in Sources */,
 				45DF57022441F435004A4B9F /* AdsHelper.swift in Sources */,
 				2A5D839B25DBDA5A0012FEEB /* CustomTrophyTableViewCell.swift in Sources */,
 				45A782082303432C0065C72A /* SettingsViewController.swift in Sources */,
 				4533BDBC242CD07E00323CA7 /* ShowHabitDetailsViewController.swift in Sources */,
 				4534C00C24290AE0003AF5E4 /* UIViewController.swift in Sources */,
-				2A6FF21225F41FA900A92FFB /* UserStandardsMigrator.swift in Sources */,
 				452F456B22F627C6009E8210 /* HabitCategorySelectorController.swift in Sources */,
 				4540FE062302AAC800D8F990 /* DateHelper.swift in Sources */,
 				45BC2E802427663000C58A6D /* StoreReviewHelper.swift in Sources */,
@@ -1122,7 +1113,7 @@
 				CODE_SIGN_ENTITLEMENTS = HabitTracker/HabitTracker.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = LEFRQUV8R6;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1153,7 +1144,7 @@
 				CODE_SIGN_ENTITLEMENTS = HabitTracker/HabitTracker.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = LEFRQUV8R6;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1180,7 +1171,7 @@
 			baseConfigurationReference = A1BCF4408208AD123269A0B0 /* Pods-HabitTracker-OneSignalNotificationServiceExtension.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = LEFRQUV8R6;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = OneSignal/Info.plist;
@@ -1204,7 +1195,7 @@
 			baseConfigurationReference = 42864F86941A5B318A9D92F1 /* Pods-HabitTracker-OneSignalNotificationServiceExtension.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = LEFRQUV8R6;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = OneSignal/Info.plist;
@@ -1271,7 +1262,7 @@
 				CODE_SIGN_ENTITLEMENTS = widget/widget.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = LEFRQUV8R6;
 				INFOPLIST_FILE = widget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1296,7 +1287,7 @@
 				CODE_SIGN_ENTITLEMENTS = widget/widget.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = LEFRQUV8R6;
 				INFOPLIST_FILE = widget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1369,7 +1360,6 @@
 		453FF90822EB503C00214532 /* HabitTracker.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				2A34AB6B25F4ED6900383E10 /* HabitTracker v2.xcdatamodel */,
 				453FF90922EB503C00214532 /* HabitTracker.xcdatamodel */,
 			);
 			currentVersion = 453FF90922EB503C00214532 /* HabitTracker.xcdatamodel */;
