@@ -35,8 +35,7 @@ class HabitCreatorController: UIViewController, GADBannerViewDelegate {
         AdsHelper().checkAndAskForAds(uiViewController: self, unitId: "ca-app-pub-1847727001534987/1702927273")
         self.setupToHideKeyboardOnTapOnView()
         
-        let adSize = GADAdSizeFromCGSize(CGSize(width: 320, height: 100))
-        bannerView = GADBannerView(adSize: adSize)
+        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
         bannerView.adUnitID = "ca-app-pub-1847727001534987/8268335622"
         bannerView.rootViewController = self
         bannerView.delegate = self
@@ -152,6 +151,7 @@ class HabitCreatorController: UIViewController, GADBannerViewDelegate {
     }
     
     @objc func showDatePicker(){
+        bannerView.isHidden = true
         datePicker.datePickerMode = .date
         
         let toolbar = UIToolbar();
@@ -172,6 +172,7 @@ class HabitCreatorController: UIViewController, GADBannerViewDelegate {
     }
     
     @objc func showTimePicker(){
+        bannerView.isHidden = true
         timePicker.datePickerMode = .time
         timePicker.locale = Locale(identifier: "en_GB")
         let toolbar = UIToolbar();
@@ -195,6 +196,7 @@ class HabitCreatorController: UIViewController, GADBannerViewDelegate {
     }
     
     @objc func doneDatePicker(){
+        bannerView.isHidden = false
         let formatter = DateFormatter()
         formatter.dateFormat = "dd-MM-yyyy"
         dateOutlet.text = "  " + formatter.string(from: datePicker.date)
@@ -202,10 +204,12 @@ class HabitCreatorController: UIViewController, GADBannerViewDelegate {
     }
     
     @objc func cancelDatePicker(){
+        bannerView.isHidden = false
         self.view.endEditing(true)
     }
     
     @objc func doneTimePicker(){
+        bannerView.isHidden = false
         let components = Calendar.current.dateComponents([.hour, .minute], from: timePicker.date)
         let hour = components.hour!
         let minute = components.minute!
@@ -214,6 +218,7 @@ class HabitCreatorController: UIViewController, GADBannerViewDelegate {
     }
     
     @objc func cancelTimePicker(){
+        bannerView.isHidden = false
         self.view.endEditing(true)
     }
 }

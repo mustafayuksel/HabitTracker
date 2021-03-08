@@ -39,8 +39,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             Constants.Defaults.set(false, forKey: Constants.Keys.RemoveAds)
         }
         
-        let adSize = GADAdSizeFromCGSize(CGSize(width: 320, height: 100))
-        bannerView = GADBannerView(adSize: adSize)
+        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
         bannerView.adUnitID = "ca-app-pub-1847727001534987/3371232165"
         bannerView.rootViewController = self
         bannerView.delegate = self

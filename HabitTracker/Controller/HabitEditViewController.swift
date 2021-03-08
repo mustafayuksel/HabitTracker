@@ -36,9 +36,8 @@ class HabitEditViewController : UIViewController, GADBannerViewDelegate {
         super.viewDidLoad()
         AdsHelper().checkAndAskForAds(uiViewController: self, unitId: "ca-app-pub-1847727001534987/4875885525")
         self.setupToHideKeyboardOnTapOnView()
-
-        let adSize = GADAdSizeFromCGSize(CGSize(width: 320, height: 100))
-        bannerView = GADBannerView(adSize: adSize)
+       
+        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
         bannerView.adUnitID = "ca-app-pub-1847727001534987/8815130538"
         bannerView.rootViewController = self
         bannerView.delegate = self
@@ -156,6 +155,7 @@ class HabitEditViewController : UIViewController, GADBannerViewDelegate {
         })
     }
     @objc func showDatePicker(){
+        bannerView.isHidden = true
         datePicker.datePickerMode = .date
         
         let toolbar = UIToolbar();
@@ -176,6 +176,7 @@ class HabitEditViewController : UIViewController, GADBannerViewDelegate {
     }
     
     @objc func showTimePicker(){
+        bannerView.isHidden = true
         timePicker.datePickerMode = .time
         timePicker.locale = Locale(identifier: "en_GB")
         let toolbar = UIToolbar();
@@ -207,6 +208,7 @@ class HabitEditViewController : UIViewController, GADBannerViewDelegate {
     }
     
     @objc func doneDatePicker(){
+        bannerView.isHidden = false
         let formatter = DateFormatter()
         formatter.dateFormat = "dd-MM-yyyy"
         dateOutlet.text = "  " + formatter.string(from: datePicker.date)
@@ -214,10 +216,12 @@ class HabitEditViewController : UIViewController, GADBannerViewDelegate {
     }
     
     @objc func cancelDatePicker(){
+        bannerView.isHidden = false
         self.view.endEditing(true)
     }
     
     @objc func doneTimePicker(){
+        bannerView.isHidden = false
         let components = Calendar.current.dateComponents([.hour, .minute], from: timePicker.date)
         let hour = components.hour!
         let minute = components.minute!
@@ -226,6 +230,7 @@ class HabitEditViewController : UIViewController, GADBannerViewDelegate {
     }
     
     @objc func cancelTimePicker(){
+        bannerView.isHidden = false
         self.view.endEditing(true)
     }
 }
